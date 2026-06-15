@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cqhw276realc"]
+
+[ext_resource type="Material" path="res://addons/godot-xr-tools/materials/pointer.tres" id="1"]
+[ext_resource type="Script" uid="uid://cvnagt08r6ul4" path="res://addons/godot-xr-tools/functions/function_pointer.gd" id="2"]
+
+[sub_resource type="BoxMesh" id="1"]
+resource_local_to_scene = true
+material = ExtResource("1")
+size = Vector3(0.002, 0.002, 10)
+subdivide_depth = 20
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17suu"]
+shading_mode = 0
+disable_ambient_light = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5a533"]
+material = SubResource("StandardMaterial3D_17suu")
+top_radius = 0.25
+bottom_radius = 0.0
+height = 0.001
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_k3gfm"]
+radius = 0.2
+
+[node name="FunctionPointer" type="Node3D" unique_id=657560358]
+script = ExtResource("2")
+
+[node name="RayCast" type="RayCast3D" parent="." unique_id=62369422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.013, 0)
+target_position = Vector3(0, 0, -10)
+collision_mask = 5242880
+
+[node name="Laser" type="MeshInstance3D" parent="." unique_id=1284873275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.013, -5)
+cast_shadow = 0
+mesh = SubResource("1")
+
+[node name="Target" type="MeshInstance3D" parent="." unique_id=985925249]
+transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 0, 0, 0)
+visible = false
+mesh = SubResource("CylinderMesh_5a533")
+
+[node name="SuppressArea" type="Area3D" parent="." unique_id=956634093]
+collision_layer = 0
+collision_mask = 4194304
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SuppressArea" unique_id=263800210]
+shape = SubResource("SphereShape3D_k3gfm")

@@ -1,0 +1,18 @@
+[gd_resource type="Environment" format=3 uid="uid://ba4nna6m3gvhp"]
+
+[ext_resource type="Texture2D" uid="uid://clnjgr1jinnxc" path="res://models/env2_exterior_aurora.png" id="1_p66fr"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_m4wsi"]
+resource_local_to_scene = true
+panorama = ExtResource("1_p66fr")
+energy_multiplier = 0.0
+
+[sub_resource type="Sky" id="Sky_pbeir"]
+sky_material = SubResource("PanoramaSkyMaterial_m4wsi")
+
+[resource]
+resource_local_to_scene = true
+background_mode = 2
+sky = SubResource("Sky_pbeir")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)

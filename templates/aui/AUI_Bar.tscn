@@ -1,0 +1,508 @@
+[gd_scene format=3 uid="uid://bpme51w4cvjb4"]
+
+[ext_resource type="Theme" uid="uid://bv103o0x0oqc5" path="res://templates/aui/shell.tres" id="1_6i3tj"]
+[ext_resource type="Texture2D" uid="uid://c3yeqrmoiivnj" path="res://images/aui/tabs/settings/ic_volume.png" id="1_dq6o1"]
+[ext_resource type="FontFile" uid="uid://beelqblky8eop" path="res://fonts/Roboto-Bold.ttf" id="2_4whpg"]
+[ext_resource type="Script" uid="uid://bm470xi1wwm3f" path="res://templates/aui/aui_bar.gd" id="2_38505"]
+[ext_resource type="Texture2D" uid="uid://bjdmq0a753qx8" path="res://images/oc_icon_wifi_on_filled_2_24_d2d3d4.png" id="3_t066l"]
+[ext_resource type="Texture2D" uid="uid://wqyjhow871n4" path="res://images/aui/tabs/settings/ic_wifi.png" id="5_ipldj"]
+[ext_resource type="Texture2D" uid="uid://cph281gwvr668" path="res://images/ic_guardian_roomscale.png" id="5_yjdci"]
+[ext_resource type="Texture2D" uid="uid://phq2rts25dfk" path="res://images/ic_guardian_stationary.png" id="6_22j2g"]
+[ext_resource type="Texture2D" uid="uid://dhdhxbrvb6x3i" path="res://images/aui/tabs/settings/ic_recenter.png" id="6_c3732"]
+[ext_resource type="Texture2D" uid="uid://bg0j7q6nx3vff" path="res://images/aui/tabs/settings/ic_settings.png" id="7_38505"]
+[ext_resource type="Texture2D" uid="uid://coo43eioyr7r1" path="res://images/aui/controller_battery/controller_left_high.png" id="7_ptio4"]
+[ext_resource type="Texture2D" uid="uid://dbqaaldfvtkph" path="res://images/aui/controller_battery/controller_right_high.png" id="8_14wpe"]
+[ext_resource type="Texture2D" uid="uid://bg4knl7cj457y" path="res://images/aui/battery/battery_100_16_1x.png" id="9_jfed5"]
+[ext_resource type="Texture2D" uid="uid://cuoagvrlcvn6i" path="res://images/aui/tabs/navigate/ic_home.png" id="9_u5ck6"]
+[ext_resource type="Texture2D" uid="uid://2kv32smv7mj1" path="res://images/aui/tabs/navigate/ic_library.png" id="10_r1pa1"]
+[ext_resource type="Texture2D" uid="uid://bpbpv4203uqv2" path="res://images/aui/tabs/navigate/ic_store.png" id="11_ltrkw"]
+[ext_resource type="Texture2D" uid="uid://c5efllpnwuc5l" path="res://images/aui/tabs/navigate/ic_internet.png" id="12_4d6sv"]
+[ext_resource type="Texture2D" uid="uid://xfgy0ytq3vah" path="res://images/aui/tabs/settings/ic_search.png" id="14_3d281"]
+[ext_resource type="Texture2D" uid="uid://hg8adcgw8r8l" path="res://images/aui/tabs/social/ic_profile.png" id="15_80fcp"]
+[ext_resource type="Texture2D" uid="uid://bmnjdmctrmufk" path="res://images/aui/tabs/social/ic_friends.png" id="16_0r4p5"]
+[ext_resource type="PackedScene" uid="uid://b3pwngjkyuq3l" path="res://templates/SubItemButton.tscn" id="16_14wpe"]
+[ext_resource type="Texture2D" uid="uid://dk5i4rvqv7sel" path="res://images/aui/tabs/sharing/ic_headsetcast.png" id="17_amjdo"]
+[ext_resource type="Texture2D" uid="uid://x36u7o73bp5p" path="res://images/aui/tabs/social/ic_chat_aui.png" id="17_j2mbx"]
+[ext_resource type="Texture2D" uid="uid://b2b8ytwmjm4kd" path="res://images/aui/tabs/social/ic_parties.png" id="18_amtsi"]
+[ext_resource type="Texture2D" uid="uid://d3gjt8l6jqr76" path="res://images/aui/tabs/sharing/ic_start_livestream.png" id="18_jkbbw"]
+[ext_resource type="Texture2D" uid="uid://b0ul26875ektx" path="res://images/aui/tabs/sharing/oc_icon_video_capture_filled_24_dadada@2x.png" id="19_yjdci"]
+[ext_resource type="Texture2D" uid="uid://t7f8vqmiomyr" path="res://images/aui/tabs/sharing/ic_camera.png" id="20_22j2g"]
+[ext_resource type="Texture2D" uid="uid://b566ukim3op1p" path="res://images/aui/tabs/social/ic_report.png" id="20_amjdo"]
+[ext_resource type="Texture2D" uid="uid://c28a43xv8oqvs" path="res://images/aui/tabs/sharing/oc_icon_camera_roll_filled_24_dadada@2x.png" id="21_mny50"]
+[ext_resource type="Texture2D" uid="uid://cai1m7upugjkx" path="res://images/aui/tabs/notifications/ic_taskbar_notifications.png" id="22_jkbbw"]
+[ext_resource type="Script" uid="uid://s8lpb0ruv85j" path="res://scripts/android_battery_plugin.gd" id="29_mny50"]
+[ext_resource type="Texture2D" uid="uid://b6p5tpvg44aqu" path="res://icon.svg" id="30_ptio4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t066l"]
+bg_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcw1r"]
+bg_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipldj"]
+bg_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3732"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Gradient" id="Gradient_38505"]
+interpolation_mode = 2
+colors = PackedColorArray(0.16862746, 0.16078432, 0.15294118, 1, 0.13333334, 0.1254902, 0.12156863, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o81kv"]
+gradient = SubResource("Gradient_38505")
+fill_from = Vector2(0.517094, 0.102564104)
+fill_to = Vector2(0.517094, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t066l"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jkbbw"]
+color = Color(0.20871013, 0.20871016, 0.20871007, 1)
+vertical = true
+
+[node name="Control" type="Control" unique_id=579676122]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_6i3tj")
+script = ExtResource("2_38505")
+
+[node name="OuterVBox" type="VBoxContainer" parent="." unique_id=846526532]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -100.0
+offset_right = 500.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="OuterVBox" unique_id=368376634]
+custom_minimum_size = Vector2(1000, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_t066l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OuterVBox/PanelContainer" unique_id=2109126167]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="StatusContainer" type="PanelContainer" parent="OuterVBox/PanelContainer/VBoxContainer" unique_id=1796066756]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dcw1r")
+
+[node name="MarginContainer" type="MarginContainer" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer" unique_id=1731834158]
+layout_mode = 2
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_bottom = 21
+
+[node name="Status Stack" type="HBoxContainer" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer" unique_id=843806599]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer/Status Stack" unique_id=1684004066]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = -1
+
+[node name="ClockLabel" type="Label" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer/Status Stack/MarginContainer" unique_id=633984843]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4whpg")
+text = "12:37 pm"
+
+[node name="WifiStatusButton" type="TextureButton" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer/Status Stack" unique_id=1256951538]
+custom_minimum_size = Vector2(22, 22.315)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_t066l")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="RoomscaleGuardianButton" type="Button" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer/Status Stack" unique_id=988569437]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"GuardianTypeButton"
+theme_override_font_sizes/font_size = 13
+toggle_mode = true
+text = "Roomscale"
+icon = ExtResource("5_yjdci")
+
+[node name="StationaryGuardianButton" type="Button" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer/Status Stack" unique_id=744559396]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"GuardianTypeButton"
+theme_override_font_sizes/font_size = 13
+toggle_mode = true
+text = "Stationary"
+icon = ExtResource("6_22j2g")
+
+[node name="Status Stack2" type="HBoxContainer" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer" unique_id=432115795]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="MarginContainer2" type="MarginContainer" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer/Status Stack2" unique_id=1497262381]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+
+[node name="TextureRect2" type="TextureRect" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer/Status Stack2/MarginContainer2" unique_id=1000157884]
+layout_mode = 2
+texture = ExtResource("7_ptio4")
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer/Status Stack2" unique_id=1703163083]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 9
+
+[node name="TextureRect" type="TextureRect" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer/Status Stack2/MarginContainer" unique_id=545089977]
+layout_mode = 2
+texture = ExtResource("8_14wpe")
+stretch_mode = 4
+
+[node name="MarginContainer3" type="MarginContainer" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer/Status Stack2" unique_id=354733050]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 9
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer/Status Stack2/MarginContainer3" unique_id=714236938]
+layout_mode = 2
+
+[node name="BatteryIcon" type="TextureRect" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer/Status Stack2/MarginContainer3/HBoxContainer" unique_id=362657103]
+layout_mode = 2
+texture = ExtResource("9_jfed5")
+stretch_mode = 5
+
+[node name="BatteryLabel" type="Label" parent="OuterVBox/PanelContainer/VBoxContainer/StatusContainer/MarginContainer/Status Stack2/MarginContainer3/HBoxContainer" unique_id=1617132731]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4whpg")
+text = "93%"
+
+[node name="MainItemsContainer" type="PanelContainer" parent="OuterVBox/PanelContainer/VBoxContainer" unique_id=265982752]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ipldj")
+
+[node name="MainItemsStack" type="HBoxContainer" parent="OuterVBox/PanelContainer/VBoxContainer/MainItemsContainer" unique_id=1963294327]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="NavigateTabButton" type="Button" parent="OuterVBox/PanelContainer/VBoxContainer/MainItemsContainer/MainItemsStack" unique_id=2131201249]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"MainItemButton"
+toggle_mode = true
+text = "Navigate"
+
+[node name="SocialTabButton" type="Button" parent="OuterVBox/PanelContainer/VBoxContainer/MainItemsContainer/MainItemsStack" unique_id=1410892477]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"MainItemButton"
+toggle_mode = true
+text = "Social"
+
+[node name="SharingTabButton" type="Button" parent="OuterVBox/PanelContainer/VBoxContainer/MainItemsContainer/MainItemsStack" unique_id=1101150717]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"MainItemButton"
+toggle_mode = true
+text = "Sharing"
+
+[node name="NotificationsTabButton" type="Button" parent="OuterVBox/PanelContainer/VBoxContainer/MainItemsContainer/MainItemsStack" unique_id=214100319]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"MainItemButton"
+toggle_mode = true
+text = "Notifications"
+
+[node name="SettingsTabButton" type="Button" parent="OuterVBox/PanelContainer/VBoxContainer/MainItemsContainer/MainItemsStack" unique_id=995407452]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"MainItemButton"
+toggle_mode = true
+text = "Settings"
+
+[node name="SubItemsContainer" type="PanelContainer" parent="OuterVBox/PanelContainer/VBoxContainer" unique_id=865835097]
+clip_children = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_c3732")
+
+[node name="TextureRect" type="TextureRect" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer" unique_id=1511958900]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_o81kv")
+
+[node name="MarginContainer" type="MarginContainer" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect" unique_id=597933438]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer" unique_id=268231560]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_t066l")
+current_tab = 0
+tabs_visible = false
+switch_on_drag_hover = false
+
+[node name="NavigateTab" type="HBoxContainer" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer" unique_id=2107212832]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="HomeButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/NavigateTab" unique_id=1459176051 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+button_icon = ExtResource("9_u5ck6")
+
+[node name="LibraryButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/NavigateTab" unique_id=128539261 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "library"
+button_text = "Library"
+button_icon = ExtResource("10_r1pa1")
+
+[node name="StoreButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/NavigateTab" unique_id=650440327 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "gfgfdg"
+action_type = "store"
+button_text = "Store"
+button_icon = ExtResource("11_ltrkw")
+
+[node name="BrowserButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/NavigateTab" unique_id=22049310 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "browser"
+button_text = "Browser"
+button_icon = ExtResource("12_4d6sv")
+
+[node name="GalleryButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/NavigateTab" unique_id=16672397 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "gallery"
+button_text = "Gallery"
+button_icon = ExtResource("21_mny50")
+
+[node name="SearchButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/NavigateTab" unique_id=1860661246 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "search"
+button_text = "Search"
+button_icon = ExtResource("14_3d281")
+
+[node name="SocialTab" type="HBoxContainer" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer" unique_id=1883009780]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ProfileButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SocialTab" unique_id=808043271 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "profile"
+button_text = "Profile"
+button_icon = ExtResource("15_80fcp")
+
+[node name="FriendsButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SocialTab" unique_id=1669989840 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "friends"
+button_text = "Friends"
+button_icon = ExtResource("16_0r4p5")
+
+[node name="ChatsButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SocialTab" unique_id=466965238 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "chats"
+button_text = "Chats"
+button_icon = ExtResource("17_j2mbx")
+
+[node name="PartiesButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SocialTab" unique_id=102522714 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "parties"
+button_text = "Parties"
+button_icon = ExtResource("18_amtsi")
+
+[node name="ReportButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SocialTab" unique_id=1819339241 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "report"
+button_text = "Report"
+button_icon = ExtResource("20_amjdo")
+
+[node name="SharingTab" type="HBoxContainer" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer" unique_id=1879371486]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="CastButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SharingTab" unique_id=1084724045 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "cast"
+button_text = "Cast"
+button_icon = ExtResource("17_amjdo")
+
+[node name="GoLiveButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SharingTab" unique_id=1048370041 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "goLive"
+button_text = "Go Live"
+button_icon = ExtResource("18_jkbbw")
+
+[node name="RecordVideoButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SharingTab" unique_id=168960856 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "recordVideo"
+button_text = "Record Video"
+button_icon = ExtResource("19_yjdci")
+
+[node name="TakePhotoButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SharingTab" unique_id=648410539 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "takePhoto"
+button_text = "Take Photo"
+button_icon = ExtResource("20_22j2g")
+
+[node name="CameraRollButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SharingTab" unique_id=1764811621 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "cameraRoll"
+button_text = "Camera Roll"
+button_icon = ExtResource("21_mny50")
+
+[node name="NotificationsTab" type="HBoxContainer" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer" unique_id=1028740843]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/NotificationsTab" unique_id=1762623051]
+layout_mode = 2
+theme_override_constants/margin_left = 324
+theme_override_constants/margin_right = 228
+
+[node name="Label" type="Label" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/NotificationsTab/MarginContainer" unique_id=22170275]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("2_4whpg")
+theme_override_font_sizes/font_size = 27
+text = "No new notifications."
+
+[node name="VSeparator" type="VSeparator" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/NotificationsTab" unique_id=1811180470]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_jkbbw")
+
+[node name="NotifViewAllButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/NotificationsTab" unique_id=1168372081 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = false
+action_type = "notifsViewAll"
+button_text = "View All"
+button_icon = ExtResource("22_jkbbw")
+font_color = Color(0.6706895, 0.6706895, 0.6706895, 1)
+
+[node name="SettingsTab" type="HBoxContainer" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer" unique_id=25592933]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="VolumeButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SettingsTab" unique_id=1728362188 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = false
+action_type = "volume"
+button_text = "Volume"
+button_icon = ExtResource("1_dq6o1")
+
+[node name="WifiButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SettingsTab" unique_id=1723552139 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "wifi"
+button_text = "Wi-Fi"
+button_icon = ExtResource("5_ipldj")
+
+[node name="ResetViewButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SettingsTab" unique_id=905484045 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "resetView"
+button_text = "Reset View"
+button_icon = ExtResource("6_c3732")
+
+[node name="SeeAllButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SettingsTab" unique_id=1428502477 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "seeAll"
+button_text = "See All"
+button_icon = ExtResource("7_38505")
+
+[node name="SeeOutsideButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SettingsTab" unique_id=135384364 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+action_type = "seeOutside"
+button_text = "(Debug)Toggle Passthru"
+button_icon = ExtResource("30_ptio4")
+
+[node name="VolumeSubTab" type="HBoxContainer" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer" unique_id=367268281]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 5
+
+[node name="VolumeButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/VolumeSubTab" unique_id=1733108755 instance=ExtResource("16_14wpe")]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = false
+action_type = "volumeMuteToggle"
+button_text = "Volume"
+button_icon = ExtResource("1_dq6o1")
+
+[node name="0label" type="Label" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/VolumeSubTab" unique_id=2070238616]
+layout_mode = 2
+text = "0"
+
+[node name="MarginContainer" type="MarginContainer" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/VolumeSubTab" unique_id=1956933064]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 20
+
+[node name="VolumeSlider" type="HSlider" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/VolumeSubTab/MarginContainer" unique_id=1751894830]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="100label" type="Label" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/VolumeSubTab" unique_id=1133791326]
+layout_mode = 2
+text = "100"
+
+[node name="AndroidBatteryPlugin" type="Node" parent="." unique_id=1218482062]
+script = ExtResource("29_mny50")

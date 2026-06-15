@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c8xjeyevcci2u"]
+
+[ext_resource type="Theme" uid="uid://bv103o0x0oqc5" path="res://templates/aui/shell.tres" id="1_03l6j"]
+[ext_resource type="Script" uid="uid://dnepvvc05yykl" path="res://templates/dropdown_popup.gd" id="2_1uvav"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uvav"]
+bg_color = Color(0.21176471, 0.22352941, 0.22745098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Control" type="Control" unique_id=847787625]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_03l6j")
+script = ExtResource("2_1uvav")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1649447270]
+layout_mode = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_1uvav")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer" unique_id=371498572]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/ScrollContainer" unique_id=542529043]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ScrollContainer/MarginContainer" unique_id=268857822]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=650804963]
+layout_mode = 2
+theme_type_variation = &"MainButton"
+text = "Options "

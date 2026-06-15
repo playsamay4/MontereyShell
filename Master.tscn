@@ -1,0 +1,301 @@
+[gd_scene format=3 uid="uid://c8vtwyh8d2edg"]
+
+[ext_resource type="Script" uid="uid://c6qkfubwx3ynl" path="res://Master.gd" id="1_uo5ck"]
+[ext_resource type="Script" uid="uid://dj33bmjlrjodk" path="res://scripts/xr_origin_3d.gd" id="2_aljfc"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_di6w3"]
+[ext_resource type="PackedScene" uid="uid://ddvhmy2ieihb6" path="res://scenes/LoadingDots.tscn" id="4_jpxbg"]
+[ext_resource type="AudioStream" uid="uid://c7hbminq8ke08" path="res://audio/system_environment_ambix.ogg" id="5_ljl6t"]
+[ext_resource type="Texture2D" uid="uid://5dgqfbxbmk1o" path="res://images/bootanim_splash_2880x1600_left.png" id="6_ogaq2"]
+[ext_resource type="Script" uid="uid://dbmilca0ni7c0" path="res://scripts/controller.gd" id="7_eexsn"]
+[ext_resource type="Script" uid="uid://vndxc4tur7w4" path="res://scripts/PointerOrigin.gd" id="8_oy28a"]
+[ext_resource type="Material" uid="uid://18quiyxyue5h" path="res://materials/ray_white.tres" id="9_p526a"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="10_wratf"]
+[ext_resource type="Material" uid="uid://cbt5g5xvxxm5d" path="res://materials/reticle_white.tres" id="11_j87gw"]
+[ext_resource type="AudioStream" uid="uid://cyobx2awq25ml" path="res://audio/startup1.wav" id="12_aljfc"]
+[ext_resource type="Environment" uid="uid://ba4nna6m3gvhp" path="res://QuestHomeEnvironment.tres" id="12_di6w3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8mn8"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+texture_filter = 1
+texture_repeat = false
+grow_amount = 0.2
+stencil_flags = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_di6w3"]
+resource_local_to_scene = true
+size = Vector2(0.08, 0.055)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jpxbg"]
+viewport_path = NodePath("XROrigin3D/XRCamera3D/LoadingDots/Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljl6t"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_jpxbg")
+texture_filter = 1
+texture_repeat = false
+grow_amount = 0.2
+stencil_flags = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ogaq2"]
+resource_local_to_scene = true
+size = Vector3(0.08, 0.055, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7p0lb"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = ExtResource("6_ogaq2")
+
+[sub_resource type="QuadMesh" id="QuadMesh_br6fn"]
+material = SubResource("StandardMaterial3D_7p0lb")
+size = Vector2(2.7, 3)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2ca2e"]
+material = ExtResource("9_p526a")
+top_radius = 0.002
+bottom_radius = 0.002
+
+[sub_resource type="Animation" id="Animation_7p0lb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("XROrigin3D/XRCamera3D/OculusLogo:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("XROrigin3D/XRCamera3D/LoadingDots:material:albedo_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_aljfc"]
+resource_name = "fade_in_loading_dots"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("XROrigin3D/XRCamera3D/LoadingDots/Screen:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jqo18"]
+resource_name = "new_animation"
+length = 4.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("XROrigin3D/XRCamera3D/OculusLogo:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667, 0.53333336, 0.6, 0.6666667, 0.73333335, 0.8, 0.8666667, 0.93333334, 1, 1.0666667, 1.1333333, 1.2, 1.2666667, 1.3333334, 1.4, 1.4666667, 1.5333333, 1.6, 1.6666666, 1.7333333, 1.8, 1.8666667, 1.9333333, 2, 2.0666666, 2.1333334, 2.2, 2.2666667, 2.3333333, 2.4, 2.4666667, 2.5333333, 2.6, 2.6666667, 2.7333333, 2.8, 2.8666666, 2.9333334, 3, 3.0666666, 3.1333334, 3.2, 3.2666667, 3.3333333, 3.4, 3.4666667, 3.5333333, 3.6, 3.6666667, 3.7333333, 3.8, 3.8666666, 3.9333334, 4, 4.0666666, 4.133333, 4.2, 4.266667, 4.3333335, 4.4, 4.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.97594774), Color(1, 1, 1, 0.9518954), Color(1, 1, 1, 0.92784315), Color(1, 1, 1, 0.90379083), Color(1, 1, 1, 0.87973857), Color(1, 1, 1, 0.8556863), Color(1, 1, 1, 0.831634), Color(1, 1, 1, 0.8075817), Color(1, 1, 1, 0.7835294), Color(1, 1, 1, 0.75947714), Color(1, 1, 1, 0.7354249), Color(1, 1, 1, 0.71137255), Color(1, 1, 1, 0.6873203), Color(1, 1, 1, 0.66326797), Color(1, 1, 1, 0.6392157), Color(1, 1, 1, 0.61516345), Color(1, 1, 1, 0.5911111), Color(1, 1, 1, 0.5670588), Color(1, 1, 1, 0.54300654), Color(1, 1, 1, 0.5189543), Color(1, 1, 1, 0.494902), Color(1, 1, 1, 0.4708497), Color(1, 1, 1, 0.44679743), Color(1, 1, 1, 0.4227451), Color(1, 1, 1, 0.39869285), Color(1, 1, 1, 0.37464058), Color(1, 1, 1, 0.35058826), Color(1, 1, 1, 0.326536), Color(1, 1, 1, 0.30248374), Color(1, 1, 1, 0.2784314), Color(1, 1, 1, 0.30248368), Color(1, 1, 1, 0.32653597), Color(1, 1, 1, 0.35058826), Color(1, 1, 1, 0.37464052), Color(1, 1, 1, 0.39869282), Color(1, 1, 1, 0.4227451), Color(1, 1, 1, 0.44679737), Color(1, 1, 1, 0.4708497), Color(1, 1, 1, 0.49490196), Color(1, 1, 1, 0.5189543), Color(1, 1, 1, 0.54300654), Color(1, 1, 1, 0.5670588), Color(1, 1, 1, 0.59111106), Color(1, 1, 1, 0.6151634), Color(1, 1, 1, 0.6392157), Color(1, 1, 1, 0.66326797), Color(1, 1, 1, 0.68732023), Color(1, 1, 1, 0.71137255), Color(1, 1, 1, 0.7354248), Color(1, 1, 1, 0.75947714), Color(1, 1, 1, 0.7835294), Color(1, 1, 1, 0.80758166), Color(1, 1, 1, 0.8316339), Color(1, 1, 1, 0.8556863), Color(1, 1, 1, 0.87973857), Color(1, 1, 1, 0.90379083), Color(1, 1, 1, 0.9278431), Color(1, 1, 1, 0.95189536), Color(1, 1, 1, 0.9759476), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oy28a"]
+_data = {
+&"RESET": SubResource("Animation_7p0lb"),
+&"fade_in_loading_dots": SubResource("Animation_aljfc"),
+&"new_animation": SubResource("Animation_jqo18")
+}
+
+[sub_resource type="Animation" id="Animation_ljl6t"]
+resource_name = "RESET"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky:sky_material:energy_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_di6w3"]
+resource_name = "scene_fade_black"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky:sky_material:energy_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [5.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_jpxbg"]
+resource_name = "scene_fade_in"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky:sky_material:energy_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 5.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljl6t"]
+_data = {
+&"RESET": SubResource("Animation_ljl6t"),
+&"scene_fade_black": SubResource("Animation_di6w3"),
+&"scene_fade_in": SubResource("Animation_jpxbg")
+}
+
+[node name="Node3D" type="Node3D" unique_id=156355126]
+script = ExtResource("1_uo5ck")
+
+[node name="WorldContainer" type="Node3D" parent="." unique_id=689515792]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=2090565491 node_paths=PackedStringArray("left_controller", "right_controller")]
+script = ExtResource("2_aljfc")
+left_controller = NodePath("LeftController")
+right_controller = NodePath("RightController")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=142615117]
+fov = 37.849285
+far = 7000.0
+
+[node name="LoadingDots" parent="XROrigin3D/XRCamera3D" unique_id=930884362 instance=ExtResource("3_di6w3")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.659948)
+visible = false
+screen_size = Vector2(0.08, 0.055)
+enabled = false
+scene = ExtResource("4_jpxbg")
+material = SubResource("StandardMaterial3D_j8mn8")
+transparent = 1
+unshaded = true
+scene_properties_keys = PackedStringArray("loading_dots.gd")
+
+[node name="Screen" parent="XROrigin3D/XRCamera3D/LoadingDots" index="1"]
+mesh = SubResource("QuadMesh_di6w3")
+surface_material_override/0 = SubResource("StandardMaterial3D_ljl6t")
+
+[node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/LoadingDots" index="2"]
+screen_size = Vector2(0.08, 0.055)
+
+[node name="CollisionShape3D" parent="XROrigin3D/XRCamera3D/LoadingDots/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_ogaq2")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="XROrigin3D/XRCamera3D" unique_id=609952225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.066339016, 1.3237058, 0)
+stream = ExtResource("5_ljl6t")
+autoplay = true
+
+[node name="OculusLogo" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D" unique_id=269925954]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23, 0, -2)
+mesh = SubResource("QuadMesh_br6fn")
+
+[node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=1584163574]
+unique_name_in_owner = true
+tracker = &"left_hand"
+pose = &"grip"
+show_when_tracked = true
+script = ExtResource("7_eexsn")
+hand_side = "left"
+
+[node name="OpenXRFbRenderModel" type="OpenXRFbRenderModel" parent="XROrigin3D/LeftController" unique_id=669880310]
+visible = false
+
+[node name="PointerOrigin" type="Node3D" parent="XROrigin3D/LeftController" unique_id=1663400515]
+transform = Transform3D(1, 0, 0, 0, 0.68835455, 0.72537434, 0, -0.72537434, 0.68835455, 0.01, 0, -0.02)
+script = ExtResource("8_oy28a")
+
+[node name="LaserMesh" type="MeshInstance3D" parent="XROrigin3D/LeftController/PointerOrigin" unique_id=570872340]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+visible = false
+mesh = SubResource("CylinderMesh_2ca2e")
+
+[node name="FunctionPointer" parent="XROrigin3D/LeftController" unique_id=657560358 instance=ExtResource("10_wratf")]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0.02, -0.03535534, -0.10606602)
+y_offset = -0.033
+show_laser = 0
+laser_length = 1
+show_target = true
+target_radius = 0.02
+target_material = ExtResource("11_j87gw")
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=896131650]
+unique_name_in_owner = true
+tracker = &"right_hand"
+pose = &"grip"
+show_when_tracked = true
+script = ExtResource("7_eexsn")
+hand_side = "right"
+
+[node name="OpenXRFbRenderModel" type="OpenXRFbRenderModel" parent="XROrigin3D/RightController" unique_id=702565089]
+render_model_type = 1
+visible = false
+
+[node name="PointerOrigin" type="Node3D" parent="XROrigin3D/RightController" unique_id=72983320]
+transform = Transform3D(1, 0, 0, 0, 0.68835455, 0.72537434, 0, -0.72537434, 0.68835455, -0.005, 0, -0.01)
+script = ExtResource("8_oy28a")
+
+[node name="LaserMesh" type="MeshInstance3D" parent="XROrigin3D/RightController/PointerOrigin" unique_id=777017135]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+visible = false
+mesh = SubResource("CylinderMesh_2ca2e")
+
+[node name="FunctionPointer" parent="XROrigin3D/RightController" unique_id=47089934 instance=ExtResource("10_wratf")]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -0.02, -0.03535534, -0.10606602)
+y_offset = -0.048
+show_laser = 0
+laser_length = 1
+show_target = true
+target_radius = 0.02
+target_material = ExtResource("11_j87gw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1873643722]
+environment = ExtResource("12_di6w3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=525991297]
+libraries/ = SubResource("AnimationLibrary_oy28a")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=214080396]
+stream = ExtResource("12_aljfc")
+
+[node name="SceneLightingAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1878625810]
+libraries/ = SubResource("AnimationLibrary_ljl6t")
+
+[editable path="XROrigin3D/XRCamera3D/LoadingDots"]

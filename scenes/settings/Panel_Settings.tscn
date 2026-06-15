@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://b4t2v1uil8735"]
+
+[ext_resource type="Theme" uid="uid://bv103o0x0oqc5" path="res://templates/aui/shell.tres" id="1_16p1y"]
+[ext_resource type="Script" uid="uid://c1qtajhdfvs5b" path="res://scenes/settings/panel_settings.gd" id="2_wa5on"]
+[ext_resource type="Texture2D" uid="uid://dxlyfneen0opl" path="res://images/oc_icon_arrow_left_filled_24_d2d2d2.png" id="2_yhrjh"]
+[ext_resource type="PackedScene" uid="uid://mpmgaapg7ylb" path="res://scenes/settings/components/settings_option.tscn" id="6_wa5on"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3bc3"]
+bg_color = Color(0.14509805, 0.15294118, 0.16078432, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b2b5"]
+bg_color = Color(0.11372549, 0.12156863, 0.12941177, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_qui0h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6l6n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f624p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0egcc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_prd3q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ph6mg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ssg5"]
+
+[node name="MasterPanel" type="PanelContainer" unique_id=1325590977]
+clip_children = 2
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_16p1y")
+theme_override_styles/panel = SubResource("StyleBoxFlat_b3bc3")
+script = ExtResource("2_wa5on")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=460766369]
+layout_mode = 2
+
+[node name="Tabs" type="PanelContainer" parent="HBoxContainer" unique_id=442857772]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_3b2b5")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Tabs" unique_id=2004735317]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 89
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Tabs/MarginContainer" unique_id=2108486118]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Header" type="Label" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=873261026]
+layout_mode = 2
+theme_type_variation = &"PanelHeader"
+text = "Settings"
+
+[node name="DeviceTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=1115950284]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250.9, 51.675)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qui0h")
+text = "   Device"
+alignment = 0
+
+[node name="GuardianTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=1418206278]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250.9, 51.675)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qui0h")
+text = "   Guardian"
+alignment = 0
+
+[node name="StorageTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=1525449288]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250.9, 51.675)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qui0h")
+text = "   Storage"
+alignment = 0
+
+[node name="ApplicationsTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=1010767677]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250.9, 51.675)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qui0h")
+text = "   Applications"
+alignment = 0
+
+[node name="EnvironmentTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=1980612432]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250.9, 51.675)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qui0h")
+text = "   Virtual Environment"
+alignment = 0
+
+[node name="ExperimentalTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=1027358327]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250.9, 51.675)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qui0h")
+text = "   Experimental Features"
+alignment = 0
+
+[node name="DeveloperTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=649172512]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250.9, 51.675)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qui0h")
+text = "   Developer"
+alignment = 0
+
+[node name="AboutTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=1723819657]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250.9, 51.675)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qui0h")
+text = "   About"
+alignment = 0
+
+[node name="Content" type="PanelContainer" parent="HBoxContainer" unique_id=1575005638]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_g6l6n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Content" unique_id=1338605033]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/Content/VBoxContainer" unique_id=867045921]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 19
+theme_override_constants/margin_bottom = 18
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Content/VBoxContainer/MarginContainer2" unique_id=1590365227]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="BackButton" type="Button" parent="HBoxContainer/Content/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1220236490]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 42.505)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f624p")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0egcc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_prd3q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ph6mg")
+icon = ExtResource("2_yhrjh")
+icon_alignment = 1
+
+[node name="PageHeader" type="Label" parent="HBoxContainer/Content/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=723737276]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Device"
+
+[node name="TabContainer" type="TabContainer" parent="HBoxContainer/Content/VBoxContainer" unique_id=2064186954]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4ssg5")
+current_tab = 0
+tabs_visible = false
+switch_on_drag_hover = false
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Content/VBoxContainer/TabContainer" unique_id=2138757054]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 26
+metadata/_tab_index = 0
+
+[node name="DeviceScroll" type="ScrollContainer" parent="HBoxContainer/Content/VBoxContainer/TabContainer/MarginContainer" unique_id=2001295948]
+layout_mode = 2
+
+[node name="DeviceVStack" type="VBoxContainer" parent="HBoxContainer/Content/VBoxContainer/TabContainer/MarginContainer/DeviceScroll" unique_id=34228449]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 43
+
+[node name="DNDOption" parent="HBoxContainer/Content/VBoxContainer/TabContainer/MarginContainer/DeviceScroll/DeviceVStack" unique_id=733437892 instance=ExtResource("6_wa5on")]
+unique_name_in_owner = true
+layout_mode = 2
+setting_id = "dndEnabled"
+header_text = ""
+subtitle_text = "Mute all notifications in VR"
+options_list = Array[String](["English (US)", "Meow", "English (UK)", "Epstein did not ", "Hi", "I'm Nothing like Yall"])
+option_type = "text"

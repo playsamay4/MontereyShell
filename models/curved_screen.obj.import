@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cet8t4iv2bp4t"
+path="res://.godot/imported/curved_screen.obj-591e07b52619599477266886a374597e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/curved_screen.obj-591e07b52619599477266886a374597e.mesh"]
+
+source_file="res://models/curved_screen.obj"
+dest_files=["res://.godot/imported/curved_screen.obj-591e07b52619599477266886a374597e.mesh", "res://.godot/imported/curved_screen.obj-591e07b52619599477266886a374597e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

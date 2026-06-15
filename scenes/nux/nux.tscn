@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://7l7yoixda8d4"]
+
+[ext_resource type="Script" uid="uid://dj33bmjlrjodk" path="res://scripts/xr_origin_3d.gd" id="1_acwso"]
+[ext_resource type="Script" uid="uid://dftpu05kx3y3q" path="res://scenes/nux/nux.gd" id="1_v1xag"]
+[ext_resource type="AudioStream" uid="uid://b87g6wp6fk5tf" path="res://audio/music_first_time_nux_dark_loop.ogg" id="2_aujwi"]
+[ext_resource type="Script" uid="uid://c2hbdhg8arhcf" path="res://scripts/curved_viewport_2d_in_3d.gd" id="5_mlrma"]
+[ext_resource type="Script" uid="uid://c1jyucwn1mind" path="res://scenes/lock_viewport.gd" id="5_ty0uu"]
+[ext_resource type="ArrayMesh" uid="uid://cet8t4iv2bp4t" path="res://models/curved_screen.obj" id="6_ty0uu"]
+[ext_resource type="PackedScene" uid="uid://cfet20kj5jvcs" path="res://scenes/nux/NuxOtaBlock.tscn" id="8_1d4h2"]
+
+[sub_resource type="Environment" id="Environment_v1xag"]
+background_mode = 1
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_acwso"]
+viewport_path = NodePath("Node3D/CurvedPanel/Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_851kq"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_acwso")
+texture_filter = 1
+
+[node name="Node3D" type="Node3D" unique_id=788185007]
+script = ExtResource("1_v1xag")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=957497400]
+script = ExtResource("1_acwso")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=234202255]
+current = true
+far = 8000.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="XROrigin3D/XRCamera3D" unique_id=713168698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.066339016, 1.3237058, 0)
+stream = ExtResource("2_aujwi")
+autoplay = true
+
+[node name="OpenXRCompositionLayerCylinder2" type="OpenXRCompositionLayerCylinder" parent="XROrigin3D" unique_id=913635230 node_paths=PackedStringArray("layer_viewport")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8260833, -2.1321836)
+visible = false
+layer_viewport = NodePath("SubViewport")
+radius = 4.215
+aspect_ratio = 1.3
+central_angle = 1.0995574
+
+[node name="SubViewport" type="SubViewport" parent="XROrigin3D/OpenXRCompositionLayerCylinder2" unique_id=1615169577]
+transparent_bg = true
+render_target_update_mode = 4
+
+[node name="PanelContainer" parent="XROrigin3D/OpenXRCompositionLayerCylinder2/SubViewport" unique_id=2017674730 instance=ExtResource("8_1d4h2")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1702168595]
+environment = SubResource("Environment_v1xag")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1669136267 node_paths=PackedStringArray("xr_camera")]
+script = ExtResource("5_ty0uu")
+xr_camera = NodePath("../XROrigin3D/XRCamera3D")
+
+[node name="CurvedPanel" type="Node3D" parent="Node3D" unique_id=1563200114]
+transform = Transform3D(0.80156946, 0, 0, 0, 0.89091784, 0, 0, 0, 1, 0, 1.2497276, -2.5548663)
+script = ExtResource("5_mlrma")
+screen_size = Vector2(3.95, 2)
+scene = ExtResource("8_1d4h2")
+viewport_size = Vector2(1280, 720)
+transparent = 1
+alpha_scissor_threshold = 0.25
+unshaded = true
+filter = true
+scene_properties_keys = PackedStringArray()
+
+[node name="Viewport" type="SubViewport" parent="Node3D/CurvedPanel" unique_id=1181127424]
+disable_3d = true
+transparent_bg = true
+gui_embed_subwindows = true
+size = Vector2i(1280, 720)
+render_target_update_mode = 1
+
+[node name="Screen" type="MeshInstance3D" parent="Node3D/CurvedPanel" unique_id=1387837431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3435391, 0)
+mesh = ExtResource("6_ty0uu")
+surface_material_override/0 = SubResource("StandardMaterial3D_851kq")

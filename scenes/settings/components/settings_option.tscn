@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://mpmgaapg7ylb"]
+
+[ext_resource type="Theme" uid="uid://bv103o0x0oqc5" path="res://templates/aui/shell.tres" id="1_5vv5y"]
+[ext_resource type="Texture2D" uid="uid://c8wxit321o4df" path="res://images/oc_icon_microphone_on_filled_24_d2d2d2.png" id="1_44hd5"]
+[ext_resource type="PackedScene" uid="uid://k0p4wec68h7o" path="res://templates/oculus_toggle.tscn" id="2_5vv5y"]
+[ext_resource type="Script" uid="uid://de48plfekntbv" path="res://scenes/settings/components/settings_option.gd" id="2_if2fg"]
+[ext_resource type="Texture2D" uid="uid://b83dfqwmfwps3" path="res://images/oc_icon_chevron_down_filled_24_d2d2d2.png" id="5_hn5wg"]
+[ext_resource type="Texture2D" uid="uid://dmhiw0nxcp8qv" path="res://images/oc_icon_open_tab_filled_24_dadada.png" id="6_hn5wg"]
+
+[node name="ParentHBox" type="HBoxContainer" unique_id=733437892]
+theme = ExtResource("1_5vv5y")
+theme_override_constants/separation = 15
+script = ExtResource("2_if2fg")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=937400086]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("1_44hd5")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextStack" type="VBoxContainer" parent="." unique_id=951984551]
+layout_mode = 2
+theme_override_constants/separation = -2
+
+[node name="Header" type="Label" parent="TextStack" unique_id=1420391653]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Option Title"
+
+[node name="Subtitle" type="Label" parent="TextStack" unique_id=1535652595]
+layout_mode = 2
+size_flags_vertical = 6
+theme_type_variation = &"SettingsSubLabel"
+text = "Subtitle Text"
+
+[node name="OculusToggle" parent="." unique_id=417458260 instance=ExtResource("2_5vv5y")]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="DropdownButton" type="Button" parent="." unique_id=1509814257]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 10
+theme_type_variation = &"MainButton"
+text = "Option"
+icon = ExtResource("5_hn5wg")
+icon_alignment = 2
+
+[node name="IconButtonTexture" type="TextureRect" parent="." unique_id=808852084]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture = ExtResource("6_hn5wg")
+expand_mode = 1
+stretch_mode = 4

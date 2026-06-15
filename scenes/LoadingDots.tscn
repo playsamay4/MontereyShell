@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://ddvhmy2ieihb6"]
+
+[ext_resource type="Script" uid="uid://daophhbo18lup" path="res://scenes/loading_dots.gd" id="1_tllyg"]
+
+[sub_resource type="Animation" id="Animation_bg6s1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Panel2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tllyg"]
+resource_name = "animate"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.45, 0.85, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.2), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Panel2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.40000004, 0.65000004, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.2), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.32000002)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.6, 0.85, 1.1666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.2), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.32000002)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_208k8"]
+_data = {
+&"RESET": SubResource("Animation_bg6s1"),
+&"animate": SubResource("Animation_tllyg")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cu2kh"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[node name="Node2D" type="Node2D" unique_id=126828114]
+script = ExtResource("1_tllyg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=871375486]
+root_node = NodePath("../HBoxContainer/Panel")
+libraries/ = SubResource("AnimationLibrary_208k8")
+autoplay = &"animate"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1286522761]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 31
+
+[node name="Panel" type="Panel" parent="HBoxContainer" unique_id=1054350238]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cu2kh")
+
+[node name="Panel2" type="Panel" parent="HBoxContainer" unique_id=428418301]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cu2kh")
+
+[node name="Panel3" type="Panel" parent="HBoxContainer" unique_id=900687698]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cu2kh")

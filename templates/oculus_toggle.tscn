@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://k0p4wec68h7o"]
+
+[ext_resource type="Script" uid="uid://c65fqfyvi2y3e" path="res://templates/oculus_toggle.gd" id="1_0p0qx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p0qx"]
+bg_color = Color(0.24313726, 0.2509804, 0.27058825, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16p1y"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="OculusToggle" type="Control" unique_id=417458260]
+custom_minimum_size = Vector2(64, 28)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 28.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_0p0qx")
+
+[node name="Track" type="Panel" parent="." unique_id=1299749890]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0p0qx")
+
+[node name="Knob" type="Panel" parent="." unique_id=1638744281]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -10.0
+offset_right = 24.0
+offset_bottom = 10.0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_16p1y")

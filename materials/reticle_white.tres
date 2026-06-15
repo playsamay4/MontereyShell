@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cbt5g5xvxxm5d"]
+
+[ext_resource type="Texture2D" uid="uid://bsw5eabvaje6g" path="res://images/reticle_white.png" id="1_xq4vt"]
+
+[resource]
+render_priority = 100
+no_depth_test = true
+shading_mode = 0
+disable_ambient_light = true
+albedo_texture = ExtResource("1_xq4vt")
+uv1_scale = Vector3(-1.972, 1, -1.972)
+uv1_offset = Vector3(0.5, 0, 0.5)
+uv1_triplanar = true
+uv2_triplanar_sharpness = 0.22202913

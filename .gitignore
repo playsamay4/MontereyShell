@@ -1,0 +1,41 @@
+# ==========================================
+# Godot-specific ignores
+# ==========================================
+# Godot 4+ auto-generated binary import files
+.godot/
+
+.import/
+
+*.translation
+
+# ==========================================
+# Android & Build Artifacts
+# ==========================================
+*.apk
+*.ap_
+*.ase
+*.build
+*.release
+*.debug
+
+android/build/assetPacks/
+android/build/assets/
+android/build/build/
+android/build/libs/
+android/build/res/
+android/build/src/
+
+# Ensure your actual custom plugins are NOT ignored
+!android/plugins/
+
+# ==========================================
+# Editor, OS, and Temporary files
+# ==========================================
+*.tmp
+*.bak
+
+.DS_Store
+Thumbs.db
+
+__pycache__/
+*.log

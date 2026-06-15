@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://biwhryg7ppdug"]
+
+[resource]
+render_priority = 100
+no_depth_test = true
+shading_mode = 0
+disable_ambient_light = true
+albedo_color = Color(1.0781288e-05, 0.38503724, 0.8202194, 1)
+uv1_scale = Vector3(-1.972, 1, -2.073)
+uv1_offset = Vector3(0.5, 0, 0.5)
+uv1_triplanar = true

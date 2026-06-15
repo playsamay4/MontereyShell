@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cxskvub7kbrsm"]
+
+[ext_resource type="Theme" uid="uid://bv103o0x0oqc5" path="res://templates/aui/shell.tres" id="1_608j6"]
+[ext_resource type="Texture2D" uid="uid://bp731fxfyivcx" path="res://images/tooltip-arrow-down.png" id="2_e1ylk"]
+[ext_resource type="Script" uid="uid://bh0icqh4fmv5o" path="res://ui/aui_tooltip.gd" id="2_ybv5c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1ylk"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="AuiTooltip" type="Control" unique_id=356363498]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_608j6")
+script = ExtResource("2_ybv5c")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=883886893]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RoomscaleTooltip" type="VBoxContainer" parent="HBoxContainer" unique_id=1591042160]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ColorRect" type="PanelContainer" parent="HBoxContainer/RoomscaleTooltip" unique_id=1796663388]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_e1ylk")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/RoomscaleTooltip/ColorRect" unique_id=243555556]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/RoomscaleTooltip/ColorRect/MarginContainer" unique_id=1091822986]
+layout_mode = 2
+theme_type_variation = &"AuiTooltip"
+text = "Create a new Guardian Boundary
+for roomscale experiences"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/RoomscaleTooltip" unique_id=2007209293]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_e1ylk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="StationaryTooltip" type="MarginContainer" parent="HBoxContainer" unique_id=850702500]
+layout_mode = 2
+theme_override_constants/margin_left = -70
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/StationaryTooltip" unique_id=894230104]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ColorRect" type="PanelContainer" parent="HBoxContainer/StationaryTooltip/VBoxContainer2" unique_id=1943507416]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_e1ylk")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/StationaryTooltip/VBoxContainer2/ColorRect" unique_id=772038802]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/StationaryTooltip/VBoxContainer2/ColorRect/MarginContainer" unique_id=1997294563]
+layout_mode = 2
+theme_type_variation = &"AuiTooltip"
+text = "Create a new Guardian Boundary
+for sitting or standing experiences"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/StationaryTooltip/VBoxContainer2" unique_id=1363273477]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_e1ylk")
+expand_mode = 1
+stretch_mode = 4

@@ -1,0 +1,5141 @@
+{
+	"asset" : {
+		"generator" : "Oculus::FBX2glTF2.0",
+		"version" : "2.0"
+	},
+	"buffers" : [
+		{
+			"uri" : "buffer.bin",
+			"byteLength" : 12594576,
+			"name" : "buffer"
+		}
+	],
+	"bufferViews" : [
+		{
+			"name" : "1002Take 001_Time_BufferView",
+			"buffer" : 0,
+			"byteLength" : 924,
+			"byteOffset" : 0
+		},
+		{
+			"name" : "1002skyA_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 924
+		},
+		{
+			"name" : "1002skyA_geo_Rotation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 3696,
+			"byteOffset" : 3696
+		},
+
+		{
+			"name" : "1002fallingStar1_grp_Rotation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 3696,
+			"byteOffset" : 7392
+		},
+		{
+			"name" : "1002fallingStar1_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 11088
+		},
+		{
+			"name" : "1002fallingStar2_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 13860
+		},
+		{
+			"name" : "1002fallingStar2_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 16632
+		},
+		{
+			"name" : "1002fallingStar3_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 19404
+		},
+		{
+			"name" : "1002fallingStar3_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 22176
+		},
+		{
+			"name" : "1002fallingStar4_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 24948
+		},
+		{
+			"name" : "1002fallingStar4_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 27720
+		},
+		{
+			"name" : "1002fallingStar5_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 30492
+		},
+		{
+			"name" : "1002fallingStar5_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 33264
+		},
+		{
+			"name" : "1002fallingStar6_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 36036
+		},
+		{
+			"name" : "1002fallingStar6_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 38808
+		},
+		{
+			"name" : "1002fallingStar7_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 41580
+		},
+		{
+			"name" : "1002fallingStar7_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 44352
+		},
+		{
+			"name" : "1002fallingStar8_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 47124
+		},
+		{
+			"name" : "1002fallingStar8_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 49896
+		},
+		{
+			"name" : "1002fallingStar9_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 52668
+		},
+		{
+			"name" : "1002fallingStar9_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 55440
+		},
+		{
+			"name" : "1002amber1_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 58212
+		},
+		{
+			"name" : "1002amber1_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 60984
+		},
+		{
+			"name" : "1002amber2_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 63756
+		},
+		{
+			"name" : "1002amber2_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 66528
+		},
+		{
+			"name" : "1002amber3_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 69300
+		},
+		{
+			"name" : "1002amber3_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 72072
+		},
+		{
+			"name" : "1002amber4_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 74844
+		},
+		{
+			"name" : "1002amber4_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 77616
+		},
+		{
+			"name" : "1002amber5_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 80388
+		},
+		{
+			"name" : "1002amber5_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 83160
+		},
+		{
+			"name" : "100320190221_env2_02default_Time_BufferView",
+			"buffer" : 0,
+			"byteLength" : 924,
+			"byteOffset" : 85932
+		},
+		{
+			"name" : "1003skyA_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 86856
+		},
+		{
+			"name" : "1003skyA_geo_Rotation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 3696,
+			"byteOffset" : 89628
+		},
+		{
+			"name" : "1003fallingStar1_grp_Rotation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 3696,
+			"byteOffset" : 93324
+		},
+		{
+			"name" : "1003fallingStar1_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 97020
+		},
+		{
+			"name" : "1003fallingStar2_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 99792
+		},
+		{
+			"name" : "1003fallingStar2_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 102564
+		},
+		{
+			"name" : "1003fallingStar3_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 105336
+		},
+		{
+			"name" : "1003fallingStar3_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 108108
+		},
+		{
+			"name" : "1003fallingStar4_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 110880
+		},
+		{
+			"name" : "1003fallingStar4_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 113652
+		},
+		{
+			"name" : "1003fallingStar5_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 116424
+		},
+		{
+			"name" : "1003fallingStar5_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 119196
+		},
+		{
+			"name" : "1003fallingStar6_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 121968
+		},
+		{
+			"name" : "1003fallingStar6_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 124740
+		},
+		{
+			"name" : "1003fallingStar7_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 127512
+		},
+		{
+			"name" : "1003fallingStar7_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 130284
+		},
+		{
+			"name" : "1003fallingStar8_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 133056
+		},
+		{
+			"name" : "1003fallingStar8_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 135828
+		},
+		{
+			"name" : "1003fallingStar9_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 138600
+		},
+		{
+			"name" : "1003fallingStar9_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 141372
+		},
+		{
+			"name" : "1003amber1_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 144144
+		},
+		{
+			"name" : "1003amber1_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 146916
+		},
+		{
+			"name" : "1003amber2_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 149688
+		},
+		{
+			"name" : "1003amber2_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 152460
+		},
+		{
+			"name" : "1003amber3_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 155232
+		},
+		{
+			"name" : "1003amber3_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 158004
+		},
+		{
+			"name" : "1003amber4_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 160776
+		},
+		{
+			"name" : "1003amber4_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 163548
+		},
+		{
+			"name" : "1003amber5_geo_Translation_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 166320
+		},
+		{
+			"name" : "1003amber5_geo_Scale_BufferView",
+			"buffer" : 0,
+			"byteLength" : 2772,
+			"byteOffset" : 169092
+		},
+		{
+			"target" : 34963,
+			"name" : "0_fallingStar9_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1080,
+			"byteOffset" : 171864
+		},
+		{
+			"target" : 34962,
+			"name" : "0_fallingStar9_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 172944
+		},
+		{
+			"target" : 34962,
+			"name" : "0_fallingStar9_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 174372
+		},
+		{
+			"target" : 34962,
+			"name" : "0_fallingStar9_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 175800
+		},
+		{
+			"target" : 34962,
+			"name" : "0_fallingStar9_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 176752
+		},
+		{
+			"target" : 34963,
+			"name" : "1_fallingStar5_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1080,
+			"byteOffset" : 177704
+		},
+		{
+			"target" : 34962,
+			"name" : "1_fallingStar5_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 178784
+		},
+		{
+			"target" : 34962,
+			"name" : "1_fallingStar5_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 180212
+		},
+		{
+			"target" : 34962,
+			"name" : "1_fallingStar5_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 181640
+		},
+		{
+			"target" : 34962,
+			"name" : "1_fallingStar5_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 182592
+		},
+		{
+			"target" : 34963,
+			"name" : "2_fallingStar2_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1080,
+			"byteOffset" : 183544
+		},
+		{
+			"target" : 34962,
+			"name" : "2_fallingStar2_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 184624
+		},
+		{
+			"target" : 34962,
+			"name" : "2_fallingStar2_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 186052
+		},
+		{
+			"target" : 34962,
+			"name" : "2_fallingStar2_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 187480
+		},
+		{
+			"target" : 34962,
+			"name" : "2_fallingStar2_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 188432
+		},
+		{
+			"target" : 34963,
+			"name" : "3_fallingStar4_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1080,
+			"byteOffset" : 189384
+		},
+		{
+			"target" : 34962,
+			"name" : "3_fallingStar4_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 190464
+		},
+		{
+			"target" : 34962,
+			"name" : "3_fallingStar4_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 191892
+		},
+		{
+			"target" : 34962,
+			"name" : "3_fallingStar4_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 193320
+		},
+		{
+			"target" : 34962,
+			"name" : "3_fallingStar4_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 194272
+		},
+		{
+			"target" : 34963,
+			"name" : "4_fallingStar8_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1080,
+			"byteOffset" : 195224
+		},
+		{
+			"target" : 34962,
+			"name" : "4_fallingStar8_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 196304
+		},
+		{
+			"target" : 34962,
+			"name" : "4_fallingStar8_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 197732
+		},
+		{
+			"target" : 34962,
+			"name" : "4_fallingStar8_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 199160
+		},
+		{
+			"target" : 34962,
+			"name" : "4_fallingStar8_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 200112
+		},
+		{
+			"target" : 34963,
+			"name" : "5_fallingStar6_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1080,
+			"byteOffset" : 201064
+		},
+		{
+			"target" : 34962,
+			"name" : "5_fallingStar6_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 202144
+		},
+		{
+			"target" : 34962,
+			"name" : "5_fallingStar6_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 203572
+		},
+		{
+			"target" : 34962,
+			"name" : "5_fallingStar6_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 205000
+		},
+		{
+			"target" : 34962,
+			"name" : "5_fallingStar6_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 205952
+		},
+		{
+			"target" : 34963,
+			"name" : "6_fallingStar3_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1080,
+			"byteOffset" : 206904
+		},
+		{
+			"target" : 34962,
+			"name" : "6_fallingStar3_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 207984
+		},
+		{
+			"target" : 34962,
+			"name" : "6_fallingStar3_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 209412
+		},
+		{
+			"target" : 34962,
+			"name" : "6_fallingStar3_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 210840
+		},
+		{
+			"target" : 34962,
+			"name" : "6_fallingStar3_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 211792
+		},
+		{
+			"target" : 34963,
+			"name" : "7_fallingStar7_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1080,
+			"byteOffset" : 212744
+		},
+		{
+			"target" : 34962,
+			"name" : "7_fallingStar7_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 213824
+		},
+		{
+			"target" : 34962,
+			"name" : "7_fallingStar7_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 215252
+		},
+		{
+			"target" : 34962,
+			"name" : "7_fallingStar7_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 216680
+		},
+		{
+			"target" : 34962,
+			"name" : "7_fallingStar7_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 217632
+		},
+		{
+			"target" : 34963,
+			"name" : "8_fallingStar1_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1080,
+			"byteOffset" : 218584
+		},
+		{
+			"target" : 34962,
+			"name" : "8_fallingStar1_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 219664
+		},
+		{
+			"target" : 34962,
+			"name" : "8_fallingStar1_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 1428,
+			"byteOffset" : 221092
+		},
+		{
+			"target" : 34962,
+			"name" : "8_fallingStar1_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 222520
+		},
+		{
+			"target" : 34962,
+			"name" : "8_fallingStar1_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 952,
+			"byteOffset" : 223472
+		},
+		{
+			"target" : 34963,
+			"name" : "9_amber5_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 240,
+			"byteOffset" : 224424
+		},
+		{
+			"target" : 34962,
+			"name" : "9_amber5_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 408,
+			"byteOffset" : 224664
+		},
+		{
+			"target" : 34962,
+			"name" : "9_amber5_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 408,
+			"byteOffset" : 225072
+		},
+		{
+			"target" : 34962,
+			"name" : "9_amber5_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 272,
+			"byteOffset" : 225480
+		},
+		{
+			"target" : 34962,
+			"name" : "9_amber5_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 272,
+			"byteOffset" : 225752
+		},
+		{
+			"target" : 34963,
+			"name" : "10_amber1_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 240,
+			"byteOffset" : 226024
+		},
+		{
+			"target" : 34962,
+			"name" : "10_amber1_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 408,
+			"byteOffset" : 226264
+		},
+		{
+			"target" : 34962,
+			"name" : "10_amber1_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 408,
+			"byteOffset" : 226672
+		},
+		{
+			"target" : 34962,
+			"name" : "10_amber1_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 272,
+			"byteOffset" : 227080
+		},
+		{
+			"target" : 34962,
+			"name" : "10_amber1_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 272,
+			"byteOffset" : 227352
+		},
+		{
+			"target" : 34963,
+			"name" : "11_amber3_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 240,
+			"byteOffset" : 227624
+		},
+		{
+			"target" : 34962,
+			"name" : "11_amber3_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 408,
+			"byteOffset" : 227864
+		},
+		{
+			"target" : 34962,
+			"name" : "11_amber3_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 408,
+			"byteOffset" : 228272
+		},
+		{
+			"target" : 34962,
+			"name" : "11_amber3_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 272,
+			"byteOffset" : 228680
+		},
+		{
+			"target" : 34962,
+			"name" : "11_amber3_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 272,
+			"byteOffset" : 228952
+		},
+		{
+			"target" : 34963,
+			"name" : "12_amber4_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 240,
+			"byteOffset" : 229224
+		},
+		{
+			"target" : 34962,
+			"name" : "12_amber4_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 408,
+			"byteOffset" : 229464
+		},
+		{
+			"target" : 34962,
+			"name" : "12_amber4_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 408,
+			"byteOffset" : 229872
+		},
+		{
+			"target" : 34962,
+			"name" : "12_amber4_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 272,
+			"byteOffset" : 230280
+		},
+		{
+			"target" : 34962,
+			"name" : "12_amber4_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 272,
+			"byteOffset" : 230552
+		},
+		{
+			"target" : 34963,
+			"name" : "13_amber2_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 240,
+			"byteOffset" : 230824
+		},
+		{
+			"target" : 34962,
+			"name" : "13_amber2_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 408,
+			"byteOffset" : 231064
+		},
+		{
+			"target" : 34962,
+			"name" : "13_amber2_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 408,
+			"byteOffset" : 231472
+		},
+		{
+			"target" : 34962,
+			"name" : "13_amber2_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 272,
+			"byteOffset" : 231880
+		},
+		{
+			"target" : 34962,
+			"name" : "13_amber2_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 272,
+			"byteOffset" : 232152
+		},
+		{
+			"target" : 34963,
+			"name" : "14_mountainsForest_geo2_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 178776,
+			"byteOffset" : 232424
+		},
+		{
+			"target" : 34962,
+			"name" : "14_mountainsForest_geo2_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 357960,
+			"byteOffset" : 411200
+		},
+		{
+			"target" : 34962,
+			"name" : "14_mountainsForest_geo2_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 357960,
+			"byteOffset" : 769160
+		},
+		{
+			"target" : 34962,
+			"name" : "14_mountainsForest_geo2_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 238640,
+			"byteOffset" : 1127120
+		},
+		{
+			"target" : 34962,
+			"name" : "14_mountainsForest_geo2_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 238640,
+			"byteOffset" : 1365760
+		},
+		{
+			"target" : 34963,
+			"name" : "15_trees_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 250236,
+			"byteOffset" : 1604400
+		},
+		{
+			"target" : 34962,
+			"name" : "15_trees_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 503304,
+			"byteOffset" : 1854636
+		},
+		{
+			"target" : 34962,
+			"name" : "15_trees_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 503304,
+			"byteOffset" : 2357940
+		},
+		{
+			"target" : 34962,
+			"name" : "15_trees_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 335536,
+			"byteOffset" : 2861244
+		},
+		{
+			"target" : 34962,
+			"name" : "15_trees_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 335536,
+			"byteOffset" : 3196780
+		},
+		{
+			"target" : 34963,
+			"name" : "16_exteriorDomes_geo3_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 24408,
+			"byteOffset" : 3532316
+		},
+		{
+			"target" : 34962,
+			"name" : "16_exteriorDomes_geo3_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 90360,
+			"byteOffset" : 3556724
+		},
+		{
+			"target" : 34962,
+			"name" : "16_exteriorDomes_geo3_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 90360,
+			"byteOffset" : 3647084
+		},
+		{
+			"target" : 34962,
+			"name" : "16_exteriorDomes_geo3_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 60240,
+			"byteOffset" : 3737444
+		},
+		{
+			"target" : 34962,
+			"name" : "16_exteriorDomes_geo3_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 60240,
+			"byteOffset" : 3797684
+		},
+		{
+			"target" : 34963,
+			"name" : "17_stars_NEW_c_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 73872,
+			"byteOffset" : 3857924
+		},
+		{
+			"target" : 34962,
+			"name" : "17_stars_NEW_c_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 196992,
+			"byteOffset" : 3931796
+		},
+		{
+			"target" : 34962,
+			"name" : "17_stars_NEW_c_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 196992,
+			"byteOffset" : 4128788
+		},
+		{
+			"target" : 34962,
+			"name" : "17_stars_NEW_c_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 131328,
+			"byteOffset" : 4325780
+		},
+		{
+			"target" : 34962,
+			"name" : "17_stars_NEW_c_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 131328,
+			"byteOffset" : 4457108
+		},
+		{
+			"target" : 34963,
+			"name" : "18_env2_interior_floor_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 108552,
+			"byteOffset" : 4588436
+		},
+		{
+			"target" : 34962,
+			"name" : "18_env2_interior_floor_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 283812,
+			"byteOffset" : 4696988
+		},
+		{
+			"target" : 34962,
+			"name" : "18_env2_interior_floor_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 283812,
+			"byteOffset" : 4980800
+		},
+		{
+			"target" : 34962,
+			"name" : "18_env2_interior_floor_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 189208,
+			"byteOffset" : 5264612
+		},
+		{
+			"target" : 34962,
+			"name" : "18_env2_interior_floor_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 189208,
+			"byteOffset" : 5453820
+		},
+		{
+			"target" : 34963,
+			"name" : "19_exteriorDomes_geo3_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 17280,
+			"byteOffset" : 5643028
+		},
+		{
+			"target" : 34962,
+			"name" : "19_exteriorDomes_geo3_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 67248,
+			"byteOffset" : 5660308
+		},
+		{
+			"target" : 34962,
+			"name" : "19_exteriorDomes_geo3_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 67248,
+			"byteOffset" : 5727556
+		},
+		{
+			"target" : 34962,
+			"name" : "19_exteriorDomes_geo3_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 44832,
+			"byteOffset" : 5794804
+		},
+		{
+			"target" : 34962,
+			"name" : "19_exteriorDomes_geo3_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 44832,
+			"byteOffset" : 5839636
+		},
+		{
+			"target" : 34963,
+			"name" : "20_lounge_reduced_NEW_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 328278,
+			"byteOffset" : 5884468
+		},
+		{
+			"target" : 34962,
+			"name" : "20_lounge_reduced_NEW_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 451728,
+			"byteOffset" : 6212748
+		},
+		{
+			"target" : 34962,
+			"name" : "20_lounge_reduced_NEW_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 451728,
+			"byteOffset" : 6664476
+		},
+		{
+			"target" : 34962,
+			"name" : "20_lounge_reduced_NEW_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 301152,
+			"byteOffset" : 7116204
+		},
+		{
+			"target" : 34962,
+			"name" : "20_lounge_reduced_NEW_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 301152,
+			"byteOffset" : 7417356
+		},
+		{
+			"target" : 34963,
+			"name" : "21_fireplace_NEW_03_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 238602,
+			"byteOffset" : 7718508
+		},
+		{
+			"target" : 34962,
+			"name" : "21_fireplace_NEW_03_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 393540,
+			"byteOffset" : 7957112
+		},
+		{
+			"target" : 34962,
+			"name" : "21_fireplace_NEW_03_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 393540,
+			"byteOffset" : 8350652
+		},
+		{
+			"target" : 34962,
+			"name" : "21_fireplace_NEW_03_COLOR_BufferView",
+			"buffer" : 0,
+			"byteLength" : 524720,
+			"byteOffset" : 8744192
+		},
+		{
+			"target" : 34962,
+			"name" : "21_fireplace_NEW_03_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 262360,
+			"byteOffset" : 9268912
+		},
+		{
+			"target" : 34962,
+			"name" : "21_fireplace_NEW_03_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 262360,
+			"byteOffset" : 9531272
+		},
+		{
+			"target" : 34963,
+			"name" : "22_libraryArea_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 271104,
+			"byteOffset" : 9793632
+		},
+		{
+			"target" : 34962,
+			"name" : "22_libraryArea_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 751476,
+			"byteOffset" : 10064736
+		},
+		{
+			"target" : 34962,
+			"name" : "22_libraryArea_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 751476,
+			"byteOffset" : 10816212
+		},
+		{
+			"target" : 34962,
+			"name" : "22_libraryArea_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 500984,
+			"byteOffset" : 11567688
+		},
+		{
+			"target" : 34962,
+			"name" : "22_libraryArea_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 500984,
+			"byteOffset" : 12068672
+		},
+		{
+			"target" : 34963,
+			"name" : "23_skyA_geo_INDICES_BufferView",
+			"buffer" : 0,
+			"byteLength" : 5280,
+			"byteOffset" : 12569656
+		},
+		{
+			"target" : 34962,
+			"name" : "23_skyA_geo_POSITION_BufferView",
+			"buffer" : 0,
+			"byteLength" : 5892,
+			"byteOffset" : 12574936
+		},
+		{
+			"target" : 34962,
+			"name" : "23_skyA_geo_NORMAL_BufferView",
+			"buffer" : 0,
+			"byteLength" : 5892,
+			"byteOffset" : 12580828
+		},
+		{
+			"target" : 34962,
+			"name" : "23_skyA_geo_TEXCOORD_0_BufferView",
+			"buffer" : 0,
+			"byteLength" : 3928,
+			"byteOffset" : 12586720
+		},
+		{
+			"target" : 34962,
+			"name" : "23_skyA_geo_TEXCOORD_1_BufferView",
+			"buffer" : 0,
+			"byteLength" : 3928,
+			"byteOffset" : 12590648
+		}
+	],
+	"accessors" : [
+		{
+			"name" : "1002Take 001_Time_Accessor",
+			"bufferView" : 0,
+			"byteOffset" : 0,
+			"byteStride" : 4,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "1002skyA_geo_Translation_Accessor",
+			"bufferView" : 1,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002skyA_geo_Rotation_Accessor",
+			"bufferView" : 2,
+			"byteOffset" : 0,
+			"byteStride" : 16,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC4"
+		},
+		{
+			"name" : "1002fallingStar1_grp_Rotation_Accessor",
+			"bufferView" : 3,
+			"byteOffset" : 0,
+			"byteStride" : 16,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC4"
+		},
+		{
+			"name" : "1002fallingStar1_geo_Scale_Accessor",
+			"bufferView" : 4,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar2_geo_Translation_Accessor",
+			"bufferView" : 5,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar2_geo_Scale_Accessor",
+			"bufferView" : 6,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar3_geo_Translation_Accessor",
+			"bufferView" : 7,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar3_geo_Scale_Accessor",
+			"bufferView" : 8,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar4_geo_Translation_Accessor",
+			"bufferView" : 9,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar4_geo_Scale_Accessor",
+			"bufferView" : 10,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar5_geo_Translation_Accessor",
+			"bufferView" : 11,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar5_geo_Scale_Accessor",
+			"bufferView" : 12,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar6_geo_Translation_Accessor",
+			"bufferView" : 13,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar6_geo_Scale_Accessor",
+			"bufferView" : 14,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar7_geo_Translation_Accessor",
+			"bufferView" : 15,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar7_geo_Scale_Accessor",
+			"bufferView" : 16,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar8_geo_Translation_Accessor",
+			"bufferView" : 17,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar8_geo_Scale_Accessor",
+			"bufferView" : 18,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar9_geo_Translation_Accessor",
+			"bufferView" : 19,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002fallingStar9_geo_Scale_Accessor",
+			"bufferView" : 20,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002amber1_geo_Translation_Accessor",
+			"bufferView" : 21,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002amber1_geo_Scale_Accessor",
+			"bufferView" : 22,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002amber2_geo_Translation_Accessor",
+			"bufferView" : 23,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002amber2_geo_Scale_Accessor",
+			"bufferView" : 24,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002amber3_geo_Translation_Accessor",
+			"bufferView" : 25,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002amber3_geo_Scale_Accessor",
+			"bufferView" : 26,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002amber4_geo_Translation_Accessor",
+			"bufferView" : 27,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002amber4_geo_Scale_Accessor",
+			"bufferView" : 28,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002amber5_geo_Translation_Accessor",
+			"bufferView" : 29,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1002amber5_geo_Scale_Accessor",
+			"bufferView" : 30,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "100320190221_env2_02default_Time_Accessor",
+			"bufferView" : 31,
+			"byteOffset" : 0,
+			"byteStride" : 4,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "1003skyA_geo_Translation_Accessor",
+			"bufferView" : 32,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003skyA_geo_Rotation_Accessor",
+			"bufferView" : 33,
+			"byteOffset" : 0,
+			"byteStride" : 16,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC4"
+		},
+		{
+			"name" : "1003fallingStar1_grp_Rotation_Accessor",
+			"bufferView" : 34,
+			"byteOffset" : 0,
+			"byteStride" : 16,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC4"
+		},
+		{
+			"name" : "1003fallingStar1_geo_Scale_Accessor",
+			"bufferView" : 35,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar2_geo_Translation_Accessor",
+			"bufferView" : 36,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar2_geo_Scale_Accessor",
+			"bufferView" : 37,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar3_geo_Translation_Accessor",
+			"bufferView" : 38,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar3_geo_Scale_Accessor",
+			"bufferView" : 39,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar4_geo_Translation_Accessor",
+			"bufferView" : 40,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar4_geo_Scale_Accessor",
+			"bufferView" : 41,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar5_geo_Translation_Accessor",
+			"bufferView" : 42,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar5_geo_Scale_Accessor",
+			"bufferView" : 43,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar6_geo_Translation_Accessor",
+			"bufferView" : 44,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar6_geo_Scale_Accessor",
+			"bufferView" : 45,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar7_geo_Translation_Accessor",
+			"bufferView" : 46,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar7_geo_Scale_Accessor",
+			"bufferView" : 47,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar8_geo_Translation_Accessor",
+			"bufferView" : 48,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar8_geo_Scale_Accessor",
+			"bufferView" : 49,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar9_geo_Translation_Accessor",
+			"bufferView" : 50,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003fallingStar9_geo_Scale_Accessor",
+			"bufferView" : 51,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003amber1_geo_Translation_Accessor",
+			"bufferView" : 52,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003amber1_geo_Scale_Accessor",
+			"bufferView" : 53,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003amber2_geo_Translation_Accessor",
+			"bufferView" : 54,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003amber2_geo_Scale_Accessor",
+			"bufferView" : 55,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003amber3_geo_Translation_Accessor",
+			"bufferView" : 56,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003amber3_geo_Scale_Accessor",
+			"bufferView" : 57,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003amber4_geo_Translation_Accessor",
+			"bufferView" : 58,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003amber4_geo_Scale_Accessor",
+			"bufferView" : 59,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003amber5_geo_Translation_Accessor",
+			"bufferView" : 60,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1003amber5_geo_Scale_Accessor",
+			"bufferView" : 61,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 231,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "0_fallingStar9_geo_INDICES_Accessor",
+			"bufferView" : 62,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 540,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "0_fallingStar9_geo_POSITION_Accessor",
+			"bufferView" : 63,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3",
+			"min" : [
+				-1.00000011920928955,
+				-1,
+				-0.951056718826293945
+			],
+			"max" : [
+				1,
+				1,
+				0.951056599617004395
+			]
+		},
+		{
+			"name" : "0_fallingStar9_geo_NORMAL_Accessor",
+			"bufferView" : 64,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "0_fallingStar9_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 65,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "0_fallingStar9_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 66,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "1_fallingStar5_geo_INDICES_Accessor",
+			"bufferView" : 67,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 540,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "1_fallingStar5_geo_POSITION_Accessor",
+			"bufferView" : 68,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3",
+			"min" : [
+				-1.00000011920928955,
+				-1,
+				-0.951056718826293945
+			],
+			"max" : [
+				1,
+				1,
+				0.951056599617004395
+			]
+		},
+		{
+			"name" : "1_fallingStar5_geo_NORMAL_Accessor",
+			"bufferView" : 69,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "1_fallingStar5_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 70,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "1_fallingStar5_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 71,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "2_fallingStar2_geo_INDICES_Accessor",
+			"bufferView" : 72,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 540,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "2_fallingStar2_geo_POSITION_Accessor",
+			"bufferView" : 73,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3",
+			"min" : [
+				-1.00000011920928955,
+				-1,
+				-0.951056718826293945
+			],
+			"max" : [
+				1,
+				1,
+				0.951056599617004395
+			]
+		},
+		{
+			"name" : "2_fallingStar2_geo_NORMAL_Accessor",
+			"bufferView" : 74,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "2_fallingStar2_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 75,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "2_fallingStar2_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 76,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "3_fallingStar4_geo_INDICES_Accessor",
+			"bufferView" : 77,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 540,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "3_fallingStar4_geo_POSITION_Accessor",
+			"bufferView" : 78,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3",
+			"min" : [
+				-1.00000011920928955,
+				-1,
+				-0.951056718826293945
+			],
+			"max" : [
+				1,
+				1,
+				0.951056599617004395
+			]
+		},
+		{
+			"name" : "3_fallingStar4_geo_NORMAL_Accessor",
+			"bufferView" : 79,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "3_fallingStar4_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 80,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "3_fallingStar4_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 81,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "4_fallingStar8_geo_INDICES_Accessor",
+			"bufferView" : 82,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 540,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "4_fallingStar8_geo_POSITION_Accessor",
+			"bufferView" : 83,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3",
+			"min" : [
+				-1.00000011920928955,
+				-1,
+				-0.951056718826293945
+			],
+			"max" : [
+				1,
+				1,
+				0.951056599617004395
+			]
+		},
+		{
+			"name" : "4_fallingStar8_geo_NORMAL_Accessor",
+			"bufferView" : 84,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "4_fallingStar8_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 85,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "4_fallingStar8_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 86,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "5_fallingStar6_geo_INDICES_Accessor",
+			"bufferView" : 87,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 540,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "5_fallingStar6_geo_POSITION_Accessor",
+			"bufferView" : 88,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3",
+			"min" : [
+				-1.00000011920928955,
+				-1,
+				-0.951056718826293945
+			],
+			"max" : [
+				1,
+				1,
+				0.951056599617004395
+			]
+		},
+		{
+			"name" : "5_fallingStar6_geo_NORMAL_Accessor",
+			"bufferView" : 89,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "5_fallingStar6_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 90,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "5_fallingStar6_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 91,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "6_fallingStar3_geo_INDICES_Accessor",
+			"bufferView" : 92,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 540,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "6_fallingStar3_geo_POSITION_Accessor",
+			"bufferView" : 93,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3",
+			"min" : [
+				-1.00000011920928955,
+				-1,
+				-0.951056718826293945
+			],
+			"max" : [
+				1,
+				1,
+				0.951056599617004395
+			]
+		},
+		{
+			"name" : "6_fallingStar3_geo_NORMAL_Accessor",
+			"bufferView" : 94,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "6_fallingStar3_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 95,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "6_fallingStar3_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 96,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "7_fallingStar7_geo_INDICES_Accessor",
+			"bufferView" : 97,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 540,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "7_fallingStar7_geo_POSITION_Accessor",
+			"bufferView" : 98,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3",
+			"min" : [
+				-1.00000011920928955,
+				-1,
+				-0.951056718826293945
+			],
+			"max" : [
+				1,
+				1,
+				0.951056599617004395
+			]
+		},
+		{
+			"name" : "7_fallingStar7_geo_NORMAL_Accessor",
+			"bufferView" : 99,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "7_fallingStar7_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 100,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "7_fallingStar7_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 101,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "8_fallingStar1_geo_INDICES_Accessor",
+			"bufferView" : 102,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 540,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "8_fallingStar1_geo_POSITION_Accessor",
+			"bufferView" : 103,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3",
+			"min" : [
+				-1.00000011920928955,
+				-1,
+				-0.951056718826293945
+			],
+			"max" : [
+				1,
+				1,
+				0.951056599617004395
+			]
+		},
+		{
+			"name" : "8_fallingStar1_geo_NORMAL_Accessor",
+			"bufferView" : 104,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "8_fallingStar1_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 105,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "8_fallingStar1_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 106,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 119,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "9_amber5_geo_INDICES_Accessor",
+			"bufferView" : 107,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 120,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "9_amber5_geo_POSITION_Accessor",
+			"bufferView" : 108,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC3",
+			"min" : [
+				553.67633056640625,
+				76.4438323974609375,
+				355.350433349609375
+			],
+			"max" : [
+				554.13323974609375,
+				76.97161865234375,
+				355.830841064453125
+			]
+		},
+		{
+			"name" : "9_amber5_geo_NORMAL_Accessor",
+			"bufferView" : 109,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "9_amber5_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 110,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "9_amber5_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 111,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "10_amber1_geo_INDICES_Accessor",
+			"bufferView" : 112,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 120,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "10_amber1_geo_POSITION_Accessor",
+			"bufferView" : 113,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC3",
+			"min" : [
+				551.157470703125,
+				28.2389106750488281,
+				372.2840576171875
+			],
+			"max" : [
+				553.480224609375,
+				30.9301128387451172,
+				374.726409912109375
+			]
+		},
+		{
+			"name" : "10_amber1_geo_NORMAL_Accessor",
+			"bufferView" : 114,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "10_amber1_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 115,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "10_amber1_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 116,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "11_amber3_geo_INDICES_Accessor",
+			"bufferView" : 117,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 120,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "11_amber3_geo_POSITION_Accessor",
+			"bufferView" : 118,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC3",
+			"min" : [
+				552.16009521484375,
+				56.2815780639648438,
+				382.36944580078125
+			],
+			"max" : [
+				553.13677978515625,
+				57.4123191833496094,
+				383.39642333984375
+			]
+		},
+		{
+			"name" : "11_amber3_geo_NORMAL_Accessor",
+			"bufferView" : 119,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "11_amber3_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 120,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "11_amber3_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 121,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "12_amber4_geo_INDICES_Accessor",
+			"bufferView" : 122,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 120,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "12_amber4_geo_POSITION_Accessor",
+			"bufferView" : 123,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC3",
+			"min" : [
+				576.22808837890625,
+				41.5324363708496094,
+				356.81756591796875
+			],
+			"max" : [
+				578.27777099609375,
+				43.9061927795410156,
+				358.972747802734375
+			]
+		},
+		{
+			"name" : "12_amber4_geo_NORMAL_Accessor",
+			"bufferView" : 124,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "12_amber4_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 125,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "12_amber4_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 126,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "13_amber2_geo_INDICES_Accessor",
+			"bufferView" : 127,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 120,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "13_amber2_geo_POSITION_Accessor",
+			"bufferView" : 128,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC3",
+			"min" : [
+				556.0213623046875,
+				27.3027229309082031,
+				390.442352294921875
+			],
+			"max" : [
+				557.65277099609375,
+				29.1901721954345703,
+				392.15765380859375
+			]
+		},
+		{
+			"name" : "13_amber2_geo_NORMAL_Accessor",
+			"bufferView" : 129,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "13_amber2_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 130,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "13_amber2_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 131,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 34,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "14_mountainsForest_geo2_INDICES_Accessor",
+			"bufferView" : 132,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 89388,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "14_mountainsForest_geo2_POSITION_Accessor",
+			"bufferView" : 133,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 29830,
+			"type" : "VEC3",
+			"min" : [
+				-228941.078125,
+				-40036.0546875,
+				-259135.046875
+			],
+			"max" : [
+				294540.53125,
+				45240.95703125,
+				279759.78125
+			]
+		},
+		{
+			"name" : "14_mountainsForest_geo2_NORMAL_Accessor",
+			"bufferView" : 134,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 29830,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "14_mountainsForest_geo2_TEXCOORD_0_Accessor",
+			"bufferView" : 135,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 29830,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "14_mountainsForest_geo2_TEXCOORD_1_Accessor",
+			"bufferView" : 136,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 29830,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "15_trees_geo_INDICES_Accessor",
+			"bufferView" : 137,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 125118,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "15_trees_geo_POSITION_Accessor",
+			"bufferView" : 138,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 41942,
+			"type" : "VEC3",
+			"min" : [
+				-20642.25,
+				-26069.380859375,
+				-20429.27734375
+			],
+			"max" : [
+				24334.42578125,
+				196.85107421875,
+				2796.012939453125
+			]
+		},
+		{
+			"name" : "15_trees_geo_NORMAL_Accessor",
+			"bufferView" : 139,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 41942,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "15_trees_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 140,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 41942,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "15_trees_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 141,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 41942,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "16_exteriorDomes_geo3_INDICES_Accessor",
+			"bufferView" : 142,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 12204,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "16_exteriorDomes_geo3_POSITION_Accessor",
+			"bufferView" : 143,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 7530,
+			"type" : "VEC3",
+			"min" : [
+				-20079.75390625,
+				-2980.0927734375,
+				-20025.146484375
+			],
+			"max" : [
+				20406.771484375,
+				-260.005462646484375,
+				429.697265625
+			]
+		},
+		{
+			"name" : "16_exteriorDomes_geo3_NORMAL_Accessor",
+			"bufferView" : 144,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 7530,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "16_exteriorDomes_geo3_TEXCOORD_0_Accessor",
+			"bufferView" : 145,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 7530,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "16_exteriorDomes_geo3_TEXCOORD_1_Accessor",
+			"bufferView" : 146,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 7530,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "17_stars_NEW_c_INDICES_Accessor",
+			"bufferView" : 147,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 36936,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "17_stars_NEW_c_POSITION_Accessor",
+			"bufferView" : 148,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 16416,
+			"type" : "VEC3",
+			"min" : [
+				-360343.53125,
+				43499.640625,
+				-337813.375
+			],
+			"max" : [
+				324945.8125,
+				351939.34375,
+				344842
+			]
+		},
+		{
+			"name" : "17_stars_NEW_c_NORMAL_Accessor",
+			"bufferView" : 149,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 16416,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "17_stars_NEW_c_TEXCOORD_0_Accessor",
+			"bufferView" : 150,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 16416,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "17_stars_NEW_c_TEXCOORD_1_Accessor",
+			"bufferView" : 151,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 16416,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "18_env2_interior_floor_geo_INDICES_Accessor",
+			"bufferView" : 152,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 54276,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "18_env2_interior_floor_geo_POSITION_Accessor",
+			"bufferView" : 153,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 23651,
+			"type" : "VEC3",
+			"min" : [
+				-746.69818115234375,
+				-24.4848403930664063,
+				-753.71612548828125
+			],
+			"max" : [
+				744.5015869140625,
+				796.09002685546875,
+				756.3223876953125
+			]
+		},
+		{
+			"name" : "18_env2_interior_floor_geo_NORMAL_Accessor",
+			"bufferView" : 154,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 23651,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "18_env2_interior_floor_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 155,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 23651,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "18_env2_interior_floor_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 156,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 23651,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "19_exteriorDomes_geo3_INDICES_Accessor",
+			"bufferView" : 157,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 8640,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "19_exteriorDomes_geo3_POSITION_Accessor",
+			"bufferView" : 158,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 5604,
+			"type" : "VEC3",
+			"min" : [
+				-20279.224609375,
+				-4578.24853515625,
+				-20209.26171875
+			],
+			"max" : [
+				20553.169921875,
+				-1162.3111572265625,
+				767.807373046875
+			]
+		},
+		{
+			"name" : "19_exteriorDomes_geo3_NORMAL_Accessor",
+			"bufferView" : 159,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 5604,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "19_exteriorDomes_geo3_TEXCOORD_0_Accessor",
+			"bufferView" : 160,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 5604,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "19_exteriorDomes_geo3_TEXCOORD_1_Accessor",
+			"bufferView" : 161,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 5604,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "20_lounge_reduced_NEW_INDICES_Accessor",
+			"bufferView" : 162,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 164139,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "20_lounge_reduced_NEW_POSITION_Accessor",
+			"bufferView" : 163,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 37644,
+			"type" : "VEC3",
+			"min" : [
+				-746.98101806640625,
+				-0.595422804355621338,
+				-223.958221435546875
+			],
+			"max" : [
+				-364.45330810546875,
+				185.65997314453125,
+				320.44635009765625
+			]
+		},
+		{
+			"name" : "20_lounge_reduced_NEW_NORMAL_Accessor",
+			"bufferView" : 164,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 37644,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "20_lounge_reduced_NEW_TEXCOORD_0_Accessor",
+			"bufferView" : 165,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 37644,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "20_lounge_reduced_NEW_TEXCOORD_1_Accessor",
+			"bufferView" : 166,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 37644,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "21_fireplace_NEW_03_INDICES_Accessor",
+			"bufferView" : 167,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 119301,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "21_fireplace_NEW_03_POSITION_Accessor",
+			"bufferView" : 168,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 32795,
+			"type" : "VEC3",
+			"min" : [
+				412.7435302734375,
+				-2.1022493839263916,
+				-238.039276123046875
+			],
+			"max" : [
+				737.51715087890625,
+				418.86376953125,
+				443.9617919921875
+			]
+		},
+		{
+			"name" : "21_fireplace_NEW_03_NORMAL_Accessor",
+			"bufferView" : 169,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 32795,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "21_fireplace_NEW_03_COLOR_Accessor",
+			"bufferView" : 170,
+			"byteOffset" : 0,
+			"byteStride" : 16,
+			"componentType" : 5126,
+			"count" : 32795,
+			"type" : "VEC4"
+		},
+		{
+			"name" : "21_fireplace_NEW_03_TEXCOORD_0_Accessor",
+			"bufferView" : 171,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 32795,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "21_fireplace_NEW_03_TEXCOORD_1_Accessor",
+			"bufferView" : 172,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 32795,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "22_libraryArea_geo_INDICES_Accessor",
+			"bufferView" : 173,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 135552,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "22_libraryArea_geo_POSITION_Accessor",
+			"bufferView" : 174,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 62623,
+			"type" : "VEC3",
+			"min" : [
+				-459.76739501953125,
+				-5.72242069244384766,
+				483.167205810546875
+			],
+			"max" : [
+				443.876220703125,
+				365.98590087890625,
+				723.7606201171875
+			]
+		},
+		{
+			"name" : "22_libraryArea_geo_NORMAL_Accessor",
+			"bufferView" : 175,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 62623,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "22_libraryArea_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 176,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 62623,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "22_libraryArea_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 177,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 62623,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "23_skyA_geo_INDICES_Accessor",
+			"bufferView" : 178,
+			"byteOffset" : 0,
+			"byteStride" : 2,
+			"componentType" : 5123,
+			"count" : 2640,
+			"type" : "SCALAR"
+		},
+		{
+			"name" : "23_skyA_geo_POSITION_Accessor",
+			"bufferView" : 179,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 491,
+			"type" : "VEC3",
+			"min" : [
+				-475732.9375,
+				-61013.7890625,
+				-357695.9375
+			],
+			"max" : [
+				527937.5625,
+				467328.125,
+				1103399.25
+			]
+		},
+		{
+			"name" : "23_skyA_geo_NORMAL_Accessor",
+			"bufferView" : 180,
+			"byteOffset" : 0,
+			"byteStride" : 12,
+			"componentType" : 5126,
+			"count" : 491,
+			"type" : "VEC3"
+		},
+		{
+			"name" : "23_skyA_geo_TEXCOORD_0_Accessor",
+			"bufferView" : 181,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 491,
+			"type" : "VEC2"
+		},
+		{
+			"name" : "23_skyA_geo_TEXCOORD_1_Accessor",
+			"bufferView" : 182,
+			"byteOffset" : 0,
+			"byteStride" : 8,
+			"componentType" : 5126,
+			"count" : 491,
+			"type" : "VEC2"
+		}
+	],
+	"images" : [
+		{
+			"name" : "env2_exterior_aurora",
+			"uri" : "env2_exterior_aurora.png"
+		},
+		{
+			"name" : "env2_exterior_half_newDomes_03cc",
+			"uri" : "env2_exterior_half_newDomes_03cc.png"
+		},
+		{
+			"name" : "env2_interior_green_fix_purple_fix_06fireplace",
+			"uri" : "env2_interior_green_fix_purple_fix_06fireplace.png"
+		},
+		{
+			"name" : "env2_furniture_03fireplaceScreen",
+			"uri" : "env2_furniture_03fireplaceScreen.png"
+		}
+	],
+	"textures" : [
+		{
+			"name" : "env2_exterior_aurora",
+			"source" : 0
+		},
+		{
+			"name" : "env2_exterior_half_newDomes_03cc",
+			"source" : 1
+		},
+		{
+			"name" : "env2_interior_green_fix_purple_fix_06fireplace",
+			"source" : 2
+		},
+		{
+			"name" : "env2_furniture_03fireplaceScreen",
+			"source" : 3
+		}
+	],
+	"materials" : [
+		{
+			"name" : "exerior_sha",
+			"pbrMetallicRoughness" : {
+				"baseColorTexture" : {
+					"index" : 1,
+					"texCoord" : 0
+				}
+			},
+			"alphaMode" : "OPAQUE",
+			"extensions" : {
+				"oculus_write_alpha" : true
+			}
+		},
+		{
+			"name" : "env2_interior_green_fix_purple_fix_04fireplace_1Material",
+			"pbrMetallicRoughness" : {
+				"baseColorTexture" : {
+					"index" : 2,
+					"texCoord" : 0
+				}
+			},
+			"alphaMode" : "OPAQUE",
+			"extensions" : {
+				"oculus_write_alpha" : true
+			}
+		},
+		{
+			"name" : "furniture_sha",
+			"pbrMetallicRoughness" : {
+				"baseColorTexture" : {
+					"index" : 3,
+					"texCoord" : 0
+				}
+			},
+			"alphaMode" : "OPAQUE",
+			"extensions" : {
+				"oculus_write_alpha" : true
+			}
+		},
+		{
+			"name" : "exerior_sky",
+			"pbrMetallicRoughness" : {
+				"baseColorTexture" : {
+					"index" : 0,
+					"texCoord" : 0
+				}
+			},
+			"alphaMode" : "OPAQUE",
+			"extensions" : {
+				"oculus_write_alpha" : true
+			}
+		}
+	],
+	"meshes" : [
+		{
+			"name" : "fallingStar1_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 103,
+						"NORMAL" : 104,
+						"TEXCOORD_0" : 105,
+						"TEXCOORD_1" : 106
+					},
+					"indices" : 102,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "fallingStar9_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 63,
+						"NORMAL" : 64,
+						"TEXCOORD_0" : 65,
+						"TEXCOORD_1" : 66
+					},
+					"indices" : 62,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "fallingStar5_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 68,
+						"NORMAL" : 69,
+						"TEXCOORD_0" : 70,
+						"TEXCOORD_1" : 71
+					},
+					"indices" : 67,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "fallingStar2_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 73,
+						"NORMAL" : 74,
+						"TEXCOORD_0" : 75,
+						"TEXCOORD_1" : 76
+					},
+					"indices" : 72,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "fallingStar4_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 78,
+						"NORMAL" : 79,
+						"TEXCOORD_0" : 80,
+						"TEXCOORD_1" : 81
+					},
+					"indices" : 77,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "fallingStar8_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 83,
+						"NORMAL" : 84,
+						"TEXCOORD_0" : 85,
+						"TEXCOORD_1" : 86
+					},
+					"indices" : 82,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "fallingStar6_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 88,
+						"NORMAL" : 89,
+						"TEXCOORD_0" : 90,
+						"TEXCOORD_1" : 91
+					},
+					"indices" : 87,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "fallingStar3_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 93,
+						"NORMAL" : 94,
+						"TEXCOORD_0" : 95,
+						"TEXCOORD_1" : 96
+					},
+					"indices" : 92,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "fallingStar7_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 98,
+						"NORMAL" : 99,
+						"TEXCOORD_0" : 100,
+						"TEXCOORD_1" : 101
+					},
+					"indices" : 97,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "amber5_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 108,
+						"NORMAL" : 109,
+						"TEXCOORD_0" : 110,
+						"TEXCOORD_1" : 111
+					},
+					"indices" : 107,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "amber1_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 113,
+						"NORMAL" : 114,
+						"TEXCOORD_0" : 115,
+						"TEXCOORD_1" : 116
+					},
+					"indices" : 112,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "libraryArea_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 174,
+						"NORMAL" : 175,
+						"TEXCOORD_0" : 176,
+						"TEXCOORD_1" : 177
+					},
+					"indices" : 173,
+					"material" : 2,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "amber3_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 118,
+						"NORMAL" : 119,
+						"TEXCOORD_0" : 120,
+						"TEXCOORD_1" : 121
+					},
+					"indices" : 117,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "amber4_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 123,
+						"NORMAL" : 124,
+						"TEXCOORD_0" : 125,
+						"TEXCOORD_1" : 126
+					},
+					"indices" : 122,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "exteriorDomes_geo3",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 143,
+						"NORMAL" : 144,
+						"TEXCOORD_0" : 145,
+						"TEXCOORD_1" : 146
+					},
+					"indices" : 142,
+					"material" : 0,
+					"mode" : 4
+				},
+				{
+					"attributes" : {
+						"POSITION" : 158,
+						"NORMAL" : 159,
+						"TEXCOORD_0" : 160,
+						"TEXCOORD_1" : 161
+					},
+					"indices" : 157,
+					"material" : 1,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "amber2_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 128,
+						"NORMAL" : 129,
+						"TEXCOORD_0" : 130,
+						"TEXCOORD_1" : 131
+					},
+					"indices" : 127,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "mountainsForest_geo2",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 133,
+						"NORMAL" : 134,
+						"TEXCOORD_0" : 135,
+						"TEXCOORD_1" : 136
+					},
+					"indices" : 132,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "trees_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 138,
+						"NORMAL" : 139,
+						"TEXCOORD_0" : 140,
+						"TEXCOORD_1" : 141
+					},
+					"indices" : 137,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "stars_NEW_c",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 148,
+						"NORMAL" : 149,
+						"TEXCOORD_0" : 150,
+						"TEXCOORD_1" : 151
+					},
+					"indices" : 147,
+					"material" : 0,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "env2_interior_floor_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 153,
+						"NORMAL" : 154,
+						"TEXCOORD_0" : 155,
+						"TEXCOORD_1" : 156
+					},
+					"indices" : 152,
+					"material" : 1,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "lounge_reduced_NEW",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 163,
+						"NORMAL" : 164,
+						"TEXCOORD_0" : 165,
+						"TEXCOORD_1" : 166
+					},
+					"indices" : 162,
+					"material" : 2,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "fireplace_NEW_03",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 168,
+						"NORMAL" : 169,
+						"COLOR" : 170,
+						"TEXCOORD_0" : 171,
+						"TEXCOORD_1" : 172
+					},
+					"indices" : 167,
+					"material" : 2,
+					"mode" : 4
+				}
+			]
+		},
+		{
+			"name" : "skyA_geo",
+			"primitives" : [
+				{
+					"attributes" : {
+						"POSITION" : 179,
+						"NORMAL" : 180,
+						"TEXCOORD_0" : 181,
+						"TEXCOORD_1" : 182
+					},
+					"indices" : 178,
+					"material" : 3,
+					"mode" : 4
+				}
+			]
+		}
+	],
+	"skins" : [
+	],
+	"animations" : [
+		{
+			"name" : "Take 001",
+			"channels" : [
+				{
+					"sampler" : 0,
+					"target" : {
+						"node" : 3,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 1,
+					"target" : {
+						"node" : 3,
+						"path" : "rotation"
+					}
+				},
+				{
+					"sampler" : 2,
+					"target" : {
+						"node" : 6,
+						"path" : "rotation"
+					}
+				},
+				{
+					"sampler" : 3,
+					"target" : {
+						"node" : 7,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 4,
+					"target" : {
+						"node" : 9,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 5,
+					"target" : {
+						"node" : 9,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 6,
+					"target" : {
+						"node" : 11,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 7,
+					"target" : {
+						"node" : 11,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 8,
+					"target" : {
+						"node" : 13,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 9,
+					"target" : {
+						"node" : 13,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 10,
+					"target" : {
+						"node" : 15,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 11,
+					"target" : {
+						"node" : 15,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 12,
+					"target" : {
+						"node" : 17,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 13,
+					"target" : {
+						"node" : 17,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 14,
+					"target" : {
+						"node" : 19,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 15,
+					"target" : {
+						"node" : 19,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 16,
+					"target" : {
+						"node" : 21,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 17,
+					"target" : {
+						"node" : 21,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 18,
+					"target" : {
+						"node" : 23,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 19,
+					"target" : {
+						"node" : 23,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 20,
+					"target" : {
+						"node" : 32,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 21,
+					"target" : {
+						"node" : 32,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 22,
+					"target" : {
+						"node" : 33,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 23,
+					"target" : {
+						"node" : 33,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 24,
+					"target" : {
+						"node" : 34,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 25,
+					"target" : {
+						"node" : 34,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 26,
+					"target" : {
+						"node" : 35,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 27,
+					"target" : {
+						"node" : 35,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 28,
+					"target" : {
+						"node" : 36,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 29,
+					"target" : {
+						"node" : 36,
+						"path" : "scale"
+					}
+				}
+			],
+			"samplers" : [
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 1
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 2
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 3
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 4
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 5
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 6
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 7
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 8
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 9
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 10
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 11
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 12
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 13
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 14
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 15
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 16
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 17
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 18
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 19
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 20
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 21
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 22
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 23
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 24
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 25
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 26
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 27
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 28
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 29
+				},
+				{
+					"input" : 0,
+					"interpolation" : "LINEAR",
+					"output" : 30
+				}
+			]
+		},
+		{
+			"name" : "20190221_env2_02default",
+			"channels" : [
+				{
+					"sampler" : 0,
+					"target" : {
+						"node" : 3,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 1,
+					"target" : {
+						"node" : 3,
+						"path" : "rotation"
+					}
+				},
+				{
+					"sampler" : 2,
+					"target" : {
+						"node" : 6,
+						"path" : "rotation"
+					}
+				},
+				{
+					"sampler" : 3,
+					"target" : {
+						"node" : 7,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 4,
+					"target" : {
+						"node" : 9,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 5,
+					"target" : {
+						"node" : 9,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 6,
+					"target" : {
+						"node" : 11,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 7,
+					"target" : {
+						"node" : 11,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 8,
+					"target" : {
+						"node" : 13,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 9,
+					"target" : {
+						"node" : 13,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 10,
+					"target" : {
+						"node" : 15,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 11,
+					"target" : {
+						"node" : 15,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 12,
+					"target" : {
+						"node" : 17,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 13,
+					"target" : {
+						"node" : 17,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 14,
+					"target" : {
+						"node" : 19,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 15,
+					"target" : {
+						"node" : 19,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 16,
+					"target" : {
+						"node" : 21,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 17,
+					"target" : {
+						"node" : 21,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 18,
+					"target" : {
+						"node" : 23,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 19,
+					"target" : {
+						"node" : 23,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 20,
+					"target" : {
+						"node" : 32,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 21,
+					"target" : {
+						"node" : 32,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 22,
+					"target" : {
+						"node" : 33,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 23,
+					"target" : {
+						"node" : 33,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 24,
+					"target" : {
+						"node" : 34,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 25,
+					"target" : {
+						"node" : 34,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 26,
+					"target" : {
+						"node" : 35,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 27,
+					"target" : {
+						"node" : 35,
+						"path" : "scale"
+					}
+				},
+				{
+					"sampler" : 28,
+					"target" : {
+						"node" : 36,
+						"path" : "translation"
+					}
+				},
+				{
+					"sampler" : 29,
+					"target" : {
+						"node" : 36,
+						"path" : "scale"
+					}
+				}
+			],
+			"samplers" : [
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 32
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 33
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 34
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 35
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 36
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 37
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 38
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 39
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 40
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 41
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 42
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 43
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 44
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 45
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 46
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 47
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 48
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 49
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 50
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 51
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 52
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 53
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 54
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 55
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 56
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 57
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 58
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 59
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 60
+				},
+				{
+					"input" : 31,
+					"interpolation" : "LINEAR",
+					"output" : 61
+				}
+			]
+		}
+	],
+	"cameras" : [
+	],
+	"nodes" : [
+		{
+			"name" : "RootNode",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"children" : [
+				1
+			]
+		},
+		{
+			"name" : "env2_bake_grp",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				0.00999999977648258209,
+				0.00999999977648258209,
+				0.00999999977648258209
+			],
+			"children" : [
+				2,
+				27,
+				28,
+				29,
+				30,
+				31
+			]
+		},
+		{
+			"name" : "exterior_grp",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"children" : [
+				3,
+				4,
+				5,
+				24,
+				25,
+				26
+			]
+		},
+		{
+			"name" : "skyA_geo",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"mesh" : 22
+		},
+		{
+			"name" : "stars_NEW_c",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"mesh" : 18
+		},
+		{
+			"name" : "fallingStars_grp",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"children" : [
+				6,
+				8,
+				10,
+				12,
+				14,
+				16,
+				18,
+				20,
+				22
+			]
+		},
+		{
+			"name" : "fallingStar1_grp",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				-0.194839119911193848,
+				0.294814318418502808,
+				0.317192375659942627,
+				0.880063176155090332
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"children" : [
+				7
+			]
+		},
+		{
+			"name" : "fallingStar1_geo",
+			"translation" : [
+				-3.63797880709171295e-12,
+				253347.984375,
+				3.63797880709171295e-12
+			],
+			"rotation" : [
+				1.14754749835869278e-17,
+				4.59018999343477113e-17,
+				-4.59018999343477113e-17,
+				1
+			],
+			"scale" : [
+				309.59185791015625,
+				309.59185791015625,
+				309.59185791015625
+			],
+			"mesh" : 0
+		},
+		{
+			"name" : "fallingStar2_grp",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				-0.479907840490341187,
+				-0.281904220581054688,
+				0.118518546223640442,
+				0.822296679019927979
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"children" : [
+				9
+			]
+		},
+		{
+			"name" : "fallingStar2_geo",
+			"translation" : [
+				47764.74609375,
+				237999.0625,
+				75341.1484375
+			],
+			"rotation" : [
+				-2.29509499671738557e-17,
+				-1.14754749835869278e-17,
+				-2.63373067927209638e-34,
+				1
+			],
+			"scale" : [
+				309.59185791015625,
+				309.59185791015625,
+				309.59185791015625
+			],
+			"mesh" : 3
+		},
+		{
+			"name" : "fallingStar3_grp",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				-0.479907840490341187,
+				-0.281904220581054688,
+				0.118518546223640442,
+				0.822296679019927979
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"children" : [
+				11
+			]
+		},
+		{
+			"name" : "fallingStar3_geo",
+			"translation" : [
+				179036.6875,
+				155338.734375,
+				42029.37109375
+			],
+			"rotation" : [
+				-2.29509499671738557e-17,
+				-1.14754749835869278e-17,
+				-2.63373067927209638e-34,
+				1
+			],
+			"scale" : [
+				309.59185791015625,
+				309.59185791015625,
+				309.59185791015625
+			],
+			"mesh" : 7
+		},
+		{
+			"name" : "fallingStar4_grp",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				-0.479907840490341187,
+				-0.281904220581054688,
+				0.118518546223640442,
+				0.822296679019927979
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"children" : [
+				13
+			]
+		},
+		{
+			"name" : "fallingStar4_geo",
+			"translation" : [
+				161670.5,
+				-28385.876953125,
+				203876.4375
+			],
+			"rotation" : [
+				-2.29509499671738557e-17,
+				-1.14754749835869278e-17,
+				-2.63373067927209638e-34,
+				1
+			],
+			"scale" : [
+				309.59185791015625,
+				309.59185791015625,
+				309.59185791015625
+			],
+			"mesh" : 4
+		},
+		{
+			"name" : "fallingStar5_grp",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				-0.479907840490341187,
+				-0.281904220581054688,
+				0.118518546223640442,
+				0.822296679019927979
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"children" : [
+				15
+			]
+		},
+		{
+			"name" : "fallingStar5_geo",
+			"translation" : [
+				148510.859375,
+				205579.515625,
+				31908.814453125
+			],
+			"rotation" : [
+				0,
+				-2.36847584321818976e-17,
+				0,
+				1
+			],
+			"scale" : [
+				300,
+				300,
+				300
+			],
+			"mesh" : 2
+		},
+		{
+			"name" : "fallingStar6_grp",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				-0.479907840490341187,
+				-0.281904220581054688,
+				0.118518546223640442,
+				0.822296679019927979
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"children" : [
+				17
+			]
+		},
+		{
+			"name" : "fallingStar6_geo",
+			"translation" : [
+				148287,
+				-530.65679931640625,
+				224547.546875
+			],
+			"rotation" : [
+				0,
+				-2.36847584321818976e-17,
+				0,
+				1
+			],
+			"scale" : [
+				300,
+				300,
+				0.00100000004749745131
+			],
+			"mesh" : 6
+		},
+		{
+			"name" : "fallingStar7_grp",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				-0.479907840490341187,
+				-0.281904220581054688,
+				0.118518546223640442,
+				0.822296679019927979
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"children" : [
+				19
+			]
+		},
+		{
+			"name" : "fallingStar7_geo",
+			"translation" : [
+				-35413.41015625,
+				134903.1875,
+				178162.1875
+			],
+			"rotation" : [
+				0,
+				-2.36847584321818976e-17,
+				0,
+				1
+			],
+			"scale" : [
+				300,
+				300,
+				300
+			],
+			"mesh" : 8
+		},
+		{
+			"name" : "fallingStar8_grp",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				-0.479907840490341187,
+				-0.281904220581054688,
+				0.118518546223640442,
+				0.822296679019927979
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"children" : [
+				21
+			]
+		},
+		{
+			"name" : "fallingStar8_geo",
+			"translation" : [
+				668.161865234375,
+				195194.140625,
+				67202.9453125
+			],
+			"rotation" : [
+				0,
+				-2.36847584321818976e-17,
+				0,
+				1
+			],
+			"scale" : [
+				300,
+				300,
+				300
+			],
+			"mesh" : 5
+		},
+		{
+			"name" : "fallingStar9_grp",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				-0.479907840490341187,
+				-0.281904220581054688,
+				0.118518546223640442,
+				0.822296679019927979
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"children" : [
+				23
+			]
+		},
+		{
+			"name" : "fallingStar9_geo",
+			"translation" : [
+				117462.046875,
+				170330.65625,
+				24402.375
+			],
+			"rotation" : [
+				0,
+				-2.36847584321818976e-17,
+				0,
+				1
+			],
+			"scale" : [
+				300,
+				300,
+				300
+			],
+			"mesh" : 1
+		},
+		{
+			"name" : "mountainsForest_geo2",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"mesh" : 16
+		},
+		{
+			"name" : "trees_geo",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"mesh" : 17
+		},
+		{
+			"name" : "exteriorDomes_geo3",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"mesh" : 14
+		},
+		{
+			"name" : "env2_interior_floor_geo",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"mesh" : 19
+		},
+		{
+			"name" : "lounge_reduced_NEW",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"mesh" : 20
+		},
+		{
+			"name" : "fireplace_NEW_03",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"mesh" : 21
+		},
+		{
+			"name" : "libraryArea_geo",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"mesh" : 11
+		},
+		{
+			"name" : "ambers_grp",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"children" : [
+				32,
+				33,
+				34,
+				35,
+				36
+			]
+		},
+		{
+			"name" : "amber1_geo",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"mesh" : 10
+		},
+		{
+			"name" : "amber2_geo",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"mesh" : 15
+		},
+		{
+			"name" : "amber3_geo",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"mesh" : 12
+		},
+		{
+			"name" : "amber4_geo",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"mesh" : 13
+		},
+		{
+			"name" : "amber5_geo",
+			"translation" : [
+				0,
+				0,
+				0
+			],
+			"rotation" : [
+				0,
+				0,
+				0,
+				1
+			],
+			"scale" : [
+				1,
+				1,
+				1
+			],
+			"mesh" : 9
+		}
+	],
+	"scenes" : [
+		{
+			"nodes" : [
+				0
+			],
+			"name" : "Root Scene",
+			"extensions" : {
+				"oculus_tags" : [
+				]
+			}
+		}
+	],
+	"scene" : 0
+}

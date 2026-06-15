@@ -1,0 +1,53 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="MontereyShell"
+run/main_scene="uid://c8vtwyh8d2edg"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout=""
+
+[autoload]
+
+XRToolsUserSettings="*uid://bqgb8i74tm0t"
+XRToolsRumbleManager="*uid://by853dk86g1qw"
+UiAudioManager="*uid://cnv5eldgtgp5e"
+SignalBus="*uid://twkxgatpl075"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/BatteryPlugin/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg")
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/msaa_3d=1
+
+[xr]
+
+openxr/enabled=true
+openxr/form_factor=0
+openxr/environment_blend_mode=2
+openxr/extensions/render_model=true
+shaders/enabled=true
+openxr/extensions/meta/render_model=true
+openxr/extensions/meta/passthrough=true
