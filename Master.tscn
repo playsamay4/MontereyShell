@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dj33bmjlrjodk" path="res://scripts/xr_origin_3d.gd" id="2_aljfc"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_di6w3"]
 [ext_resource type="PackedScene" uid="uid://ddvhmy2ieihb6" path="res://scenes/LoadingDots.tscn" id="4_jpxbg"]
-[ext_resource type="AudioStream" uid="uid://c7hbminq8ke08" path="res://audio/system_environment_ambix.ogg" id="5_ljl6t"]
 [ext_resource type="Texture2D" uid="uid://5dgqfbxbmk1o" path="res://images/bootanim_splash_2880x1600_left.png" id="6_ogaq2"]
 [ext_resource type="Script" uid="uid://dbmilca0ni7c0" path="res://scripts/controller.gd" id="7_eexsn"]
 [ext_resource type="Script" uid="uid://vndxc4tur7w4" path="res://scripts/PointerOrigin.gd" id="8_oy28a"]
@@ -23,24 +22,24 @@ texture_repeat = false
 grow_amount = 0.2
 stencil_flags = 2
 
-[sub_resource type="QuadMesh" id="QuadMesh_di6w3"]
+[sub_resource type="QuadMesh" id="QuadMesh_aljfc"]
 resource_local_to_scene = true
 size = Vector2(0.08, 0.055)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_jpxbg"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_di6w3"]
 viewport_path = NodePath("XROrigin3D/XRCamera3D/LoadingDots/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljl6t"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpxbg"]
 transparency = 1
 no_depth_test = true
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_jpxbg")
+albedo_texture = SubResource("ViewportTexture_di6w3")
 texture_filter = 1
 texture_repeat = false
 grow_amount = 0.2
 stencil_flags = 2
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ogaq2"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ljl6t"]
 resource_local_to_scene = true
 size = Vector3(0.08, 0.055, 0.02)
 
@@ -208,19 +207,14 @@ unshaded = true
 scene_properties_keys = PackedStringArray("loading_dots.gd")
 
 [node name="Screen" parent="XROrigin3D/XRCamera3D/LoadingDots" index="1"]
-mesh = SubResource("QuadMesh_di6w3")
-surface_material_override/0 = SubResource("StandardMaterial3D_ljl6t")
+mesh = SubResource("QuadMesh_aljfc")
+surface_material_override/0 = SubResource("StandardMaterial3D_jpxbg")
 
 [node name="StaticBody3D" parent="XROrigin3D/XRCamera3D/LoadingDots" index="2"]
 screen_size = Vector2(0.08, 0.055)
 
 [node name="CollisionShape3D" parent="XROrigin3D/XRCamera3D/LoadingDots/StaticBody3D" index="0"]
-shape = SubResource("BoxShape3D_ogaq2")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="XROrigin3D/XRCamera3D" unique_id=609952225]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.066339016, 1.3237058, 0)
-stream = ExtResource("5_ljl6t")
-autoplay = true
+shape = SubResource("BoxShape3D_ljl6t")
 
 [node name="OculusLogo" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D" unique_id=269925954]
 unique_name_in_owner = true

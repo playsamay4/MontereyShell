@@ -12,7 +12,7 @@ config_version=5
 
 config/name="MontereyShell"
 run/main_scene="uid://c8vtwyh8d2edg"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [audio]
@@ -23,12 +23,32 @@ buses/default_bus_layout=""
 
 XRToolsUserSettings="*uid://bqgb8i74tm0t"
 XRToolsRumbleManager="*uid://by853dk86g1qw"
-UiAudioManager="*uid://cnv5eldgtgp5e"
 SignalBus="*uid://twkxgatpl075"
+SettingsManager="*uid://mvdlljtefbk1"
+UiAudioManager="*uid://cnv5eldgtgp5e"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BatteryPlugin/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg")
+enabled=PackedStringArray("res://addons/BatteryPlugin/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg", "res://addons/localization_with_google_sheet/plugin.cfg")
+
+[global_group]
+
+back_buttons=""
+
+[gui]
+
+theme/custom="uid://bv103o0x0oqc5"
+
+[internationalization]
+
+locale/translations=["res://data/localization/localization/MontereyShell_localization_translation.en.translation", "res://data/localization/localization/MontereyShell_localization_translation.de_DE.translation"]
+
+[localization_with_google_sheet]
+
+workspaces=[{
+"name": "localization",
+"url": "https://docs.google.com/spreadsheets/d/1Wv-G4QWJOUeIegdM6jzfTJ2pfFomjYgQKq6COEMdZ4M/edit?usp=sharing"
+}]
 
 [physics]
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bhef1fyprocg1"
+
+[deps]
+
+files=["res://data/localization/localization/MontereyShell_localization_translation.en.translation", "res://data/localization/localization/MontereyShell_localization_translation.de_DE.translation"]
+
+source_file="res://data/localization/localization/MontereyShell_localization_translation.csv"
+dest_files=["res://data/localization/localization/MontereyShell_localization_translation.en.translation", "res://data/localization/localization/MontereyShell_localization_translation.de_DE.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

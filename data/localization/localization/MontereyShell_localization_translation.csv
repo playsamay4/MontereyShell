@@ -1,0 +1,100 @@
+keys,en,de_DE
+BUTTON_OK,OK,
+BUTTON_CANCEL,Cancel,Abbrechen
+AUIBAR_NAVIGATE,Navigate,Navigieren
+AUIBAR_SOCIAL,Social,Soziales
+AUIBAR_SHARING,Sharing,Teilen
+AUIBAR_NOTIFICATIONS,Notifications,Benachrichtigungen
+AUIBAR_SETTINGS,Settings,Einstellungen
+AUIBAR_BUTTON_HOME,Home,Startseite
+AUIBAR_BUTTON_LIBRARY,Library,Bibliothek
+AUIBAR_BUTTON_STORE,Store,Shop
+AUIBAR_BUTTON_BROWSER,Browser,Browser
+AUIBAR_BUTTON_GALLERY,Gallery,Galerie
+AUIBAR_BUTTON_SEARCH,Search,Suche
+AUIBAR_NO_NOTIFICATIONS,No new notifications.,Keine neuen Benachrichtigungen.
+AUIBAR_BUTTON_VIEW_ALL,View All,Alle anzeigen
+AUIBAR_BUTTON_PROFILE,Profile,Profil
+AUIBAR_BUTTON_FRIENDS,Friends,Freunde
+AUIBAR_BUTTON_CHATS,Chats,Chats
+AUIBAR_BUTTON_PARTIES,Parties,Partys
+AUIBAR_BUTTON_REPORT,Report,Melden
+AUIBAR_BUTTON_CAST,Cast,Übertragen
+AUIBAR_BUTTON_GO_LIVE,Go Live,Live gehen
+AUIBAR_BUTTON_RECORD_VIDEO,Record Video,Video aufnehmen
+AUIBAR_BUTTON_TAKE_PHOTO,Take Photo,Foto aufnehmen
+AUIBAR_BUTTON_CAMERA_ROLL,Camera Roll,Aufnahmen
+AUIBAR_BUTTON_VOLUME,Volume,Lautstärke
+AUIBAR_BUTTON_WIFI,Wi-Fi,WLAN
+AUIBAR_BUTTON_RESET_VIEW,Reset View,Ansicht zurücksetzen
+AUIBAR_BUTTON_SEE_ALL,See All,Alle sehen
+AUIBAR_ROOMSCALE,Roomscale,Roomscale
+AUIBAR_STATIONARY,Stationary,Stationär
+AUIBAR_TOOLTIP_ROOMSCALE,Create a new Guardian Boundary\nfor roomscale experiences,Erstelle eine neue Guardian-Begrenzung\nfür Roomscale-Erlebnisse
+AUIBAR_TOOLTIP_STATIONARY,Create a new Guardian Boundary\nfor sitting or standing experiences,Erstelle eine neue Guardian-Begrenzung für\nsitzende oder stehende Erlebnisse
+HOME_HEADER,Home,Startseite
+HOME_EXPLORE,Explore,Entdecken
+HOME_MORE_FROM_YOUR_APPS,More From Your Apps,Mehr aus deinen Apps
+HOME_ENTERTAINMENT,Entertainment,Unterhaltung
+HOME_FRIENDS_ACTIVITY,Friends Activity,Freundesaktivität
+HOME_SAVED,Saved,Gespeichert
+HOME_RECENTS,Recents,Zuletzt verwendet
+SETTINGS_HEADER,Settings,Einstellungen
+SETTINGS_DEVICE,Device,Gerät
+SETTINGS_GUARDIAN,Guardian,Guardian
+SETTINGS_STORAGE,Storage,Speicherplatz
+SETTINGS_APPLICATIONS,Applications,Anwendungen
+SETTINGS_VIRTUAL_ENVIRONMENT,Virtual Environment,Virtuelle Umgebung
+SETTINGS_EXPERIMENTAL_FEATURES,Experimental Features,Experimentelle Funktionen
+SETTINGS_DEVELOPER,Developer,Entwickler
+SETTINGS_ABOUT,About,Info
+SETTINGS_DND,Do Not Disturb,Nicht stören
+SETTINGS_DND_SUBTITLE,Mute all notifications in VR,Alle Benachrichtigungen in VR stummschalten
+SETTINGS_MICROPHONE,Microphone,Mikrofon
+SETTINGS_WIFI,Wi-Fi,WLAN
+SETTINGS_LANGUAGE,Language,Sprache
+SETTINGS_PRIVACY,Privacy,Datenschutz
+SETTINGS_NOTIFICATIONS,Notifications,Benachrichtigungen
+SETTINGS_NOTIFICATIONS_SUBTITLE,Choose which notifications you want to see in VR and in the Oculus App,"Wähle aus, welche Benachrichtigungen du in VR und in der Oculus-App sehen möchtest"
+SETTINGS_RESTART_REQUIRED,Restart required,Neustart erforderlich
+SETTINGS_RESTART_REQUIRED_SUBTITLE,Please restart your headset to save this change,"Bitte starte dein Headset neu, um diese Änderung zu speichern"
+SETTINGS_OTA_TITLE,Software Update,Softwareaktualisierung
+SETTINGS_OTA_CHECKING,Checking for updates...,Suche nach Updates ...
+SETTINGS_OTA_UPDATE_NOW,Update Now,Jetzt aktualisieren
+SETTINGS_OTA_NOT_AVAILABLE,No Updates Available,Keine Updates verfügbar
+SETTINGS_VERSION,Version,Version
+SETTINGS_TARGET_VERSION,Target Version,Zielversion
+NUX_OTA_BLOCK_2_DIALOG_DESC,Your headset is updating. Please take off your headset and follow the steps in the Oculus app on your phone.,
+NUX_OTA_BLOCK_2_DIALOG_DESC_UPDATED,You will be notified on your phone when your headset is ready.,
+NUX_OTA_BLOCK_2_DIALOG_PROGRESS_DOWNLOADING,Downloading…,
+NUX_OTA_BLOCK_2_DIALOG_TITLE,Wi-Fi Connected\nContinue in Oculus App,
+NUX_OTA_BLOCK_2_DIALOG_TITLE_UPDATED,Updating your Headset,
+NUX_OTA_BLOCK_CALLOUT, www.oculus.com/app,
+NUX_OTA_BLOCK_DESC_EN,Download the Oculus app on your mobile phone to set up your headset.,
+NUX_OTA_BLOCK_DESC_DE,"Lade die Oculus-App auf dein Mobiltelefon herunter, um das Headset einzurichten.",
+NUX_OTA_BLOCK_DESC_ES,Descarga la aplicación Oculus en tu teléfono celular para configurar el visor.,
+NUX_OTA_BLOCK_DESC_FR,Téléchargez l'app Oculus sur votre téléphone mobile pour configurer votre casque.,
+NUX_OTA_BLOCK_DESC_IT,Scarica l'app Oculus sul tuo cellulare per configurare il tuo visore.,
+NUX_OTA_BLOCK_DESC_JA,携帯電話でOculusアプリをダウンロードしてヘッドセットを設定してください。,
+NUX_OTA_BLOCK_TITLE_EN,Grab your phone to get started.,
+NUX_OTA_BLOCK_TITLE_DE,"Nimm dein Telefon zur Hand, um loszulegen.",
+NUX_OTA_BLOCK_TITLE_ES,Toma el teléfono para empezar.,
+NUX_OTA_BLOCK_TITLE_FR,Attraper votre téléphone pour démarrer.,
+NUX_OTA_BLOCK_TITLE_IT,Prendi il tuo cellulare per iniziare.,
+NUX_OTA_BLOCK_TITLE_JA,スマートフォンを準備して始めましょう,
+NUX_OTA_BLOCK_QUEST_TITLE_DE,Download der Oculus-App,
+NUX_OTA_BLOCK_QUEST_TITLE_EN,Download the Oculus App,
+NUX_OTA_BLOCK_QUEST_TITLE_ES,Descarga la aplicación de Oculus,
+NUX_OTA_BLOCK_QUEST_TITLE_FR,Téléchargez l'app Oculus,
+NUX_OTA_BLOCK_QUEST_TITLE_IT,Scarica l'app Oculus,
+NUX_OTA_BLOCK_QUEST_TITLE_JA,Oculusアプリをダウンロード,
+NUX_OTA_BLOCK_QUEST_TITLE_KO,Oculus 앱 다운로드,
+NUX_OTA_BLOCK_QUEST_TITLE_PT,Descarregar a App Oculus,
+NUX_OTA_BLOCK_QUEST_TITLE_RU,Скачайте приложение Oculus,
+NUX_OTA_BLOCK_QUEST_TITLE_ZH_CN,下载 Oculus 应用,
+NUX_OTA_BLOCK_QUEST_TITLE_ZH_TW,下載 Oculus 應用程式,
+NUX_OTA_BLOCK_URL,www.oculus.com/app,
+NUX_OTA_BLOCK_PREPARE_DESC,We are preparing your headset. Please take off your headset and follow the steps in the Oculus app on your phone.,
+NUX_OTA_BLOCK_PREPARE_TITLE,Setting Up Your Headset,
+en,English (US),
+de-DE,Deutsch,

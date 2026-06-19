@@ -29,7 +29,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_fbc3j"]
 resource_name = "new_animation"
-length = 9.966666
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -113,7 +113,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"PanelHeader"
-text = "Popup Three Items"
+text = "Lorem ipsum dolor "
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1435788937]
 layout_mode = 2
@@ -126,11 +126,7 @@ size_flags_horizontal = 4
 theme_override_fonts/normal_font = ExtResource("2_3u51t")
 theme_override_fonts/bold_font = ExtResource("3_ht1if")
 bbcode_enabled = true
-text = "This is some text. [b]This is some bold text[/b].
-[center][img]res://images/aui/tabs/navigate/ic_home.png[/img] Here is an inline image[/center]
-This is a whole bunch of text to test text wrapping and container expansion. This is more text. More text follows. And some text here.
-[color=red]Red[/color], [rainbow]Rainbow!!![/rainbow] [shake]Shaking text :o [/shake] [wave]Wave[/wave] [tornado]Tornado[/tornado]'
-Click [url=\"https://google.com\"][b]here[/b][/url] to browse, or check your [url=\"systemux://settings/wifi\"][b]Wi-Fi Settings[/b][/url]."
+text = "Consectetur adipiscing elit. Quisque volutpat metus facilisis velit eleifend molestie. Vivamus dapibus neque vel nulla accumsan imperdiet. Mauris sit amet arcu vitae elit consequat laoreet non eu libero."
 fit_content = true
 vertical_alignment = 1
 meta_underlined = false

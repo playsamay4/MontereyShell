@@ -18,6 +18,7 @@
 *.release
 *.debug
 
+android/build/.gradle
 android/build/assetPacks/
 android/build/assets/
 android/build/build/

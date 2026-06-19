@@ -1,26 +1,26 @@
 [gd_scene format=3 uid="uid://bkuqgnhukxb2h"]
 
-[ext_resource type="PackedScene" uid="uid://d3lc2ndma73x5" path="res://models/models.gltf" id="1_itajj"]
+[ext_resource type="PackedScene" uid="uid://d3lc2ndma73x5" path="res://models/dome/models.gltf" id="1_itajj"]
 
 [node name="Root Scene" unique_id=2051101845 instance=ExtResource("1_itajj")]
 
-[node name="skyA_geo" parent="RootNode/env2_bake_grp/exterior_grp" parent_id_path=PackedInt32Array(87821748) index="0" unique_id=579213857]
+[node name="skyA_geo" parent="RootNode/env2_bake_grp/exterior_grp" parent_id_path=PackedInt32Array(73432075) index="0" unique_id=1202779793]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
-[node name="fallingStar1_grp" parent="RootNode/env2_bake_grp/exterior_grp/fallingStars_grp" parent_id_path=PackedInt32Array(261464778) index="0" unique_id=961005126]
+[node name="fallingStar1_grp" parent="RootNode/env2_bake_grp/exterior_grp/fallingStars_grp" parent_id_path=PackedInt32Array(336564806) index="0" unique_id=1726463578]
 transform = Transform3D(0.6249469, -0.6731813, 0.39530748, 0.4434159, 0.7228533, 0.5299671, -0.64251333, -0.1559157, 0.75024444, 0, 0, 0)
 
-[node name="fallingStar2_geo" parent="RootNode/env2_bake_grp/exterior_grp/fallingStars_grp/fallingStar2_grp" parent_id_path=PackedInt32Array(1751203127) index="0" unique_id=1221698139]
+[node name="fallingStar2_geo" parent="RootNode/env2_bake_grp/exterior_grp/fallingStars_grp/fallingStar2_grp" parent_id_path=PackedInt32Array(1537331945) index="0" unique_id=1041864749]
 transform = Transform3D(309.59186, 3.2615264e-31, -7.1054274e-15, -1.4316409e-38, 309.59186, 1.4210855e-14, 7.1054274e-15, -1.4210855e-14, 309.59186, 47764.746, 237999.06, 75341.15)
 
-[node name="fallingStar3_geo" parent="RootNode/env2_bake_grp/exterior_grp/fallingStars_grp/fallingStar3_grp" parent_id_path=PackedInt32Array(989273368) index="0" unique_id=1844735079]
+[node name="fallingStar3_geo" parent="RootNode/env2_bake_grp/exterior_grp/fallingStars_grp/fallingStar3_grp" parent_id_path=PackedInt32Array(1626179668) index="0" unique_id=532380137]
 transform = Transform3D(309.59186, 3.2615264e-31, -7.1054274e-15, -1.4316409e-38, 309.59186, 1.4210855e-14, 7.1054274e-15, -1.4210855e-14, 309.59186, 179036.69, 155338.73, 42029.37)
 
-[node name="fallingStar4_geo" parent="RootNode/env2_bake_grp/exterior_grp/fallingStars_grp/fallingStar4_grp" parent_id_path=PackedInt32Array(503367569) index="0" unique_id=405948185]
+[node name="fallingStar4_geo" parent="RootNode/env2_bake_grp/exterior_grp/fallingStars_grp/fallingStar4_grp" parent_id_path=PackedInt32Array(321670135) index="0" unique_id=1475920060]
 transform = Transform3D(309.59186, 3.2615264e-31, -7.1054274e-15, -1.4316409e-38, 309.59186, 1.4210855e-14, 7.1054274e-15, -1.4210855e-14, 309.59186, 161670.5, -28385.877, 203876.44)
 
-[node name="fallingStar6_geo" parent="RootNode/env2_bake_grp/exterior_grp/fallingStars_grp/fallingStar6_grp" parent_id_path=PackedInt32Array(685242447) index="0" unique_id=232530426]
+[node name="fallingStar6_geo" parent="RootNode/env2_bake_grp/exterior_grp/fallingStars_grp/fallingStar6_grp" parent_id_path=PackedInt32Array(1669777644) index="0" unique_id=461461878]
 transform = Transform3D(300, 0, -4.7368908e-20, 0, 300, 0, 1.4210855e-14, 0, 0.0009999871, 148287, -530.6568, 224547.55)
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=2060547698]
+[node name="AnimationPlayer" parent="." index="1" unique_id=615536473]
 autoplay = &"20190221_env2_02default"

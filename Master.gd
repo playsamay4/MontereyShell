@@ -12,7 +12,7 @@ var is_loading: bool = false
 var sequence_finished: bool = false
 var loaded_resource: PackedScene = null
 
-var skip_boot = false
+var skip_boot = true
 
 func _ready() -> void:
 	_start_background_load()
@@ -24,6 +24,8 @@ func _ready() -> void:
 		switch_to_vr()
 	
 	_hide_controller_models()
+	
+	TranslationServer.set_locale(SettingsManager.get_value("settings","locale"))
 
 	SignalBus.switch_to_ar.connect(switch_to_ar)
 	SignalBus.switch_to_vr.connect(switch_to_vr)

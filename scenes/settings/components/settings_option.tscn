@@ -6,13 +6,20 @@
 [ext_resource type="Script" uid="uid://de48plfekntbv" path="res://scenes/settings/components/settings_option.gd" id="2_if2fg"]
 [ext_resource type="Texture2D" uid="uid://b83dfqwmfwps3" path="res://images/oc_icon_chevron_down_filled_24_d2d2d2.png" id="5_hn5wg"]
 [ext_resource type="Texture2D" uid="uid://dmhiw0nxcp8qv" path="res://images/oc_icon_open_tab_filled_24_dadada.png" id="6_hn5wg"]
+[ext_resource type="Shader" uid="uid://de4itxoy11t5u" path="res://scenes/settings/components/spinner.gdshader" id="6_yyo2n"]
+[ext_resource type="Texture2D" uid="uid://bkdt1k6r8qvj7" path="res://images/spinner.png" id="7_p7csv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pbqrc"]
+shader = ExtResource("6_yyo2n")
 
 [node name="ParentHBox" type="HBoxContainer" unique_id=733437892]
 theme = ExtResource("1_5vv5y")
 theme_override_constants/separation = 15
 script = ExtResource("2_if2fg")
+option_type = "button"
 
 [node name="Icon" type="TextureRect" parent="." unique_id=937400086]
+visible = false
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 4
@@ -30,12 +37,14 @@ size_flags_vertical = 6
 text = "Option Title"
 
 [node name="Subtitle" type="Label" parent="TextStack" unique_id=1535652595]
+visible = false
 layout_mode = 2
 size_flags_vertical = 6
 theme_type_variation = &"SettingsSubLabel"
 text = "Subtitle Text"
 
 [node name="OculusToggle" parent="." unique_id=417458260 instance=ExtResource("2_5vv5y")]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 10
 
@@ -47,6 +56,33 @@ theme_type_variation = &"MainButton"
 text = "Option"
 icon = ExtResource("5_hn5wg")
 icon_alignment = 2
+
+[node name="OptionButton" type="Button" parent="." unique_id=781410743]
+custom_minimum_size = Vector2(69.725, 42.185)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_type_variation = &"MainButton"
+icon_alignment = 2
+
+[node name="LoadingSpinner" type="TextureRect" parent="OptionButton" unique_id=1813634639]
+material = SubResource("ShaderMaterial_pbqrc")
+custom_minimum_size = Vector2(-1, -1)
+custom_maximum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_p7csv")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="IconButtonTexture" type="TextureRect" parent="." unique_id=808852084]
 visible = false

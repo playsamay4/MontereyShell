@@ -46,6 +46,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_3b2b5")
 layout_mode = 2
 theme_override_constants/margin_left = 22
 theme_override_constants/margin_top = 89
+theme_override_constants/margin_right = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer" unique_id=2108486118]
 layout_mode = 2
@@ -54,56 +55,56 @@ size_flags_horizontal = 4
 [node name="Label" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=873261026]
 layout_mode = 2
 theme_type_variation = &"PanelHeader"
-text = "Home"
+text = "HOME_HEADER"
 
 [node name="Button" type="Button" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1115950284]
 custom_minimum_size = Vector2(250.9, 51.675)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"ButtonLeftAlign"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_qui0h")
-text = "   Explore"
+text = "HOME_EXPLORE"
 alignment = 0
 
 [node name="Button2" type="Button" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1418206278]
 custom_minimum_size = Vector2(250.9, 51.675)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"ButtonLeftAlign"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_qui0h")
-text = "   More From Your Apps"
+text = "HOME_MORE_FROM_YOUR_APPS"
 alignment = 0
 
 [node name="Button3" type="Button" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1525449288]
 custom_minimum_size = Vector2(250.9, 51.675)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"ButtonLeftAlign"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_qui0h")
-text = "   Entertainment"
+text = "HOME_ENTERTAINMENT"
 alignment = 0
 
 [node name="Button4" type="Button" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1010767677]
 custom_minimum_size = Vector2(250.9, 51.675)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"ButtonLeftAlign"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_qui0h")
-text = "   Friends Activity"
+text = "HOME_FRIENDS_ACTIVITY"
 alignment = 0
 
 [node name="Button5" type="Button" parent="HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1980612432]
 custom_minimum_size = Vector2(250.9, 51.675)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"ButtonLeftAlign"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_qui0h")
-text = "   Saved"
+text = "HOME_SAVED"
 alignment = 0
 
 [node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer" unique_id=1575005638]
@@ -153,7 +154,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer/PanelContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1635685996]
 layout_mode = 2
 theme_type_variation = &"PanelSubHeader"
-text = "Recents"
+text = "HOME_RECENTS"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PanelContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=685298665]
 layout_mode = 2

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b4ee0duaa2p8m"]
+
+[ext_resource type="Texture2D" uid="uid://bdw4fbb7shl5r" path="res://models/first_time_nux/first_time_nux_cubemap.png" id="1_occik"]
+[ext_resource type="PackedScene" uid="uid://3inf7jvyj4eq" path="res://models/first_time_nux/models.gltf" id="2_hlrgu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwa6a"]
+albedo_texture = ExtResource("1_occik")
+metallic = 1.0
+uv1_offset = Vector3(0, 0.025, 0)
+grow_amount = -16.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_ypim8"]
+material = SubResource("StandardMaterial3D_cwa6a")
+flip_faces = true
+radius = 50.0
+height = 100.0
+rings = 5
+
+[node name="Node3D" type="Node3D" unique_id=219223525]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1728381530]
+mesh = SubResource("SphereMesh_ypim8")
+
+[node name="NuxScene" parent="." unique_id=1898378952 instance=ExtResource("2_hlrgu")]

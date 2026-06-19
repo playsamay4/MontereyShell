@@ -3,7 +3,6 @@
 [ext_resource type="Theme" uid="uid://bv103o0x0oqc5" path="res://templates/aui/shell.tres" id="1_16p1y"]
 [ext_resource type="Script" uid="uid://c1qtajhdfvs5b" path="res://scenes/settings/panel_settings.gd" id="2_wa5on"]
 [ext_resource type="Texture2D" uid="uid://dxlyfneen0opl" path="res://images/oc_icon_arrow_left_filled_24_d2d2d2.png" id="2_yhrjh"]
-[ext_resource type="PackedScene" uid="uid://mpmgaapg7ylb" path="res://scenes/settings/components/settings_option.tscn" id="6_wa5on"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3bc3"]
 bg_color = Color(0.14509805, 0.15294118, 0.16078432, 1)
@@ -54,102 +53,115 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_3b2b5")
 layout_mode = 2
 theme_override_constants/margin_left = 22
 theme_override_constants/margin_top = 89
+theme_override_constants/margin_right = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Tabs/MarginContainer" unique_id=2108486118]
+[node name="SidebarVStack" type="VBoxContainer" parent="HBoxContainer/Tabs/MarginContainer" unique_id=2108486118]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 4
 
-[node name="Header" type="Label" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=873261026]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Tabs/MarginContainer/SidebarVStack" unique_id=2012145211]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="Header" type="Label" parent="HBoxContainer/Tabs/MarginContainer/SidebarVStack/MarginContainer" unique_id=873261026]
 layout_mode = 2
 theme_type_variation = &"PanelHeader"
-text = "Settings"
+text = "SETTINGS_HEADER"
 
-[node name="DeviceTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=1115950284]
+[node name="DeviceTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/SidebarVStack" unique_id=1115950284]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(250.9, 51.675)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"ButtonLeftAlign"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_qui0h")
-text = "   Device"
+text = "SETTINGS_DEVICE"
 alignment = 0
 
-[node name="GuardianTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=1418206278]
+[node name="GuardianTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/SidebarVStack" unique_id=1418206278]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(250.9, 51.675)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"ButtonLeftAlign"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_qui0h")
-text = "   Guardian"
+text = "SETTINGS_GUARDIAN"
 alignment = 0
 
-[node name="StorageTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=1525449288]
+[node name="StorageTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/SidebarVStack" unique_id=1525449288]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(250.9, 51.675)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"ButtonLeftAlign"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_qui0h")
-text = "   Storage"
+text = "SETTINGS_STORAGE"
 alignment = 0
 
-[node name="ApplicationsTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=1010767677]
+[node name="ApplicationsTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/SidebarVStack" unique_id=1010767677]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(250.9, 51.675)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"ButtonLeftAlign"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_qui0h")
-text = "   Applications"
+text = "SETTINGS_APPLICATIONS"
 alignment = 0
 
-[node name="EnvironmentTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=1980612432]
+[node name="EnvironmentTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/SidebarVStack" unique_id=1980612432]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(250.9, 51.675)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"ButtonLeftAlign"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_qui0h")
-text = "   Virtual Environment"
+text = "SETTINGS_VIRTUAL_ENVIRONMENT"
 alignment = 0
 
-[node name="ExperimentalTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=1027358327]
+[node name="ExperimentalTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/SidebarVStack" unique_id=1027358327]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(250.9, 51.675)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"ButtonLeftAlign"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_qui0h")
-text = "   Experimental Features"
+text = "SETTINGS_EXPERIMENTAL_FEATURES"
 alignment = 0
 
-[node name="DeveloperTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=649172512]
+[node name="DeveloperTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/SidebarVStack" unique_id=649172512]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(250.9, 51.675)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"ButtonLeftAlign"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_qui0h")
-text = "   Developer"
+text = "SETTINGS_DEVELOPER"
 alignment = 0
 
-[node name="AboutTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/VBoxContainer" unique_id=1723819657]
+[node name="AboutTab" type="Button" parent="HBoxContainer/Tabs/MarginContainer/SidebarVStack" unique_id=1723819657]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(250.9, 51.675)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"ButtonLeftAlign"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_qui0h")
-text = "   About"
+text = "SETTINGS_ABOUT"
 alignment = 0
 
 [node name="Content" type="PanelContainer" parent="HBoxContainer" unique_id=1575005638]
@@ -172,7 +184,7 @@ theme_override_constants/margin_bottom = 18
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="BackButton" type="Button" parent="HBoxContainer/Content/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1220236490]
+[node name="BackButton" type="Button" parent="HBoxContainer/Content/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1220236490 groups=["back_buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 42.505)
 layout_mode = 2
@@ -186,7 +198,7 @@ icon_alignment = 1
 [node name="PageHeader" type="Label" parent="HBoxContainer/Content/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=723737276]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Device"
+text = "Header"
 
 [node name="TabContainer" type="TabContainer" parent="HBoxContainer/Content/VBoxContainer" unique_id=2064186954]
 layout_mode = 2
@@ -207,17 +219,8 @@ metadata/_tab_index = 0
 [node name="DeviceScroll" type="ScrollContainer" parent="HBoxContainer/Content/VBoxContainer/TabContainer/MarginContainer" unique_id=2001295948]
 layout_mode = 2
 
-[node name="DeviceVStack" type="VBoxContainer" parent="HBoxContainer/Content/VBoxContainer/TabContainer/MarginContainer/DeviceScroll" unique_id=34228449]
+[node name="ContentVStack" type="VBoxContainer" parent="HBoxContainer/Content/VBoxContainer/TabContainer/MarginContainer/DeviceScroll" unique_id=34228449]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 43
-
-[node name="DNDOption" parent="HBoxContainer/Content/VBoxContainer/TabContainer/MarginContainer/DeviceScroll/DeviceVStack" unique_id=733437892 instance=ExtResource("6_wa5on")]
-unique_name_in_owner = true
-layout_mode = 2
-setting_id = "dndEnabled"
-header_text = ""
-subtitle_text = "Mute all notifications in VR"
-options_list = Array[String](["English (US)", "Meow", "English (UK)", "Epstein did not ", "Hi", "I'm Nothing like Yall"])
-option_type = "text"

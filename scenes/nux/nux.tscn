@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dj33bmjlrjodk" path="res://scripts/xr_origin_3d.gd" id="1_acwso"]
 [ext_resource type="Script" uid="uid://dftpu05kx3y3q" path="res://scenes/nux/nux.gd" id="1_v1xag"]
-[ext_resource type="AudioStream" uid="uid://b87g6wp6fk5tf" path="res://audio/music_first_time_nux_dark_loop.ogg" id="2_aujwi"]
+[ext_resource type="AudioStream" uid="uid://b87g6wp6fk5tf" path="res://audio/nux/music_first_time_nux_dark_loop.ogg" id="2_aujwi"]
 [ext_resource type="Script" uid="uid://c2hbdhg8arhcf" path="res://scripts/curved_viewport_2d_in_3d.gd" id="5_mlrma"]
 [ext_resource type="Script" uid="uid://c1jyucwn1mind" path="res://scenes/lock_viewport.gd" id="5_ty0uu"]
-[ext_resource type="ArrayMesh" uid="uid://cet8t4iv2bp4t" path="res://models/curved_screen.obj" id="6_ty0uu"]
+[ext_resource type="ArrayMesh" uid="uid://dw5j2sp3ahhqu" path="res://models/curved_screen.obj" id="6_ty0uu"]
 [ext_resource type="PackedScene" uid="uid://cfet20kj5jvcs" path="res://scenes/nux/NuxOtaBlock.tscn" id="8_1d4h2"]
 
 [sub_resource type="Environment" id="Environment_v1xag"]

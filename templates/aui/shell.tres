@@ -33,6 +33,39 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7o7ma"]
+content_margin_left = 10.0
+bg_color = Color(0.16078432, 0.16862746, 0.1764706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it6sc"]
+content_margin_left = 10.0
+bg_color = Color(0, 0.28627452, 0.72156864, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l23dy"]
+content_margin_left = 10.0
+bg_color = Color(0.99065965, 0.28699547, 0.6013615, 1)
+draw_center = false
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbtsb"]
+content_margin_left = 10.0
+bg_color = Color(0, 0.28627452, 0.72156864, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j38ca"]
 content_margin_left = 25.0
 content_margin_top = 10.0
@@ -153,6 +186,17 @@ content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
 bg_color = Color(0.3882353, 0.3882353, 0.3882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vt6s0"]
+content_margin_left = 25.0
+content_margin_top = 10.0
+content_margin_right = 25.0
+content_margin_bottom = 10.0
+bg_color = Color(0.26666668, 0.2784314, 0.28235295, 0.54901963)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjmu8"]
 content_margin_left = 25.0
@@ -285,6 +329,11 @@ Button/styles/hover = SubResource("StyleBoxFlat_8dxsn")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_c62ab")
 Button/styles/normal = SubResource("StyleBoxFlat_dy4es")
 Button/styles/pressed = SubResource("StyleBoxFlat_f13x7")
+ButtonLeftAlign/base_type = &"Button"
+ButtonLeftAlign/styles/hover = SubResource("StyleBoxFlat_7o7ma")
+ButtonLeftAlign/styles/hover_pressed = SubResource("StyleBoxFlat_it6sc")
+ButtonLeftAlign/styles/normal = SubResource("StyleBoxFlat_l23dy")
+ButtonLeftAlign/styles/pressed = SubResource("StyleBoxFlat_rbtsb")
 DropdownButton/base_type = &"Button"
 DropdownButton/styles/hover = SubResource("StyleBoxFlat_j38ca")
 DropdownButton/styles/hover_pressed = SubResource("StyleBoxFlat_4yvd3")
@@ -302,7 +351,9 @@ HSlider/styles/grabber_area = SubResource("StyleBoxFlat_ya1o5")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_6nspq")
 HSlider/styles/slider = SubResource("StyleBoxFlat_160no")
 MainButton/base_type = &"Button"
+MainButton/colors/font_disabled_color = Color(1, 1, 1, 0.4117647)
 MainButton/colors/font_hover_color = Color(1, 1, 1, 1)
+MainButton/styles/disabled = SubResource("StyleBoxFlat_vt6s0")
 MainButton/styles/hover = SubResource("StyleBoxFlat_vjmu8")
 MainButton/styles/hover_pressed = SubResource("StyleBoxFlat_on4t6")
 MainButton/styles/normal = SubResource("StyleBoxFlat_76e4h")

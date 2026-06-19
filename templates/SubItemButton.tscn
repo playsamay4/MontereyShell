@@ -41,8 +41,10 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1420428272]
+custom_minimum_size = Vector2(135.335, 0)
 layout_mode = 2
-size_flags_horizontal = 4
 theme_type_variation = &"SubItemLabel"
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Home"
+horizontal_alignment = 1
+autowrap_mode = 3

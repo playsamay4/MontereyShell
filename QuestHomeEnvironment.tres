@@ -1,6 +1,6 @@
 [gd_resource type="Environment" format=3 uid="uid://ba4nna6m3gvhp"]
 
-[ext_resource type="Texture2D" uid="uid://clnjgr1jinnxc" path="res://models/env2_exterior_aurora.png" id="1_p66fr"]
+[ext_resource type="Texture2D" uid="uid://clnjgr1jinnxc" path="res://models/dome/env2_exterior_aurora.png" id="1_p66fr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_m4wsi"]
 resource_local_to_scene = true

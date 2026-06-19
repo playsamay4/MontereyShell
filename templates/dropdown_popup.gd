@@ -2,7 +2,7 @@ extends Control
 
 const SHELL_THEME = preload("res://templates/aui/shell.tres")
 
-signal option_selected(index: int, text: String)
+signal option_selected(option_id: String)
 
 @onready var menu_panel: PanelContainer = $PanelContainer
 @onready var scroll_container: ScrollContainer = $PanelContainer/ScrollContainer
@@ -15,7 +15,7 @@ var dropdown_group = ButtonGroup.new()
 
 var _target_node: Control = null
 
-func setup(options: Array[String], selected_index: int, target_btn: Button) -> void:
+func setup(options: Array[String], selected_id: String, target_btn: Button) -> void:
 	
 	_target_node = target_btn
 	_target_node.visibility_changed.connect(_on_target_hidden)
@@ -26,19 +26,23 @@ func setup(options: Array[String], selected_index: int, target_btn: Button) -> v
 		child.queue_free()
 		
 		
-	for i in range(options.size()):
+	for option_id in options:
 		var btn = Button.new()
-		btn.text = options[i]
+		btn.text = tr(option_id)
+		btn.set_meta("id_key", option_id)
+		
 		btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		btn.theme = SHELL_THEME
 		btn.theme_type_variation = "DropdownButton"
 		btn.button_group = dropdown_group
 		btn.toggle_mode = true
-		if(i == selected_index):
+		
+		
+		if option_id == selected_id:
 			btn.button_pressed = true
 		
 		btn.pressed.connect(func():
-			option_selected.emit(i, options[i])
+			option_selected.emit(btn.get_meta("id_key"))
 			queue_free()
 		)
 		item_list.add_child(btn)

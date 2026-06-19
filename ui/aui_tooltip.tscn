@@ -49,8 +49,7 @@ theme_override_constants/margin_right = 5
 [node name="Label" type="Label" parent="HBoxContainer/RoomscaleTooltip/ColorRect/MarginContainer" unique_id=1091822986]
 layout_mode = 2
 theme_type_variation = &"AuiTooltip"
-text = "Create a new Guardian Boundary
-for roomscale experiences"
+text = "AUIBAR_TOOLTIP_ROOMSCALE"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/RoomscaleTooltip" unique_id=2007209293]
@@ -82,8 +81,7 @@ theme_override_constants/margin_right = 5
 [node name="Label" type="Label" parent="HBoxContainer/StationaryTooltip/VBoxContainer2/ColorRect/MarginContainer" unique_id=1997294563]
 layout_mode = 2
 theme_type_variation = &"AuiTooltip"
-text = "Create a new Guardian Boundary
-for sitting or standing experiences"
+text = "AUIBAR_TOOLTIP_STATIONARY"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/StationaryTooltip/VBoxContainer2" unique_id=1363273477]

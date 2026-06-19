@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://cbq5mdsrnxu0j" path="res://fonts/Roboto-Regular.ttf" id="3_at8j4"]
 [ext_resource type="Texture2D" uid="uid://d0e0dmaux0ykf" path="res://images/nux/img_ota_appstore_en.png" id="4_vywgu"]
 [ext_resource type="Texture2D" uid="uid://bbnv7nlsrwhep" path="res://images/nux/img_ota_googleplay_en.png" id="5_fbc3j"]
-[ext_resource type="AudioStream" uid="uid://b87g6wp6fk5tf" path="res://audio/music_first_time_nux_dark_loop.ogg" id="6_vywgu"]
+[ext_resource type="AudioStream" uid="uid://b87g6wp6fk5tf" path="res://audio/nux/music_first_time_nux_dark_loop.ogg" id="6_vywgu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_goqdy"]
 bg_color = Color(0.14509805, 0.15294118, 0.16078432, 1)
