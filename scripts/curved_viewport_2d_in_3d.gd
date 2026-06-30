@@ -100,7 +100,7 @@ const DEFAULT_LAYER := 0b0000_0000_0101_0000_0000_0000_0000_0001
 var transparent : TransparancyMode = TransparancyMode.TRANSPARENT: set = set_transparent
 
 ## Alpha Scissor Threshold property (ignored when custom material provided)
-var alpha_scissor_threshold : float = 0.25: set = set_alpha_scissor_threshold
+@export var alpha_scissor_threshold : float = 0.25: set = set_alpha_scissor_threshold
 
 ## Unshaded flag (ignored when custom material provided)
 var unshaded : bool = false: set = set_unshaded

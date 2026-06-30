@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://i10gpm1k6t6"]
+
+[ext_resource type="FontFile" uid="uid://cbq5mdsrnxu0j" path="res://fonts/Roboto-Regular.ttf" id="1_ir50i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwage"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.10980392, 0.10980392, 0.10980392, 1)
+border_color = Color(0.37254903, 0.37254903, 0.37254903, 1)
+
+[node name="Label" type="Label" unique_id=1947165320]
+theme_override_colors/font_color = Color(0.89492244, 0.89492244, 0.8949224, 1)
+theme_override_fonts/font = ExtResource("1_ir50i")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_kwage")
+text = "CONTROL"

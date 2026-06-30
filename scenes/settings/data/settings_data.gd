@@ -8,14 +8,14 @@ static var PAGES = {
 		{"name": "SETTINGS_STORAGE", "pageID": ""},
 		{"name": "SETTINGS_APPLICATIONS", "pageID": ""},
 		{"name": "SETTINGS_VIRTUAL_ENVIRONMENT", "pageID": ""},
-		{"name": "SETTINGS_EXPERIMENTAL_FEATURES", "pageID": ""},
+		{"name": "SETTINGS_EXPERIMENTAL_FEATURES", "pageID": "experimental_main"},
 		{"name": "SETTINGS_DEVELOPER", "pageID": "developer_main"},
 		{"name": "SETTINGS_ABOUT", "pageID": "about_main"},
 	],
 		
 	
 	"device_main": {
-		"title": "Device",
+		"title": "SETTINGS_DEVICE",
 		"options": [
 			{"id": "dndEnabled", "type": "toggle", "header": "SETTINGS_DND", "subtitle": "SETTINGS_DND_SUBTITLE", "icon": "res://images/oc_icon_disturb_on_2_24_ffffff.png"},
 			{"id": "microphoneEnabled", "type": "toggle", "header": "SETTINGS_MICROPHONE",  "icon": "res://images/oc_icon_microphone_on_filled_24_d2d2d2.png"},
@@ -48,6 +48,14 @@ static var PAGES = {
 
 		]
 	},
+	
+	"experimental_main": {
+			"title": "SETTINGS_EXPERIMENTAL_FEATURES",
+			"options":
+				[
+					{"id": "experimentUseBootSequence", "type": "toggle", "header": "Power On Sequence", "subtitle": "Simulates the Quest's power on sequence upon launch"}
+				]
+		},
 	
 	"about_main": {
 		"title": "SETTINGS_ABOUT",

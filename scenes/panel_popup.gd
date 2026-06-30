@@ -42,3 +42,9 @@ func _on_button_pressed(reason: String) -> void:
 			if _on_cancel_callback.is_valid(): _on_cancel_callback.call()
 			
 	SignalBus.popup_finish_requested.emit(reason)
+
+func fade_in(duration: float):
+	var tween = create_tween()
+	
+	%PanelContainer.modulate.a = 0
+	tween.tween_property(%PanelContainer, "modulate:a", 1, duration)

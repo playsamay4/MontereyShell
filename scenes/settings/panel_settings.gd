@@ -48,7 +48,7 @@ func _ready() -> void:
 func load_page(page_id: String, is_back: bool = false) -> void:
 	
 	
-	print("Settings loaded ", page_id)
+	SystemLog.log("Settings loaded ", page_id)
 	
 	if(page_id == ""):
 		return
@@ -98,7 +98,7 @@ func load_page(page_id: String, is_back: bool = false) -> void:
 			var selected = SettingsManager.get_value("settings", option_data["id"])
 			if selected == null:
 				selected = "" 
-				print("A null value was loaded for option ", option_data["id"])
+				SystemLog.log("A null value was loaded for option ", option_data["id"])
 			
 			if(option_data["id"] == "languageDropdown"):
 				data = SettingsManager.LOCALES.duplicate()
@@ -201,7 +201,7 @@ func _ask_for_restart() -> bool:
 
 
 func _on_setting_toggled(id: String, is_on: bool) -> void:
-	print("Setting toggled: ", id, " to ", is_on)
+	SystemLog.log("Setting toggled: ", id, " to ", is_on)
 	
 	
 	match id:
@@ -215,13 +215,13 @@ func _on_setting_toggled(id: String, is_on: bool) -> void:
 			if restart:
 				SettingsManager.set_value("settings",id, true)
 				
-				print("restart")
+				SystemLog.log("restart")
 			else:
 				flip_toggle_back(id)
 		
 		_:
 			if !SettingsManager.set_value("settings",id, is_on):
-				print("Couldn't find setting ", id, "!")
+				SystemLog.log("Couldn't find setting ", id, "!")
 				if OS.is_debug_build():
 					SignalBus.popup_open_requested.emit({
 						"title": "Missing key?",
@@ -244,7 +244,7 @@ func set_dropdown(id: String, value: String):
 			child.selected_id = value
 
 func _on_setting_dropdown_changed(id: String, value: String):
-	print("Dropdown ", id, " changed to ", value)
+	SystemLog.log("Dropdown ", id, " changed to ", value)
 	
 	match id:
 		"languageDropdown":
@@ -256,13 +256,13 @@ func _on_setting_dropdown_changed(id: String, value: String):
 			var restart = await _ask_for_restart()
 			if restart:
 				SettingsManager.set_value("settings", "locale", value)
-				print("Restart")
+				SystemLog.log("Restart")
 			else:
 				set_dropdown(id, currentLocale)
 				pass
 		_:
 			if !SettingsManager.set_value("settings",id, value):
-				print("Couldn't find setting ", id, "!")
+				SystemLog.log("Couldn't find setting ", id, "!")
 				if OS.is_debug_build():
 					SignalBus.popup_open_requested.emit({
 						"title": "Missing key?",

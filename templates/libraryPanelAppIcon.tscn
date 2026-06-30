@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://dfeynhjj42gnp"]
+
+[ext_resource type="Script" uid="uid://dm3wdl2dxg2w" path="res://templates/library_panel_app_icon.gd" id="1_537i8"]
+[ext_resource type="Shader" uid="uid://d1cewcpv3e7fa" path="res://shaders/RoundShader.gdshader" id="2_537i8"]
+[ext_resource type="Texture2D" uid="uid://b4wfmsraeu8p8" path="res://images/252729.png" id="3_537i8"]
+[ext_resource type="Texture2D" uid="uid://b6el6wqv4c2sv" path="res://images/oc_icon_more_vertical_filled_24_dadada.png" id="5_537i8"]
+[ext_resource type="FontFile" uid="uid://cbq5mdsrnxu0j" path="res://fonts/Roboto-Regular.ttf" id="5_3814n"]
+[ext_resource type="Texture2D" uid="uid://dtv624m7d7iki" path="res://images/oc_icon_play_circle_filled_2_48_d2d3d4.png" id="6_57f4o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_umgmk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umgmk"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.25882354, 0.5254902, 1, 0)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jjgmn"]
+shader = ExtResource("2_537i8")
+shader_parameter/corner_radius = 0.10000000475
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxpp2"]
+bg_color = Color(0, 0, 0, 0.84705883)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7ors"]
+bg_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmfff"]
+content_margin_left = 10.0
+content_margin_top = 12.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_537i8"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbqrc"]
+draw_center = false
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2vpg"]
+bg_color = Color(1, 1, 1, 0.4627451)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mw7ap"]
+bg_color = Color(1, 1, 1, 0.33333334)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="HomePanelAppIconSmall" type="PanelContainer" unique_id=1401116223]
+custom_minimum_size = Vector2(220, 220)
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_umgmk")
+script = ExtResource("1_537i8")
+
+[node name="MainIconButton" type="Button" parent="." unique_id=1396798807]
+unique_name_in_owner = true
+layout_mode = 2
+flat = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1259294970]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="BorderPanel" type="PanelContainer" parent="MarginContainer" unique_id=740988379]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_umgmk")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BorderPanel" unique_id=628798172]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="IconSquare" type="TextureRect" parent="MarginContainer/BorderPanel/MarginContainer" unique_id=359163659]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_jjgmn")
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("3_537i8")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="VeilOverlay" type="PanelContainer" parent="MarginContainer/BorderPanel/MarginContainer/IconSquare" unique_id=2102998710]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nxpp2")
+
+[node name="GrayOverlay" type="PanelContainer" parent="MarginContainer/BorderPanel/MarginContainer/IconSquare/VeilOverlay" unique_id=1285258367]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 10
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v7ors")
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/BorderPanel/MarginContainer/IconSquare/VeilOverlay/GrayOverlay" unique_id=547509874]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(147.8, 39.745)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_3814n")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pmfff")
+text = "SUPERHOT VR"
+autowrap_mode = 1
+text_overrun_behavior = 3
+
+[node name="DateLabel" type="Label" parent="MarginContainer/BorderPanel/MarginContainer/IconSquare/VeilOverlay/GrayOverlay" unique_id=2014445856]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(147.8, 39.745)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.50140655, 0.5014065, 0.5014065, 1)
+theme_override_fonts/font = ExtResource("5_3814n")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_537i8")
+text = "Dec 31, 1969"
+autowrap_mode = 2
+text_overrun_behavior = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BorderPanel/MarginContainer/IconSquare/VeilOverlay/GrayOverlay" unique_id=598695]
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+theme_override_constants/margin_right = 10
+
+[node name="Button" type="Button" parent="MarginContainer/BorderPanel/MarginContainer/IconSquare/VeilOverlay/GrayOverlay/MarginContainer" unique_id=1400170697]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_pbqrc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u2vpg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mw7ap")
+icon = ExtResource("5_537i8")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BorderPanel/MarginContainer/IconSquare/VeilOverlay" unique_id=1752306994]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/BorderPanel/MarginContainer/IconSquare/VeilOverlay/MarginContainer" unique_id=1438491180]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/BorderPanel/MarginContainer/IconSquare/VeilOverlay/MarginContainer/VBoxContainer" unique_id=392174492]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+texture = ExtResource("6_57f4o")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MarginContainer/BorderPanel/MarginContainer/IconSquare/VeilOverlay/MarginContainer/VBoxContainer" unique_id=69225945]
+custom_minimum_size = Vector2(165.63, 22)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("5_3814n")
+theme_override_font_sizes/font_size = 15
+text = "Open"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 3

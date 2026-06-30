@@ -60,7 +60,7 @@ func _get_available_languages() -> Array:
 	var langs = []
 	for t in translations:
 		var lang = _extract_lang_code(str(t))
-		print("File: %s, Extracted lang: %s" % [t, lang])
+		SystemLog.log("File: %s, Extracted lang: %s" % [t, lang])
 		if lang != "" and not langs.has(lang) and ALLOWED_LANGUAGES.has(lang):
 			langs.append(lang)
 	return langs

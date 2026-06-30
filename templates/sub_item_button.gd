@@ -25,7 +25,7 @@ signal action_triggered(type: String)
 
 func _ready() -> void:
 	pressed.connect(func(): 
-		print("BUTTON CLICKED Sending action_type: ", action_type)
+		SystemLog.log("BUTTON CLICKED Sending action_type: ", action_type)
 		action_triggered.emit(action_type)
 	)	
 	_update_ui()

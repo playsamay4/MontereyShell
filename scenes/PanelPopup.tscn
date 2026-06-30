@@ -68,6 +68,7 @@ theme = ExtResource("1_qxkkx")
 script = ExtResource("2_ht1if")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1039513614]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 1
 anchors_preset = 8

@@ -38,6 +38,12 @@ const DEFAULT_MASK := 0b0000_0000_0101_0000_0000_0000_0000_0000
 ## Default pointer collision mask of 23:ui-objects
 const SUPPRESS_MASK := 0b0000_0000_0100_0000_0000_0000_0000_0000
 
+# Tracking scroll timing
+var _time_since_last_scroll : float = 0.0
+
+# Tracking pointer positions for drag-scrolling velocity
+var _last_viewport_mouse_pos : Vector2 = Vector2.ZERO
+
 
 @export_group("General")
 
@@ -96,6 +102,15 @@ const SUPPRESS_MASK := 0b0000_0000_0100_0000_0000_0000_0000_0000
 
 ## Suppress mask
 @export_flags_3d_physics var suppress_mask : int = SUPPRESS_MASK: set = set_suppress_mask
+
+
+@export_group("Scrolling")
+## Enable thumbstick scrolling
+@export var scroll_enabled : bool = true
+## Deadzone threshold for the thumbstick (0.0 to 1.0)
+@export var scroll_deadzone : float = 0.15
+## Adjusts the scroll velocity (higher numbers scroll faster)
+@export var smooth_scroll_speed : float = 600.0
 
 
 ## Current target node
@@ -223,6 +238,7 @@ func _process(delta):
 	if (_world_scale != new_world_scale):
 		_world_scale = new_world_scale
 		_update_y_offset()
+		
 
 	# Find the new pointer target
 	var new_target : Node3D
@@ -239,6 +255,10 @@ func _process(delta):
 		else:
 			# Target is whatever the raycast is colliding with
 			new_target = $RayCast.get_collider()
+	
+	if scroll_enabled and _active_controller and new_target and target == null:
+		_handle_thumbstick_scrolling(delta, new_target)
+
 
 	# If no current or previous collisions then skip
 	if not new_target and not last_target:
@@ -246,42 +266,33 @@ func _process(delta):
 
 	# Handle pointer changes
 	if new_target and not last_target:
-		# Pointer entered new_target
 		XRToolsPointerEvent.entered(self, new_target, new_at)
-
-		# Pointer moved on new_target for the first time
 		XRToolsPointerEvent.moved(self, new_target, new_at, new_at)
-
-		# Update visible artifacts for hit
 		_visible_hit(new_at, $RayCast.get_collision_normal())
+
 	elif not new_target and last_target:
-		# Pointer exited last_target
 		XRToolsPointerEvent.exited(self, last_target, last_collided_at)
-
-		# Update visible artifacts for miss
 		_visible_miss()
+
 	elif new_target != last_target:
-		# Pointer exited last_target
 		XRToolsPointerEvent.exited(self, last_target, last_collided_at)
-
-		# Pointer entered new_target
 		XRToolsPointerEvent.entered(self, new_target, new_at)
-
-		# Pointer moved on new_target
 		XRToolsPointerEvent.moved(self, new_target, new_at, new_at)
-
-		# Move visible artifacts
 		_visible_move(new_at)
-	elif new_at != last_collided_at:
-		# Pointer moved on new_target
-		XRToolsPointerEvent.moved(self, new_target, new_at, last_collided_at)
 
-		# Move visible artifacts
-		_visible_move(new_at)
+	else:
+		# Always fire moved while pointing at something — covers both
+		# position changes AND stationary held-trigger drags (target != null)
+		if new_at != last_collided_at:
+			XRToolsPointerEvent.moved(self, new_target, new_at, last_collided_at)
+			_visible_move(new_at)
+	
+	
 
 	# Update last values
 	last_target = new_target
 	last_collided_at = new_at
+	
 
 
 # Set pointer enabled property
@@ -454,13 +465,16 @@ func _button_pressed() -> void:
 		XRToolsPointerEvent.pressed(self, target, last_collided_at)
 
 
+
 # Pointer-activation button released handler
 func _button_released() -> void:
 	if target:
 		# Report release
-		XRToolsPointerEvent.released(self, target, last_collided_at)
-		target = null
-		last_collided_at = Vector3(0, 0, 0)
+		XRToolsPointerEvent.released(self, target, last_collided_at) 
+		target = null 
+		last_collided_at = Vector3(0, 0, 0) 
+
+		
 
 
 # Button pressed handler
@@ -552,3 +566,57 @@ func _visible_miss() -> void:
 	# Restore laser length if set to collide-length
 	$Laser.mesh.size.z = distance
 	$Laser.position.z = distance * -0.5
+
+
+		
+func _handle_thumbstick_scrolling(delta: float, target_node: Node3D) -> void:
+	# Extract the thumbstick vector from your custom OpenXR action map
+	var stick_vector : Vector2 = _active_controller.get_vector2("primary")
+	var stick_y : float = stick_vector.y
+
+	# Discard inputs falling inside the deadzone
+	if abs(stick_y) < scroll_deadzone:
+		return
+		
+	# Locate the target SubViewport node
+	var viewport_node : SubViewport = target_node.get_node_or_null("Viewport")
+	if not viewport_node and target_node.get_parent():
+		viewport_node = target_node.get_parent().get_node_or_null("Viewport")
+
+	if not viewport_node:
+		return
+
+	# 1. Grab the current 2D coordinate from your VR pointer
+	var mouse_pos := viewport_node.get_mouse_position()
+	
+	# 2. Simulate a silent mouse movement event at this exact coordinate.
+	# This forces Godot's internal GUI picking engine to update its hover state.
+	var motion_event := InputEventMouseMotion.new()
+	motion_event.position = mouse_pos
+	motion_event.global_position = mouse_pos
+	viewport_node.push_input(motion_event)
+	
+	# 3. Retrieve the hovered control using Godot's built-in GUI engine
+	var hovered_control := viewport_node.gui_get_hovered_control()
+	
+	if not hovered_control:
+		# FALLBACK: If nothing is directly hovered (e.g. empty margin space),
+		# grab the control that currently has input focus.
+		hovered_control = viewport_node.gui_get_focus_owner()
+
+	if hovered_control:
+		# 4. Scan upwards through the parents to find your ScrollContainer
+		var scroll_container := _find_parent_scroll_container(hovered_control)
+		
+		if scroll_container and scroll_container.is_visible_in_tree():
+			# Calculate smooth movement bound to the frame rate (delta)
+			var scroll_amount := -stick_y * smooth_scroll_speed * delta
+			scroll_container.scroll_vertical += int(scroll_amount)
+			
+# Standard ancestor line walker
+func _find_parent_scroll_container(node: Node) -> ScrollContainer:
+	if not node or node is SubViewport:
+		return null
+	if node is ScrollContainer:
+		return node
+	return _find_parent_scroll_container(node.get_parent())

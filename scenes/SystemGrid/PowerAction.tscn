@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://cif48275f5mon"]
+
+[ext_resource type="Theme" uid="uid://bv103o0x0oqc5" path="res://templates/aui/shell.tres" id="1_2idsr"]
+[ext_resource type="Texture2D" uid="uid://bydf8k33gepc8" path="res://images/oc_icon_oculus_filled_48_dadada@3x.png" id="2_4crgj"]
+[ext_resource type="FontFile" uid="uid://beelqblky8eop" path="res://fonts/Roboto-Bold.ttf" id="5_kgt8v"]
+[ext_resource type="FontFile" uid="uid://cbq5mdsrnxu0j" path="res://fonts/Roboto-Regular.ttf" id="6_p1ipj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_goqdy"]
+bg_color = Color(0.06666667, 0.06666667, 0.06666667, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Animation" id="Animation_kdwqo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dialog/TextureRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2idsr"]
+resource_name = "loop"
+length = 3.0000000000000004
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dialog/TextureRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o5mrk"]
+_data = {
+&"RESET": SubResource("Animation_kdwqo"),
+&"loop": SubResource("Animation_2idsr")
+}
+
+[node name="Control" type="Control" unique_id=1520823292]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_2idsr")
+
+[node name="Dialog" type="PanelContainer" parent="." unique_id=1039513614]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.095
+offset_top = -180.01
+offset_right = 218.095
+offset_bottom = 81.06999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_goqdy")
+
+[node name="TextureRect2" type="TextureRect" parent="Dialog" unique_id=1144127241]
+custom_maximum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 10)
+texture = ExtResource("2_4crgj")
+stretch_mode = 4
+
+[node name="MarginContainer2" type="MarginContainer" parent="Dialog" unique_id=885658336]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 49
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Dialog/MarginContainer2" unique_id=380149449]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_constants/separation = 26
+
+[node name="Title" type="Label" parent="Dialog/MarginContainer2/VBoxContainer2" unique_id=1237868522]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+theme_type_variation = &"PanelHeader"
+theme_override_fonts/font = ExtResource("5_kgt8v")
+theme_override_font_sizes/font_size = 43
+text = "POWER_OFF"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Dialog/MarginContainer2/VBoxContainer2" unique_id=864043303]
+layout_mode = 2
+size_flags_vertical = 6
+theme_type_variation = &"PanelHeader"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_p1ipj")
+theme_override_font_sizes/font_size = 21
+text = "POWER_SHUTTING_DOWN"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1529054985]
+libraries/ = SubResource("AnimationLibrary_o5mrk")
+autoplay = &"loop"

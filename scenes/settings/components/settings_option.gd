@@ -186,5 +186,5 @@ func _on_dropdown_btn_pressed() -> void:
 func _on_item_chosen(id: String) -> void:
 	selected_id = id
 	setting_dropdown_changed.emit(setting_id, selected_id)
-	print("User changed setting to: ", selected_id)
+	SystemLog.log("User changed setting to: ", selected_id)
 	

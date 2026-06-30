@@ -13,6 +13,19 @@ var aui_fade_tween: Tween
 
 var in_ar = false
 
+var nux_steps: Array[String] = [
+	"res://scenes/nux/full_vr/fit_and_focus_fit.tscn",
+	"res://scenes/nux/full_vr/fit_and_focus_clarity.tscn",
+	"res://scenes/nux/full_vr/fit_and_focus_focus.tscn",
+	"res://scenes/nux/full_vr/HealthAndSafety.tscn",
+	"res://scenes/nux/full_vr/create_guardian_boundary.tscn",
+	"res://scenes/nux/full_vr/show_universal_menu.tscn",
+]
+var nux_current_step_index: int = 0
+var nux_current_instance: Node = null
+var nux_universal_menu_callable: Callable
+
+
 #@export var scene_light: float = 1.0:
 	#set(value):
 		#scene_light = value
@@ -40,16 +53,140 @@ func _ready() -> void:
 	
 	await SignalBus.fade_in_scene_finished
 	
+	if SettingsManager.get_value("settings", "nuxType") == "full_vr" && SettingsManager.get_value("settings", "nuxStatus") != SettingsManager.NUX_STATUS.NUX_COMPLETE:
+		UiAudioManager.play_chime("res://audio/update_complete.ogg")
+		await get_tree().create_timer(1.5).timeout
+
+		UiAudioManager.play_chime("res://audio/nux/music_first_time_nux_home_intro.ogg", 2)
+		SignalBus.popup_open_requested.emit({
+				"title": tr("NUX_UPDATE_COMPLETE_TITLE"),
+				"text": tr("NUX_UPDATE_COMPLETE_BODY"),
+				"action_text": "",
+				"primary_text": tr("NUX_CONTINUE"),
+				"cancel_text": "",
+				})
+		popupPanel.get_scene_instance().fade_in(1)
+		SignalBus.popup_finish_requested.connect(_start_nux_sequence.unbind(1), CONNECT_ONE_SHOT)
+		await get_tree().create_timer(10).timeout
+		UiAudioManager.fade_env_audio(-80,0, 1)
+		UiAudioManager.play_env_audio("res://audio/nux/music_first_time_nux_home_loop.ogg")
+		return
+		
+	init_aui()
+
+func init_aui():
+
 	await fade_aui_bar(true, 0.4)
-	curved_panel_go_to_scene("res://scenes/Panel_Home.tscn")
+	UiAudioManager.play_env_audio("res://audio/system_environment_ambix.ogg")
+	#curved_panel_go_to_scene("res://scenes/Panel_Home.tscn")
+
+func _start_nux_sequence() -> void:
+	SignalBus.tween_scene_light.emit(0.95, 2)
+	nux_current_step_index = 0
+	_load_current_step()
+
+
+func _load_current_step() -> void:
+	if is_instance_valid(nux_current_instance):
+		nux_current_instance.queue_free()
+		nux_current_instance = null
+
+	if nux_current_step_index < 0:
+		nux_current_step_index = 0
+		return
+	if nux_current_step_index >= nux_steps.size():
+		_on_nux_sequence_complete()
+		return
+
+	var scene_path = nux_steps[nux_current_step_index]
+	
+	#Pre initialization setup
+	if scene_path == "res://scenes/nux/full_vr/HealthAndSafety.tscn":
+		await UiAudioManager.fade_env_audio(0, -80, 1)
+
+	nux_current_instance = await curved_panel_go_to_scene(scene_path)
+	
 
 	
-	
+	#Post initialization setup
+	if scene_path == "res://scenes/nux/full_vr/HealthAndSafety.tscn":
+		nux_current_instance.skip_enabled = true
+		nux_current_instance.video_finished.connect(
+			func(): UiAudioManager.fade_env_audio(-80, 0, 4), 
+			CONNECT_ONE_SHOT
+		)
+	elif scene_path == "res://scenes/nux/full_vr/show_universal_menu.tscn":
+		nux_universal_menu_callable = func(hand: String, action: String):
+			if hand == "right" && action == "primary_click":
+				SignalBus.controller_button_released.disconnect(nux_universal_menu_callable)
+				curved_panel_go_to_scene("res://scenes/blank.tscn")
+				UiAudioManager.play_chime("res://audio/nux/music_first_time_nux_home_outro.ogg")
+				UiAudioManager.stop_env_audio()
+				
+				SignalBus.tween_scene_light.emit(5, 2)
+				await SignalBus.tween_scene_light_finished
+
+				init_aui()
+				SettingsManager.set_value("settings","nuxStatus", SettingsManager.NUX_STATUS.NUX_COMPLETE)
+		SignalBus.controller_button_released.connect(nux_universal_menu_callable)
+		
+
+	if nux_current_instance.has_signal("continue_button_pressed"):
+		nux_current_instance.continue_button_pressed.connect(_on_next_step)
+		
+	if nux_current_instance.has_signal("back_button_pressed"):
+		nux_current_instance.back_button_pressed.connect(_on_previous_step)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_next_step() -> void:
+	var scene_path = nux_steps[nux_current_step_index]
+	if scene_path == "res://scenes/nux/full_vr/fit_and_focus_clarity.tscn":
+		await curved_panel_go_to_scene("res://scenes/blank.tscn")
+		SignalBus.tween_scene_light.emit(0,0.5)
+		await SignalBus.tween_scene_light_finished
+		
+		SignalBus.controller_hide_lasers.emit()
+		SignalBus.controller_hide_model.emit()
+		SignalBus.controller_hide_reticles.emit()
+		SignalBus.nux_show_fixed_display.emit("res://scenes/nux/clarity.tscn")
+		await SignalBus.controller_trigger_pressed
+		
+		SignalBus.nux_hide_fixed_display.emit()
+		SignalBus.controller_show_lasers.emit()
+		SignalBus.controller_show_model.emit()
+		SignalBus.controller_show_reticles.emit()
+		SignalBus.tween_scene_light.emit(0.95,0.5)
+		await SignalBus.tween_scene_light_finished
+	elif scene_path == "res://scenes/nux/full_vr/fit_and_focus_focus.tscn":
+		await curved_panel_go_to_scene("res://scenes/blank.tscn")
+		SignalBus.tween_scene_light.emit(0,0.5)
+		await SignalBus.tween_scene_light_finished
+		
+		SignalBus.controller_hide_lasers.emit()
+		SignalBus.controller_hide_model.emit()
+		SignalBus.controller_hide_reticles.emit()
+		SignalBus.nux_show_fixed_display.emit("res://scenes/nux/ipd.tscn")
+		await SignalBus.controller_trigger_pressed
+		
+		SignalBus.nux_hide_fixed_display.emit()
+		SignalBus.controller_show_lasers.emit()
+		SignalBus.controller_show_model.emit()
+		SignalBus.controller_show_reticles.emit()
+		SignalBus.tween_scene_light.emit(0.95,0.5)
+		await SignalBus.tween_scene_light_finished
+		
+	nux_current_step_index += 1
+	_load_current_step()
+
+
+func _on_previous_step() -> void:
+	nux_current_step_index -= 1
+	_load_current_step()
+
+
+func _on_nux_sequence_complete() -> void:
+	print("NUX Sequence finished successfully!")
+
 
 
 func open_popup(config: Dictionary):
@@ -123,14 +260,10 @@ func curved_panel_go_to_scene(scene: String):
 	
 	var new_scene_resource = load(scene)
 	if new_scene_resource:
-		if mainPanel.has_method("set_scene_instance"):
-			mainPanel.set_scene_instance(null)
-		elif "scene_instance" in mainPanel:
-			if is_instance_valid(mainPanel.scene_instance):
-				mainPanel.scene_instance.queue_free()
-			mainPanel.scene_instance = null
 
 		mainPanel.set_scene(new_scene_resource)
+		await get_tree().process_frame
+		return mainPanel.get_scene_instance()
 		
 
 

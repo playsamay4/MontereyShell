@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://g51cagob7vcw"]
+
+[ext_resource type="Theme" uid="uid://bv103o0x0oqc5" path="res://templates/aui/shell.tres" id="1_4wfp7"]
+[ext_resource type="Texture2D" uid="uid://gsnlnf5okdwl" path="res://images/circle.png" id="2_08y83"]
+[ext_resource type="Script" uid="uid://d0jjn1k8h311w" path="res://scenes/nux/nux_updating_popup.gd" id="2_jhh7y"]
+[ext_resource type="FontFile" uid="uid://cbq5mdsrnxu0j" path="res://fonts/Roboto-Regular.ttf" id="4_xgxnv"]
+[ext_resource type="Texture2D" uid="uid://c21fnk2gqrmfd" path="res://images/ic_system_dialog_pair_headset_icon.png" id="7_yio3e"]
+[ext_resource type="FontFile" uid="uid://beelqblky8eop" path="res://fonts/Roboto-Bold.ttf" id="8_jqx6f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_goqdy"]
+bg_color = Color(0.06666667, 0.06666667, 0.06666667, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhh7y"]
+bg_color = Color(0.9372549, 0.93333334, 0.93333334, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08y83"]
+bg_color = Color(0, 0.47843137, 0.99607843, 1)
+
+[sub_resource type="Animation" id="Animation_vywgu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fbc3j"]
+resource_name = "new_animation"
+length = 9.966666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iu18j"]
+_data = {
+&"RESET": SubResource("Animation_vywgu"),
+&"new_animation": SubResource("Animation_fbc3j")
+}
+
+[node name="Control" type="Control" unique_id=1520823292]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.1375
+offset_top = -150.0
+offset_right = 299.1375
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_4wfp7")
+script = ExtResource("2_jhh7y")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1039513614]
+custom_minimum_size = Vector2(611.365, 396.075)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.39496
+offset_top = -200.0
+offset_right = 360.39496
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_goqdy")
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer" unique_id=1144127241]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -55.745)
+offset_transform_scale = Vector2(0.755, 0.755)
+texture = ExtResource("2_08y83")
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/TextureRect2" unique_id=644803023]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 27.685
+offset_right = 65.00001
+offset_bottom = 63.684998
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_yio3e")
+stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=2009057257]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/HBoxContainer" unique_id=885658336]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 78
+theme_override_constants/margin_right = 23
+theme_override_constants/margin_bottom = 45
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer2" unique_id=1377974782]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=380149449]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_constants/separation = 26
+
+[node name="UpdatingTitle" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer" unique_id=1237868522]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+theme_type_variation = &"PanelHeader"
+theme_override_fonts/font = ExtResource("8_jqx6f")
+theme_override_font_sizes/font_size = 37
+text = "NUX_OTA_BLOCK_2_DIALOG_TITLE_UPDATED"
+horizontal_alignment = 1
+
+[node name="SiteText" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer" unique_id=864043303]
+custom_minimum_size = Vector2(484.13, 0)
+layout_mode = 2
+size_flags_vertical = 6
+theme_type_variation = &"PanelHeader"
+theme_override_fonts/font = ExtResource("4_xgxnv")
+theme_override_font_sizes/font_size = 21
+text = "NUX_OTA_BLOCK_2_DIALOG_DESC"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=823956037]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer2" unique_id=811591519]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 9.05)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_jhh7y")
+theme_override_styles/fill = SubResource("StyleBoxFlat_08y83")
+show_percentage = false
+
+[node name="DownloadingSubtitle" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer2" unique_id=554537030]
+custom_minimum_size = Vector2(484.13, 0)
+layout_mode = 2
+size_flags_vertical = 6
+theme_type_variation = &"PanelHeader"
+theme_override_fonts/font = ExtResource("4_xgxnv")
+theme_override_font_sizes/font_size = 21
+text = "NUX_OTA_BLOCK_2_DIALOG_PROGRESS_DOWNLOADING"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1174504734]
+libraries/ = SubResource("AnimationLibrary_iu18j")
+autoplay = &"new_animation"

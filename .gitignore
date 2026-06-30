@@ -29,6 +29,8 @@ android/build/src/
 # Ensure your actual custom plugins are NOT ignored
 !android/plugins/
 
+.build_counter.txt
+
 # ==========================================
 # Editor, OS, and Temporary files
 # ==========================================

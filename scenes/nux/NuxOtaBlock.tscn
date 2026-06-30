@@ -2,10 +2,12 @@
 
 [ext_resource type="Theme" uid="uid://bv103o0x0oqc5" path="res://templates/aui/shell.tres" id="1_goqdy"]
 [ext_resource type="Texture2D" uid="uid://dujuj11bom0lf" path="res://images/nux/img_ota_blocking_phone_screenshot.png" id="2_acj8h"]
+[ext_resource type="Script" uid="uid://cqjaej56vutcc" path="res://scenes/nux/nux_ota_block.gd" id="2_whx26"]
 [ext_resource type="FontFile" uid="uid://cbq5mdsrnxu0j" path="res://fonts/Roboto-Regular.ttf" id="3_at8j4"]
 [ext_resource type="Texture2D" uid="uid://d0e0dmaux0ykf" path="res://images/nux/img_ota_appstore_en.png" id="4_vywgu"]
 [ext_resource type="Texture2D" uid="uid://bbnv7nlsrwhep" path="res://images/nux/img_ota_googleplay_en.png" id="5_fbc3j"]
-[ext_resource type="AudioStream" uid="uid://b87g6wp6fk5tf" path="res://audio/nux/music_first_time_nux_dark_loop.ogg" id="6_vywgu"]
+[ext_resource type="Texture2D" uid="uid://c21fnk2gqrmfd" path="res://images/ic_system_dialog_pair_headset_icon.png" id="6_ywunw"]
+[ext_resource type="FontFile" uid="uid://beelqblky8eop" path="res://fonts/Roboto-Bold.ttf" id="7_whx26"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_goqdy"]
 bg_color = Color(0.14509805, 0.15294118, 0.16078432, 1)
@@ -67,6 +69,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_goqdy")
+script = ExtResource("2_whx26")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1039513614]
 custom_minimum_size = Vector2(1100, 482.515)
@@ -101,48 +104,83 @@ texture = ExtResource("2_acj8h")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=1377974782]
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/HBoxContainer" unique_id=885658336]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_override_constants/separation = 19
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 23
+theme_override_constants/margin_bottom = 45
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=1444349335]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer2" unique_id=1377974782]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = -48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=380149449]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 10
+
+[node name="AnimContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer" unique_id=2068774919]
+unique_name_in_owner = true
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 1.605)
+theme_override_constants/separation = 7
+
+[node name="DownloadCTA" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/AnimContainer" unique_id=1237868522]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-
-[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=1237868522]
-layout_mode = 2
-size_flags_horizontal = 4
+size_flags_vertical = 6
 theme_type_variation = &"PanelHeader"
 theme_override_fonts/font = ExtResource("3_at8j4")
-text = "Download the Oculus App"
+text = "NUX_OTA_BLOCK_QUEST_TITLE_EN"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=1967052715]
+[node name="StoreIcons" type="HBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/AnimContainer" unique_id=1967052715]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
 theme_override_constants/separation = 33
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2039404808]
+[node name="AppStoreIcon" type="TextureRect" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/AnimContainer/StoreIcons" unique_id=2039404808]
+unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("4_vywgu")
 
-[node name="TextureRect2" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1612836370]
+[node name="PlayStoreIcon" type="TextureRect" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer/AnimContainer/StoreIcons" unique_id=1612836370]
+unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("5_fbc3j")
 
-[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=864043303]
+[node name="SiteText" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/VBoxContainer" unique_id=864043303]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 6
 theme_type_variation = &"PanelHeader"
 theme_override_fonts/font = ExtResource("3_at8j4")
 theme_override_font_sizes/font_size = 21
-text = "www.oculus.com/app"
+text = "NUX_OTA_BLOCK_URL"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1763719107]
-stream = ExtResource("6_vywgu")
-autoplay = true
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=935170517]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 15
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2" unique_id=1144127241]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_ywunw")
+stretch_mode = 4
+
+[node name="PairingCode" type="Label" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2" unique_id=1781326190]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_whx26")
+theme_override_font_sizes/font_size = 34
+text = "97538"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1174504734]
 libraries/ = SubResource("AnimationLibrary_iu18j")

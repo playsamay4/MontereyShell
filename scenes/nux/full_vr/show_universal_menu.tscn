@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://bgm3u3a082amm"]
+
+[ext_resource type="Theme" uid="uid://bv103o0x0oqc5" path="res://templates/aui/shell.tres" id="1_q45h7"]
+[ext_resource type="Script" uid="uid://cia11tm2g42bl" path="res://scenes/nux/full_vr/show_universal_menu.gd" id="2_hexdp"]
+[ext_resource type="Texture2D" uid="uid://bt7r4fqo5r25f" path="res://images/hs_temp.png" id="3_epdjt"]
+[ext_resource type="Script" uid="uid://bl1207xbrhcq8" path="res://scripts/VideoRect.gd" id="4_oo8kq"]
+[ext_resource type="VideoStream" uid="uid://3eif8o6fhfos" path="res://video/oculus_button.ogv" id="5_1asdh"]
+[ext_resource type="Texture2D" uid="uid://dxlyfneen0opl" path="res://images/oc_icon_arrow_left_filled_24_d2d2d2.png" id="6_bqa0n"]
+[ext_resource type="FontFile" uid="uid://beelqblky8eop" path="res://fonts/Roboto-Bold.ttf" id="7_j8epl"]
+[ext_resource type="FontFile" uid="uid://cbq5mdsrnxu0j" path="res://fonts/Roboto-Regular.ttf" id="8_y4csi"]
+[ext_resource type="Texture2D" uid="uid://bgrdsovhkcbup" path="res://images/img_oculus_button.png" id="9_p8i1p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3bc3"]
+bg_color = Color(0.14509805, 0.15294118, 0.16078432, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6l6n"]
+
+[sub_resource type="Gradient" id="Gradient_yoj4l"]
+offsets = PackedFloat32Array(0, 0.43119267)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dhp4g"]
+gradient = SubResource("Gradient_yoj4l")
+width = 1280
+height = 720
+fill_from = Vector2(1, 0.5)
+fill_to = Vector2(0, 0.5)
+
+[node name="MasterPanel" type="PanelContainer" unique_id=1325590977]
+clip_children = 2
+custom_minimum_size = Vector2(1280, 720)
+custom_maximum_size = Vector2(1280, 720)
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_q45h7")
+theme_override_styles/panel = SubResource("StyleBoxFlat_b3bc3")
+script = ExtResource("2_hexdp")
+
+[node name="Content" type="PanelContainer" parent="." unique_id=1575005638]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_g6l6n")
+
+[node name="VideoPlayer" type="TextureRect" parent="Content" unique_id=464764259]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1280, 720)
+custom_maximum_size = Vector2(1280, 720)
+layout_mode = 2
+texture = ExtResource("3_epdjt")
+script = ExtResource("4_oo8kq")
+android_video_path = "res://video/oculus_button.mp4"
+pc_video_stream = ExtResource("5_1asdh")
+video_resolution = Vector2i(1920, 1080)
+loop_video = true
+autoplay = false
+
+[node name="TextureRect" type="TextureRect" parent="Content" unique_id=633257993]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_dhp4g")
+
+[node name="BackButton" type="TextureButton" parent="Content" unique_id=253052138]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0.45490196)
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+offset_transform_enabled = true
+texture_normal = ExtResource("6_bqa0n")
+stretch_mode = 4
+
+[node name="TextPanel" type="MarginContainer" parent="Content" unique_id=630317229]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/margin_right = 63
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content/TextPanel" unique_id=637414814]
+custom_maximum_size = Vector2(379.425, -1)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 11
+
+[node name="Label" type="Label" parent="Content/TextPanel/VBoxContainer" unique_id=199523749]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_j8epl")
+theme_override_font_sizes/font_size = 36
+text = "NUX_UNIVERSAL_TITLE"
+autowrap_mode = 2
+
+[node name="Label2" type="RichTextLabel" parent="Content/TextPanel/VBoxContainer" unique_id=843127425]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.5649617, 0.5649616, 0.5649616, 1)
+theme_override_constants/line_separation = 5
+theme_override_constants/paragraph_separation = 8
+theme_override_fonts/normal_font = ExtResource("8_y4csi")
+theme_override_fonts/bold_font = ExtResource("7_j8epl")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+bbcode_enabled = true
+text = "NUX_UNIVERSAL_BODY"
+fit_content = true
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/TextPanel/VBoxContainer" unique_id=1378728289]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 52.215)
+layout_mode = 2
+theme_type_variation = &"MainButtonPrimary"
+
+[node name="TextureRect" type="TextureRect" parent="Content/TextPanel/VBoxContainer/HBoxContainer" unique_id=784469591]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_p8i1p")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Content/TextPanel/VBoxContainer/HBoxContainer" unique_id=616143250]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.20784314, 0.47058824, 0.8980392, 1)
+theme_override_font_sizes/font_size = 20
+text = "NUX_UNIVERSAL_PRESS_OCULUS_BUTTON"

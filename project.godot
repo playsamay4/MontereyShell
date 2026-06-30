@@ -23,25 +23,33 @@ buses/default_bus_layout=""
 
 XRToolsUserSettings="*uid://bqgb8i74tm0t"
 XRToolsRumbleManager="*uid://by853dk86g1qw"
+SystemLog="*uid://dt0cv4ml5k5gt"
 SignalBus="*uid://twkxgatpl075"
 SettingsManager="*uid://mvdlljtefbk1"
 UiAudioManager="*uid://cnv5eldgtgp5e"
+PackageManager="*uid://lhj0ftjsmx1o"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BatteryPlugin/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg", "res://addons/localization_with_google_sheet/plugin.cfg")
+enabled=PackedStringArray("res://addons/BatteryPlugin/plugin.cfg", "res://addons/ExportStamper/plugin.cfg", "res://addons/LauncherPlugin/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg", "res://addons/localization_with_google_sheet/plugin.cfg")
 
 [global_group]
 
 back_buttons=""
+no_hover_sound=""
+no_press_sound=""
 
 [gui]
 
 theme/custom="uid://bv103o0x0oqc5"
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [internationalization]
 
-locale/translations=["res://data/localization/localization/MontereyShell_localization_translation.en.translation", "res://data/localization/localization/MontereyShell_localization_translation.de_DE.translation"]
+locale/translations=["res://data/localization/localization/MontereyShell_localization_translation.en.translation", "res://data/localization/localization/MontereyShell_localization_translation.de_DE.translation", "res://data/localization/localization/MontereyShell_localization_translation.es_ES.translation", "res://data/localization/localization/MontereyShell_localization_translation.fr_FR.translation"]
 
 [localization_with_google_sheet]
 

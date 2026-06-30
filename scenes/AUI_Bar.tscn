@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://c28a43xv8oqvs" path="res://images/aui/tabs/sharing/oc_icon_camera_roll_filled_24_dadada@2x.png" id="21_mny50"]
 [ext_resource type="Texture2D" uid="uid://cai1m7upugjkx" path="res://images/aui/tabs/notifications/ic_taskbar_notifications.png" id="22_jkbbw"]
 [ext_resource type="Script" uid="uid://s8lpb0ruv85j" path="res://scripts/android_battery_plugin.gd" id="29_mny50"]
-[ext_resource type="Texture2D" uid="uid://b6p5tpvg44aqu" path="res://icon.svg" id="30_ptio4"]
+[ext_resource type="Texture2D" uid="uid://bjn7r5i4buook" path="res://images/bcc.png" id="31_6mf15"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t066l"]
 bg_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
@@ -271,7 +271,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_t066l")
-current_tab = 2
+current_tab = 4
 tabs_visible = false
 switch_on_drag_hover = false
 
@@ -363,6 +363,7 @@ button_text = "AUIBAR_BUTTON_REPORT"
 button_icon = ExtResource("20_amjdo")
 
 [node name="SharingTab" type="HBoxContainer" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer" unique_id=1879371486]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -441,7 +442,6 @@ button_icon = ExtResource("22_jkbbw")
 font_color = Color(0.6706895, 0.6706895, 0.6706895, 1)
 
 [node name="SettingsTab" type="HBoxContainer" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer" unique_id=25592933]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 
@@ -474,12 +474,14 @@ action_type = "seeAll"
 button_text = "AUIBAR_BUTTON_SEE_ALL"
 button_icon = ExtResource("7_38505")
 
-[node name="SeeOutsideButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SettingsTab" unique_id=135384364 instance=ExtResource("16_14wpe")]
+[node name="DebugSettingsButton" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer/SettingsTab" unique_id=135384364 instance=ExtResource("16_14wpe")]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
-action_type = "seeOutside"
-button_text = "(Debug)Toggle Passthru"
-button_icon = ExtResource("30_ptio4")
+action_type = "debug"
+button_text = "Debug Settings"
+button_icon = ExtResource("31_6mf15")
 
 [node name="VolumeSubTab" type="HBoxContainer" parent="OuterVBox/PanelContainer/VBoxContainer/SubItemsContainer/TextureRect/MarginContainer/TabContainer" unique_id=367268281]
 visible = false

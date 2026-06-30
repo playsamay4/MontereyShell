@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bpme51w4cvjb4" path="res://scenes/AUI_Bar.tscn" id="4_14ia5"]
 [ext_resource type="PackedScene" uid="uid://cxskvub7kbrsm" path="res://ui/aui_tooltip.tscn" id="5_oselk"]
 [ext_resource type="Script" uid="uid://c2hbdhg8arhcf" path="res://scripts/curved_viewport_2d_in_3d.gd" id="6_ilaxn"]
-[ext_resource type="PackedScene" uid="uid://b8tt044xa76sl" path="res://scenes/blank.tscn" id="7_nnt8a"]
+[ext_resource type="PackedScene" uid="uid://beod72dwn1v5s" path="res://scenes/Library/Panel_Library.tscn" id="7_s5ufq"]
 [ext_resource type="Script" uid="uid://cpl5yiyf1ypft" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d_body.gd" id="8_ib7m1"]
 [ext_resource type="ArrayMesh" uid="uid://dw5j2sp3ahhqu" path="res://models/curved_screen.obj" id="9_y23qn"]
 [ext_resource type="PackedScene" uid="uid://cpf78bgnhfgg" path="res://scenes/PanelPopup.tscn" id="10_sfooh"]
@@ -205,13 +205,12 @@ disabled = true
 transform = Transform3D(0.676, 0, 0, 0, 0.751, 0, 0, 0, 0.843, 0, 1.1107985, -2.1364305)
 script = ExtResource("6_ilaxn")
 screen_size = Vector2(3.95, 2)
-scene = ExtResource("7_nnt8a")
+scene = ExtResource("7_s5ufq")
 viewport_size = Vector2(1280, 720)
 transparent = 1
-alpha_scissor_threshold = 0.25
 unshaded = true
 filter = true
-scene_properties_keys = PackedStringArray()
+scene_properties_keys = PackedStringArray("panel_library.gd")
 
 [node name="Viewport" type="SubViewport" parent="CurvedPanel" unique_id=1655866932]
 disable_3d = true
@@ -241,7 +240,6 @@ screen_size = Vector2(3.95, 2)
 scene = ExtResource("10_sfooh")
 viewport_size = Vector2(1280, 720)
 transparent = 1
-alpha_scissor_threshold = 0.25
 unshaded = true
 filter = true
 scene_properties_keys = PackedStringArray("panel_popup.gd")
@@ -276,7 +274,6 @@ mesh = SubResource("SphereMesh_so211")
 
 [node name="HomeAmbientPlayer" type="AudioStreamPlayer" parent="." unique_id=1580780917]
 stream = ExtResource("11_gwqxd")
-autoplay = true
 
 [editable path="AUI_Bar"]
 [editable path="AUI_Tooltips"]

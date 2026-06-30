@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cr33osg2u2xys"]
+
+[ext_resource type="FontFile" uid="uid://cbq5mdsrnxu0j" path="res://fonts/Roboto-Regular.ttf" id="1_cn5da"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbqrc"]
+content_margin_left = 10.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn5da"]
+content_margin_left = 10.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ch2g6"]
+content_margin_left = 10.0
+bg_color = Color(0.6, 0.6, 0.6, 0.56078434)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4uv0"]
+content_margin_left = 10.0
+bg_color = Color(0.6, 0.6, 0.6, 0.30980393)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tl32i"]
+content_margin_left = 10.0
+bg_color = Color(0.6, 0.6, 0.6, 0.56078434)
+
+[node name="PanelContainer" type="PanelContainer" unique_id=1218442234]
+theme_override_styles/panel = SubResource("StyleBoxFlat_pbqrc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1637619848]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1615841831]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6215238, 0.62152404, 0.6215233, 1)
+theme_override_fonts/font = ExtResource("1_cn5da")
+theme_override_font_sizes/font_size = 14
+text = "Title"
+
+[node name="Body" type="Label" parent="VBoxContainer" unique_id=812733176]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.89492244, 0.89492244, 0.8949224, 1)
+theme_override_fonts/font = ExtResource("1_cn5da")
+theme_override_font_sizes/font_size = 14
+text = "Body"
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1445764964]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.89411765, 0.89411765, 0.89411765, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_cn5da")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ch2g6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u4uv0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_tl32i")
+text = "Button Text"
+alignment = 0

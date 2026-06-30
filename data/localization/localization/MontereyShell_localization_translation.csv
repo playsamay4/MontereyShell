@@ -1,100 +1,144 @@
-keys,en,de_DE
-BUTTON_OK,OK,
-BUTTON_CANCEL,Cancel,Abbrechen
-AUIBAR_NAVIGATE,Navigate,Navigieren
-AUIBAR_SOCIAL,Social,Soziales
-AUIBAR_SHARING,Sharing,Teilen
-AUIBAR_NOTIFICATIONS,Notifications,Benachrichtigungen
-AUIBAR_SETTINGS,Settings,Einstellungen
-AUIBAR_BUTTON_HOME,Home,Startseite
-AUIBAR_BUTTON_LIBRARY,Library,Bibliothek
-AUIBAR_BUTTON_STORE,Store,Shop
-AUIBAR_BUTTON_BROWSER,Browser,Browser
-AUIBAR_BUTTON_GALLERY,Gallery,Galerie
-AUIBAR_BUTTON_SEARCH,Search,Suche
-AUIBAR_NO_NOTIFICATIONS,No new notifications.,Keine neuen Benachrichtigungen.
-AUIBAR_BUTTON_VIEW_ALL,View All,Alle anzeigen
-AUIBAR_BUTTON_PROFILE,Profile,Profil
-AUIBAR_BUTTON_FRIENDS,Friends,Freunde
-AUIBAR_BUTTON_CHATS,Chats,Chats
-AUIBAR_BUTTON_PARTIES,Parties,Partys
-AUIBAR_BUTTON_REPORT,Report,Melden
-AUIBAR_BUTTON_CAST,Cast,Übertragen
-AUIBAR_BUTTON_GO_LIVE,Go Live,Live gehen
-AUIBAR_BUTTON_RECORD_VIDEO,Record Video,Video aufnehmen
-AUIBAR_BUTTON_TAKE_PHOTO,Take Photo,Foto aufnehmen
-AUIBAR_BUTTON_CAMERA_ROLL,Camera Roll,Aufnahmen
-AUIBAR_BUTTON_VOLUME,Volume,Lautstärke
-AUIBAR_BUTTON_WIFI,Wi-Fi,WLAN
-AUIBAR_BUTTON_RESET_VIEW,Reset View,Ansicht zurücksetzen
-AUIBAR_BUTTON_SEE_ALL,See All,Alle sehen
-AUIBAR_ROOMSCALE,Roomscale,Roomscale
-AUIBAR_STATIONARY,Stationary,Stationär
-AUIBAR_TOOLTIP_ROOMSCALE,Create a new Guardian Boundary\nfor roomscale experiences,Erstelle eine neue Guardian-Begrenzung\nfür Roomscale-Erlebnisse
-AUIBAR_TOOLTIP_STATIONARY,Create a new Guardian Boundary\nfor sitting or standing experiences,Erstelle eine neue Guardian-Begrenzung für\nsitzende oder stehende Erlebnisse
-HOME_HEADER,Home,Startseite
-HOME_EXPLORE,Explore,Entdecken
-HOME_MORE_FROM_YOUR_APPS,More From Your Apps,Mehr aus deinen Apps
-HOME_ENTERTAINMENT,Entertainment,Unterhaltung
-HOME_FRIENDS_ACTIVITY,Friends Activity,Freundesaktivität
-HOME_SAVED,Saved,Gespeichert
-HOME_RECENTS,Recents,Zuletzt verwendet
-SETTINGS_HEADER,Settings,Einstellungen
-SETTINGS_DEVICE,Device,Gerät
-SETTINGS_GUARDIAN,Guardian,Guardian
-SETTINGS_STORAGE,Storage,Speicherplatz
-SETTINGS_APPLICATIONS,Applications,Anwendungen
-SETTINGS_VIRTUAL_ENVIRONMENT,Virtual Environment,Virtuelle Umgebung
-SETTINGS_EXPERIMENTAL_FEATURES,Experimental Features,Experimentelle Funktionen
-SETTINGS_DEVELOPER,Developer,Entwickler
-SETTINGS_ABOUT,About,Info
-SETTINGS_DND,Do Not Disturb,Nicht stören
-SETTINGS_DND_SUBTITLE,Mute all notifications in VR,Alle Benachrichtigungen in VR stummschalten
-SETTINGS_MICROPHONE,Microphone,Mikrofon
-SETTINGS_WIFI,Wi-Fi,WLAN
-SETTINGS_LANGUAGE,Language,Sprache
-SETTINGS_PRIVACY,Privacy,Datenschutz
-SETTINGS_NOTIFICATIONS,Notifications,Benachrichtigungen
-SETTINGS_NOTIFICATIONS_SUBTITLE,Choose which notifications you want to see in VR and in the Oculus App,"Wähle aus, welche Benachrichtigungen du in VR und in der Oculus-App sehen möchtest"
-SETTINGS_RESTART_REQUIRED,Restart required,Neustart erforderlich
-SETTINGS_RESTART_REQUIRED_SUBTITLE,Please restart your headset to save this change,"Bitte starte dein Headset neu, um diese Änderung zu speichern"
-SETTINGS_OTA_TITLE,Software Update,Softwareaktualisierung
-SETTINGS_OTA_CHECKING,Checking for updates...,Suche nach Updates ...
-SETTINGS_OTA_UPDATE_NOW,Update Now,Jetzt aktualisieren
-SETTINGS_OTA_NOT_AVAILABLE,No Updates Available,Keine Updates verfügbar
-SETTINGS_VERSION,Version,Version
-SETTINGS_TARGET_VERSION,Target Version,Zielversion
-NUX_OTA_BLOCK_2_DIALOG_DESC,Your headset is updating. Please take off your headset and follow the steps in the Oculus app on your phone.,
-NUX_OTA_BLOCK_2_DIALOG_DESC_UPDATED,You will be notified on your phone when your headset is ready.,
-NUX_OTA_BLOCK_2_DIALOG_PROGRESS_DOWNLOADING,Downloading…,
-NUX_OTA_BLOCK_2_DIALOG_TITLE,Wi-Fi Connected\nContinue in Oculus App,
-NUX_OTA_BLOCK_2_DIALOG_TITLE_UPDATED,Updating your Headset,
-NUX_OTA_BLOCK_CALLOUT, www.oculus.com/app,
-NUX_OTA_BLOCK_DESC_EN,Download the Oculus app on your mobile phone to set up your headset.,
-NUX_OTA_BLOCK_DESC_DE,"Lade die Oculus-App auf dein Mobiltelefon herunter, um das Headset einzurichten.",
-NUX_OTA_BLOCK_DESC_ES,Descarga la aplicación Oculus en tu teléfono celular para configurar el visor.,
-NUX_OTA_BLOCK_DESC_FR,Téléchargez l'app Oculus sur votre téléphone mobile pour configurer votre casque.,
-NUX_OTA_BLOCK_DESC_IT,Scarica l'app Oculus sul tuo cellulare per configurare il tuo visore.,
-NUX_OTA_BLOCK_DESC_JA,携帯電話でOculusアプリをダウンロードしてヘッドセットを設定してください。,
-NUX_OTA_BLOCK_TITLE_EN,Grab your phone to get started.,
-NUX_OTA_BLOCK_TITLE_DE,"Nimm dein Telefon zur Hand, um loszulegen.",
-NUX_OTA_BLOCK_TITLE_ES,Toma el teléfono para empezar.,
-NUX_OTA_BLOCK_TITLE_FR,Attraper votre téléphone pour démarrer.,
-NUX_OTA_BLOCK_TITLE_IT,Prendi il tuo cellulare per iniziare.,
-NUX_OTA_BLOCK_TITLE_JA,スマートフォンを準備して始めましょう,
-NUX_OTA_BLOCK_QUEST_TITLE_DE,Download der Oculus-App,
-NUX_OTA_BLOCK_QUEST_TITLE_EN,Download the Oculus App,
-NUX_OTA_BLOCK_QUEST_TITLE_ES,Descarga la aplicación de Oculus,
-NUX_OTA_BLOCK_QUEST_TITLE_FR,Téléchargez l'app Oculus,
-NUX_OTA_BLOCK_QUEST_TITLE_IT,Scarica l'app Oculus,
-NUX_OTA_BLOCK_QUEST_TITLE_JA,Oculusアプリをダウンロード,
-NUX_OTA_BLOCK_QUEST_TITLE_KO,Oculus 앱 다운로드,
-NUX_OTA_BLOCK_QUEST_TITLE_PT,Descarregar a App Oculus,
-NUX_OTA_BLOCK_QUEST_TITLE_RU,Скачайте приложение Oculus,
-NUX_OTA_BLOCK_QUEST_TITLE_ZH_CN,下载 Oculus 应用,
-NUX_OTA_BLOCK_QUEST_TITLE_ZH_TW,下載 Oculus 應用程式,
-NUX_OTA_BLOCK_URL,www.oculus.com/app,
-NUX_OTA_BLOCK_PREPARE_DESC,We are preparing your headset. Please take off your headset and follow the steps in the Oculus app on your phone.,
-NUX_OTA_BLOCK_PREPARE_TITLE,Setting Up Your Headset,
-en,English (US),
-de-DE,Deutsch,
+keys,en,de_DE,es_ES,fr_FR
+POWER_OFF,Power off,Ausschalten,Apagar,Éteindre
+POWER_RESTART,Restart,Neu starten,Reiniciar,Redémarrer
+POWER_CONTROLLER_NOT_WORKING,"Controller not working? Press a volume key to ""click"" your selection","Controller funktioniert nicht? Drücke eine Lautstärketaste, um deine Auswahl zu bestätigen.","¿El controlador no funciona? Presiona una tecla de volumen para ""hacer clic"" en tu selección",La manette ne fonctionne pas ? Appuyez sur une touche de volume pour « cliquer » sur votre sélection
+POWER_SHUTTING_DOWN,Shutting down...,Wird ausgeschaltet...,Apagando...,Extinction...
+POWER_FACTORY_RESET,Factory data reset,Werkseinstellungen werden zurückgesetzt,Restablecimiento de fábrica,Restaurer la configuration d'usine
+BUTTON_OK,OK,OK,Aceptar,OK
+BUTTON_CANCEL,Cancel,Abbrechen,Cancelar,Annuler
+AUIBAR_NAVIGATE,Navigate,Navigieren,Navegar,Naviguer
+AUIBAR_SOCIAL,Social,Soziales,Social,Social
+AUIBAR_SHARING,Sharing,Teilen,Compartir,Partage
+AUIBAR_NOTIFICATIONS,Notifications,Benachrichtigungen,Notificaciones,Notifications
+AUIBAR_SETTINGS,Settings,Einstellungen,Configuración,Paramètres
+AUIBAR_BUTTON_HOME,Home,Startseite,Inicio,Accueil
+AUIBAR_BUTTON_LIBRARY,Library,Bibliothek,Biblioteca,Bibliothèque
+AUIBAR_BUTTON_STORE,Store,Store,Tienda,Boutique
+AUIBAR_BUTTON_BROWSER,Browser,Browser,Navegador,Navigateur
+AUIBAR_BUTTON_GALLERY,Gallery,Galerie,Galería,Galerie
+AUIBAR_BUTTON_SEARCH,Search,Suche,Buscar,Rechercher
+AUIBAR_NO_NOTIFICATIONS,No new notifications.,Keine neuen Benachrichtigungen.,No hay notificaciones nuevas.,Aucune nouvelle notification.
+AUIBAR_BUTTON_VIEW_ALL,View All,Alle anzeigen,Ver todo,Tout afficher
+AUIBAR_BUTTON_PROFILE,Profile,Profil,Perfil,Profil
+AUIBAR_BUTTON_FRIENDS,Friends,Freunde,Amigos,Amis
+AUIBAR_BUTTON_CHATS,Chats,Chats,Chats,Discussions
+AUIBAR_BUTTON_PARTIES,Parties,Partys,Grupos,Partys
+AUIBAR_BUTTON_REPORT,Report,Melden,Reportar,Signaler
+AUIBAR_BUTTON_CAST,Cast,Übertragen,Transmitir,Caster
+AUIBAR_BUTTON_GO_LIVE,Go Live,Live gehen,Transmitir en vivo,Lancer un direct
+AUIBAR_BUTTON_RECORD_VIDEO,Record Video,Video aufnehmen,Grabar video,Enregistrer une vidéo
+AUIBAR_BUTTON_TAKE_PHOTO,Take Photo,Foto aufnehmen,Tomar foto,Prendre une photo
+AUIBAR_BUTTON_CAMERA_ROLL,Camera Roll,Kamerarolle,Galería de la cámara,Pellicule
+AUIBAR_BUTTON_VOLUME,Volume,Lautstärke,Volumen,Volume
+AUIBAR_BUTTON_WIFI,Wi-Fi,WLAN,Wi-Fi,Wi-Fi
+AUIBAR_BUTTON_RESET_VIEW,Reset View,Ansicht zurücksetzen,Restablecer vista,Réinitialiser la vue
+AUIBAR_BUTTON_SEE_ALL,See All,Alle sehen,Ver todo,Tout voir
+AUIBAR_ROOMSCALE,Roomscale,Roomscale,Escala de la habitación,Mode Piece (Roomscale)
+AUIBAR_STATIONARY,Stationary,Stationär,Estático,Statique
+AUIBAR_TOOLTIP_ROOMSCALE,Create a new Guardian Boundary\nfor roomscale experiences,Erstelle eine neue Guardian-Begrenzung\nfür Roomscale-Erlebnisse,"Crea un nuevo límite de Guardian
+para experiencias a escala de la habitación","Créer une nouvelle limite Guardian
+pour les expériences à l'échelle de la pièce"
+AUIBAR_TOOLTIP_STATIONARY,Create a new Guardian Boundary\nfor sitting or standing experiences,Erstelle eine neue Guardian-Begrenzung für\nsitzende oder stehende Erlebnisse,"Crea un nuevo límite de Guardian
+para experiencias sentadas o de pie","Créer une nouvelle limite Guardian
+pour les expériences en position assise ou debout"
+HOME_HEADER,Home,Startseite,Inicio,Accueil
+HOME_EXPLORE,Explore,Entdecken,Explorar,Explorer
+HOME_MORE_FROM_YOUR_APPS,More From Your Apps,Mehr aus deinen Apps,Más de tus apps,Plus de vos applications
+HOME_ENTERTAINMENT,Entertainment,Unterhaltung,Entretenimiento,Divertissement
+HOME_FRIENDS_ACTIVITY,Friends Activity,Freundesaktivität,Actividad de amigos,Activité des amis
+HOME_SAVED,Saved,Gespeichert,Guardado,Enregistré
+HOME_RECENTS,Recents,Zuletzt verwendet,Recientes,Récents
+HOME_WELCOME,"Welcome, %s","Willkommen, %s","Bienvenido, %s","Bienvenue, %s"
+SETTINGS_HEADER,Settings,Einstellungen,Configuración,Paramètres
+SETTINGS_DEVICE,Device,Gerät,Dispositivo,Appareil
+SETTINGS_GUARDIAN,Guardian,Guardian,Guardian,Guardian
+SETTINGS_STORAGE,Storage,Speicherplatz,Almacenamiento,Stockage
+SETTINGS_APPLICATIONS,Applications,Anwendungen,Aplicaciones,Applications
+SETTINGS_VIRTUAL_ENVIRONMENT,Virtual Environment,Virtuelle Umgebung,Entorno virtual,Environnement virtuel
+SETTINGS_EXPERIMENTAL_FEATURES,Experimental Features,Experimentelle Funktionen,Funciones experimentales,Fonctionnalités expérimentales
+SETTINGS_DEVELOPER,Developer,Entwickler,Desarrollador,Développeur
+SETTINGS_ABOUT,About,Info,Información,À propos
+SETTINGS_DND,Do Not Disturb,Nicht stören,No molestar,Ne pas déranger
+SETTINGS_DND_SUBTITLE,Mute all notifications in VR,Alle Benachrichtigungen in VR stummschalten,Silenciar todas las notificaciones en VR,Désactiver toutes les notifications en VR
+SETTINGS_MICROPHONE,Microphone,Mikrofon,Micrófono,Microphone
+SETTINGS_WIFI,Wi-Fi,WLAN,Wi-Fi,Wi-Fi
+SETTINGS_LANGUAGE,Language,Sprache,Idioma,Langue
+SETTINGS_PRIVACY,Privacy,Datenschutz,Privacidad,Confidentialité
+SETTINGS_NOTIFICATIONS,Notifications,Benachrichtigungen,Notificaciones,Notifications
+SETTINGS_NOTIFICATIONS_SUBTITLE,Choose which notifications you want to see in VR and in the Oculus App,"Wähle aus, welche Benachrichtigungen du in VR und in der Oculus-App sehen möchtest",Elige qué notificaciones quieres ver en VR y en la app de Oculus,Choisissez les notifications que vous souhaitez voir en VR et dans l'application Oculus
+SETTINGS_RESTART_REQUIRED,Restart required,Neustart erforderlich,Se requiere reiniciar,Redémarrage requis
+SETTINGS_RESTART_REQUIRED_SUBTITLE,Please restart your headset to save this change,"Bitte starte dein Headset neu, um diese Änderung zu speichern",Reinicia tu visor para guardar este cambio,Veuillez redémarrer votre casque pour enregistrer ce changement
+SETTINGS_OTA_TITLE,Software Update,Softwareaktualisierung,Actualización de software,Mise à jour logicielle
+SETTINGS_OTA_CHECKING,Checking for updates...,Suche nach Updates ...,Buscando actualizaciones...,Recherche de mises à jour...
+SETTINGS_OTA_UPDATE_NOW,Update Now,Jetzt aktualisieren,Actualizar ahora,Mettre à jour maintenant
+SETTINGS_OTA_NOT_AVAILABLE,No Updates Available,Keine Updates verfügbar,No hay actualizaciones disponibles,Aucune mise à jour disponible
+SETTINGS_VERSION,Version,Version,Versión,Version
+SETTINGS_TARGET_VERSION,Target Version,Zielversion,Versión de destino,Version cible
+NUX_CLARITY_ADJUST_TITLE,Adjust the headset up and down against your face until the green lines are not blurry.,"Richten Sie das Headset an Ihrem Gesicht nach oben und unten aus, bis die grünen Linien nicht mehr unscharf sind.",Ajusta el visor hacia arriba y hacia abajo en tu rostro hasta que las líneas verdes no se vean borrosas.,Ajustez le casque vers le haut et vers le bas sur votre visage jusqu'à ce que les lignes vertes ne soient plus floues.
+NUX_IPD_ADJUST_TITLE,Move the slider left or right until the green lines are not blurry.,"Bewegen Sie den Schieberegler nach links oder rechts, bis die grünen Linien nicht mehr unscharf sind.",Mueve el deslizador hacia la izquierda o hacia la derecha hasta que las líneas verdes no se vean borrosas.,Déplacez le curseur vers la gauche ou la droite jusqu'à ce que les lignes vertes ne soient plus floues.
+NUX_ADJUST_SUBTITLE,Press the trigger button on your controller to continue.,"Drücken Sie den Trigger-Button Ihres Controllers, um fortzufahren.",Presiona el botón de gatillo en tu controlador para continuar.,Appuyez sur la gâchette de votre manette pour continuer.
+NUX_HS_VID_1,Oculus Quest Safety,Oculus Quest Sicherheit,Seguridad de Oculus Quest,Sécurité d'Oculus Quest
+NUX_HS_VID_2,Clear a Safe Play Area,Einen sicheren Spielbereich freiräumen,Despejar un área de juego segura,Dégager une zone de jeu sécurisée
+NUX_HS_VID_3,Set a Guardian Boundary,Eine Guardian-Grenze einrichten,Configurar un límite de Guardian,Définir une limite Guardian
+NUX_HS_VID_4,Designed for Ages 13 and Up,Für Personen ab 13 Jahren,Diseñado para mayores de 13 años,Conçu pour los personnes de 13 ans et plus
+NUX_HS_VID_5,Choose Appropriate Content,Geeignete Inhalte auswählen,Elegir contenido adecuado,Choisir un contenu approprié
+NUX_HS_TITLE,Safety,Sicherheit,Seguridad,Sécurité
+NUX_HS_BODY,"Your health and safety are important in VR. By tapping [b][color=eeeeee]Acknowledge[/color][/b], you understand the Oculus health and safety warnings in the video and in online resources, and you agree to show them to other people using your device.
+
+You can find this video again in your Oculus settings. Read the complete health and safety warnings at oculus.com/warnings.","Ihre Gesundheit und Sicherheit sind in VR wichtig. Indem Sie auf [b][color=eeeeee]Bestätigen[/color][/b] tippen, bestätigen Sie, dass Sie die Gesundheits- und Sicherheitshinweise in diesem Video sowie in Online-Ressourcen verstanden haben und dass Sie diese auch anderen Personen zeigen, die Ihr Gerät verwenden.","Tu salud y seguridad son importantes en VR. Al tocar [b][color=eeeeee]Aceptar[/color][/b], comprendes las advertencias de salud y seguridad de Oculus en el video y en los recursos en línea, y aceptas mostrarlas a otras personas que usen tu dispositivo.\n\nPuedes encontrar este video nuevamente en la configuración de tu Oculus. Lee las advertencias completas de salud y seguridad en oculus.com/warnings.","Votre santé et votre sécurité sont importantes en VR. En appuyant sur [b][color=eeeeee]Accepter[/color][/b], vous comprenez les avertissements de santé et de sécurité d'Oculus dans la vidéo et dans les ressources en ligne, et vous acceptez de les montrer aux autres personnes utilisant votre appareil.\n\nVous pouvez retrouver cette vidéo dans vos paramètres Oculus. Lisez les avertissements complets de santé et de sécurité sur oculus.com/warnings."
+NUX_HS_SKIP,Skip,Überspringen,Omitir,Passer
+NUX_GUARDIAN_TITLE,Create Guardian Boundary,Guardian-Grenze erstellen,Crear límite de Guardian,Créer une limite Guardian
+NUX_GUARDIAN_BODY,Guardian is an Oculus safety feature that helps you stay within your play area. The virtual boundary you create will appear in VR to alert you when you get close to it.,"Guardian ist eine Oculus-Sicherheitsfunktion, die Ihnen hilft, innerhalb Ihres Spielbereichs zu bleiben. Die virtuelle Grenze wird in VR angezeigt und warnt Sie, wenn Sie sich ihr nähern.
+",Guardian es una función de seguridad de Oculus que te ayuda a mantenerte dentro de tu área de juego. El límite virtual que crees aparecerá en VR para alertarte cuando te acerques a él.,Guardian est une fonction de sécurité d'Oculus qui vous aide à rester dans votre zone de jeu. La limite virtuelle que vous créez apparaîtra en VR pour vous alerter lorsque vous vous en approcherez.
+NUX_CLARITY_TITLE,Clarity,Schärfe,Claridad,Clarté
+NUX_CLARITY_BODY,Tilt or reposition the headset against your face to improve clarity.,"Kippen oder positionieren Sie das Headset an Ihrem Gesicht neu, um die Bildschärfe zu verbessern.",Inclina o reposiciona el visor contra tu rostro para mejorar la claridad.,Inclinez ou repositionnez le casque sur votre visage pour améliorer la clarté.
+NUX_FIT_TITLE,Headset Fit,Headset-Passform,Ajuste del visor,Ajustement du casque
+NUX_FIT_BODY,Make sure the bottom strap of your headset sits comfortably at the base of your head.,"Stellen Sie sicher, dass der untere Gurt des Headsets bequem am Hinterkopf sitzt.",Asegúrate de que la correa inferior de tu visor se asiente cómodamente en la base de tu cabeza.,Assurez-vous que la sangle inférieure de votre casque repose confortablement à la base de votre tête.
+NUX_FOCUS_TITLE,Lens Spacing,Linsenabstand,Espaciado de lentes,Espacement des lentilles
+NUX_FOCUS_BODY,Use the slider on the bottom left of the headset to align the lenses with your eyes.,"Verwenden Sie den Schieberegler unten links am Headset, um die Linsen auf Ihre Augen auszurichten.",Usa el deslizador en la parte inferior izquierda del visor para alinear las lentes con tus ojos.,Utilisez le curseur situé en bas à gauche du casque pour aligner les lentilles avec vos yeux.
+NUX_UNIVERSAL_TITLE,Show Universal Menu,Universelles Menü anzeigen,Mostrar menú universal,Afficher le menu universel
+NUX_UNIVERSAL_BODY,Press the Oculus button once to access the universal menu.,"Drücken Sie einmal die Oculus-Taste, um das universelle Menü zu öffnen.",Presiona el botón Oculus una vez para acceder al menú universal.,Appuyez une fois sur le bouton Oculus pour accéder au menu universel.
+NUX_UNIVERSAL_PRESS_OCULUS_BUTTON,Press Oculus Button,Oculus-Taste drücken,Presionar botón Oculus,Appuyer sur le bouton Oculus
+NUX_UPDATE_COMPLETE_TITLE,Update Complete,Update abgeschlossen,Actualización completa,Mise à jour terminée
+NUX_UPDATE_COMPLETE_BODY,[center]Next you'll get to know your device and home environment[/center],[center]Als Nächstes lernen Sie Ihr Gerät und Ihre Umgebung kennen[/center],[center]A continuación conocerás tu dispositivo y el entorno de inicio[/center],"[center]Ensuite, vous découvrirez votre appareil et votre environnement d'accueil[/center]"
+NUX_ACKNOWLEDGE,Acknowledge,Bestätigen,Aceptar,Accepter
+NUX_CALIBRATE,Calibrate,Kalibrieren,Calibrar,Calibrer
+NUX_CONTINUE,Continue,Fortfahren,Continuar,Continuer
+NUX_OTA_BLOCK_2_DIALOG_DESC,Your headset is updating. Please take off your headset and follow the steps in the Oculus app on your phone.,Ihr Headset wird aktualisiert. Nehmen Sie Ihr Headset ab und folgen Sie den Anweisungen in der Oculus-App auf Ihrem Mobiltelefon.,Tu visor se está actualizando. Quítate el visor y sigue los pasos en la app de Oculus en tu teléfono.,Votre casque est en cours de mise à jour. Veuillez retirer votre casque et suivre los étapes dans l'application Oculus sur votre téléphone.
+NUX_OTA_BLOCK_2_DIALOG_DESC_UPDATED,You will be notified on your phone when your headset is ready.,"Sie erhalten eine Benachrichtigung auf Ihrem Mobiltelefon, sobald Ihr Headset einsatzbereit ist.",Se te notificará en tu teléfono cuando tu visor esté listo.,Vous serez notifié sur votre téléphone lorsque votre casque sera prêt.
+NUX_OTA_BLOCK_2_DIALOG_PROGRESS_DOWNLOADING,Downloading…,Wird heruntergeladen...,Descargando...,Téléchargement...
+NUX_OTA_BLOCK_2_DIALOG_TITLE,Wi-Fi Connected\nContinue in Oculus App,,"Wi-Fi conectado
+Continuar en la app de Oculus","Wi-Fi connecté
+Continuer dans l'application Oculus"
+NUX_OTA_BLOCK_2_DIALOG_TITLE_UPDATED,Updating your Headset,Headset wird aktualisiert,Actualizando tu visor,Mise à jour de votre casque
+NUX_OTA_BLOCK_CALLOUT, www.oculus.com/app,,www.oculus.com/app,www.oculus.com/app
+NUX_OTA_BLOCK_DESC_EN,Download the Oculus app on your mobile phone to set up your headset.,,,
+NUX_OTA_BLOCK_DESC_DE,"Lade die Oculus-App auf dein Mobiltelefon herunter, um das Headset einzurichten.",,,
+NUX_OTA_BLOCK_DESC_ES,Descarga la aplicación Oculus en tu teléfono celular para configurar el visor.,,,
+NUX_OTA_BLOCK_DESC_FR,Téléchargez l'app Oculus sur votre téléphone mobile pour configurer votre casque.,,,
+NUX_OTA_BLOCK_DESC_IT,Scarica l'app Oculus sul tuo cellulare per configurare il tuo visore.,,,
+NUX_OTA_BLOCK_DESC_JA,携帯電話でOculusアプリをダウンロードしてヘッドセットを設定してください。,,,
+NUX_OTA_BLOCK_TITLE_EN,Grab your phone to get started.,,,
+NUX_OTA_BLOCK_TITLE_DE,"Nimm dein Telefon zur Hand, um loszulegen.",,,
+NUX_OTA_BLOCK_TITLE_ES,Toma el teléfono para empezar.,,,
+NUX_OTA_BLOCK_TITLE_FR,Attraper votre téléphone pour démarrer.,,,
+NUX_OTA_BLOCK_TITLE_IT,Prendi il tuo cellulare per iniziare.,,,
+NUX_OTA_BLOCK_TITLE_JA,スマートフォンを準備して始めましょう,,,
+NUX_OTA_BLOCK_QUEST_TITLE_DE,Download der Oculus-App,,,
+NUX_OTA_BLOCK_QUEST_TITLE_EN,Download the Oculus App,,,
+NUX_OTA_BLOCK_QUEST_TITLE_ES,Descarga la aplicación de Oculus,,,
+NUX_OTA_BLOCK_QUEST_TITLE_FR,Téléchargez l'app Oculus,,,
+NUX_OTA_BLOCK_QUEST_TITLE_IT,Scarica l'app Oculus,,,
+NUX_OTA_BLOCK_QUEST_TITLE_JA,Oculusアプリをダウンロード,,,
+NUX_OTA_BLOCK_QUEST_TITLE_KO,Oculus 앱 다운로드,,,
+NUX_OTA_BLOCK_QUEST_TITLE_PT,Descarregar a App Oculus,,,
+NUX_OTA_BLOCK_QUEST_TITLE_RU,Скачайте приложение Oculus,,,
+NUX_OTA_BLOCK_QUEST_TITLE_ZH_CN,下载 Oculus 应用,,,
+NUX_OTA_BLOCK_QUEST_TITLE_ZH_TW,下載 Oculus 應用程式,,,
+NUX_OTA_BLOCK_URL,www.oculus.com/app,,,
+NUX_OTA_BLOCK_PREPARE_DESC,We are preparing your headset. Please take off your headset and follow the steps in the Oculus app on your phone.,Ihr Headset wird vorbereitet. Nehmen Sie Ihr Headset ab und folgen Sie den Anweisungen in der Oculus-App auf Ihrem Mobiletelefon.,Estamos preparando tu visor. Quítate el visor y sigue los pasos en la app de Oculus en tu teléfono.,Nous préparons votre casque. Veuillez retirer votre casque et suivre los étapes dans l'application Oculus sur votre téléphone.
+NUX_OTA_BLOCK_PREPARE_TITLE,Setting Up Your Headset,,Configurando tu visor,Configuration de votre casque
+en,English (US),,,
+de-DE,Deutsch,,,
+es-ES,Spanish (Spain),,,
+fr-FR,French,,,

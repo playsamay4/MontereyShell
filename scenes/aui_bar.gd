@@ -23,7 +23,8 @@ var battLevel = 100
 
 
 func _ready() -> void:
-
+	if OS.is_debug_build():
+		%DebugSettingsButton.show()
 	
 	# Tab Bindings
 	navigate_btn.pressed.connect(_switch_to_tab.bind(0, navigate_btn))
@@ -43,7 +44,7 @@ func _ready() -> void:
 		android_plugin.android_battery_level_changed.connect(self._on_battery_level_changed)
 		android_plugin.android_battery_state_changed.connect(self._on_battery_state_changed)
 	else:
-		print("Android plugin not initialized!")
+		SystemLog.log("Android plugin not initialized!")
 	
 	var clockTimer = Timer.new()
 	clockTimer.wait_time = 1.0
@@ -81,36 +82,29 @@ func _switch_to_tab(tab_index: int, clicked_button: Button) -> void:
 	
 
 func _on_sub_item_triggered(action: String) -> void:
-	print("Auto-routed action received from: ", action)
+	SystemLog.log("Auto-routed action received from: ", action)
 	
 	_manage_sub_button_toggles(tabContainer, action)
 	
 	match action:
+
 		"home":
-			print("Home")
 			SignalBus.panel_open_requested.emit("res://scenes/Panel_Home.tscn")
+		"library":
+			SignalBus.panel_open_requested.emit("res://scenes/Library/Panel_Library.tscn")
 		"volume":
 			_switch_to_tab(5,settings_btn)
 		"seeAll":
 			SignalBus.panel_open_requested.emit("res://scenes/settings/Panel_Settings.tscn")
-		"report":
-			SignalBus.popup_open_requested.emit({
-				"title": "(Debug) Closing AUI",
-				"text": "AUI will hide when you press OK. Hold Grip + A/X to restart Quest Home",
-				"action_text": "",
-				"primary_text": "OK",
-				"cancel_text": ""
-				})
-				
-			await SignalBus.popup_finish_requested
-			SignalBus.aui_bar_hide_requested.emit()
-		"seeOutside":
-			#TODO: Move to SignalBus event
-			SignalBus.panel_open_requested.emit("seeOutside")
+		"debug":
+			SignalBus.panel_open_requested.emit("res://scenes/Debug/DebugPanel.tscn")
+		#"seeOutside":
+			##TODO: Move to SignalBus event
+			#SignalBus.panel_open_requested.emit("seeOutside")
 		"notifsViewAll":
 			SignalBus.panel_open_requested.emit("res://scenes/DebugPanel.tscn")
 		_:
-			print("No route defined for: ", action)
+			SystemLog.log("No route defined for: ", action)
 			SignalBus.popup_open_requested.emit({
 				"title": "No route defined",
 				"text": "Sub item triggered: " + action + ", there is no route for this event.",

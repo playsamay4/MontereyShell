@@ -141,7 +141,7 @@ texture_scale = 0.25
 
 [node name="Label" type="Label" parent="HBoxContainer/PanelContainer2/VBoxContainer/Header/HBoxContainer" unique_id=345334541]
 layout_mode = 2
-text = "Welcome, Default User"
+text = "HOME_WELCOME"
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer2/VBoxContainer" unique_id=161516506]
 layout_mode = 2
