@@ -174,6 +174,12 @@ func _on_next_step() -> void:
 		SignalBus.controller_show_reticles.emit()
 		SignalBus.tween_scene_light.emit(0.95,0.5)
 		await SignalBus.tween_scene_light_finished
+	elif scene_path == "res://scenes/nux/full_vr/create_guardian_boundary.tscn":
+		SignalBus.panel_open_requested.emit("res://scenes/blank.tscn")
+		await get_tree().create_timer(0.5).timeout
+		PackageManager.launch_app("com.oculus.guardiansetup")
+		await get_tree().create_timer(0.5).timeout
+		
 		
 	nux_current_step_index += 1
 	_load_current_step()
