@@ -37,6 +37,10 @@ func _ready() -> void:
 	
 	PackageManager.app_icon_updated.connect(_on_app_icon_updated)
 	
+	%EnterGuardianSetup.pressed.connect(func():
+		PackageManager.launch_app("com.oculus.guardiansetup")
+		)	
+	
 	%ClearAppDBCacheBtn.pressed.connect(func():
 		PackageManager.clear_icon_cache()
 		SignalBus.popup_open_requested.emit({

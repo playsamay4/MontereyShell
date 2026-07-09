@@ -217,7 +217,8 @@ size_flags_horizontal = 4
 theme_type_variation = &"DebugButton"
 text = "Send Test Notification"
 
-[node name="ClosePanel5" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/TabContainer/TestActionsPanel/VBoxContainer" unique_id=589039739]
+[node name="EnterGuardianSetup" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/TabContainer/TestActionsPanel/VBoxContainer" unique_id=589039739]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"DebugButton"
