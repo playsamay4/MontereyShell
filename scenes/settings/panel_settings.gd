@@ -63,7 +63,7 @@ func load_page(page_id: String, is_back: bool = false) -> void:
 		
 	current_page_id = page_id
 	var page_data = SettingsData.PAGES[page_id]
-	
+
 	page_header.text = page_data["title"]
 	
 	for child in content_v_stack.get_children():
@@ -155,6 +155,18 @@ func load_page(page_id: String, is_back: bool = false) -> void:
 							new_option.button_enabled = get_current_enabled_state.call()
 					)
 
+			var btn_action_data = option_data.get("buttonAction")
+			new_option.setting_button_clicked.connect(func(_id):
+				if btn_action_data is Dictionary:
+					var target_node = Engine.get_main_loop().root.get_node_or_null(btn_action_data["target"])
+					if target_node and target_node.has_method(btn_action_data["method"]):
+						target_node.call(btn_action_data["method"])
+					else:
+						SystemLog.log("Settings button action target/method not found: ", btn_action_data)
+				else:
+					SystemLog.log("Settings button clicked with no buttonAction defined: ", option_data["id"])
+			)
+
 
 		if option_data.get("subtitle") or option_data.get("subtitleSource"):
 			var sub_src = option_data.get("subtitleSource")
@@ -188,15 +200,24 @@ func _on_back_pressed() -> void:
 	if id:
 		load_page(id, true)
 
+## Universal back button (controller B/Y): go to the previous settings page
+## if there is one, same as tapping the in-app back button. Only when
+## already at the root page do we decline and let the window close Settings
+## and reveal whatever was open before it.
+func _on_universal_back() -> bool:
+	if previous_page_ids.is_empty():
+		return false
+	_on_back_pressed()
+	return true
+
 func _ask_for_restart() -> bool:
-	SignalBus.popup_open_requested.emit({
+	var reason = await PopupManager.show_popup({
 					"title": tr("SETTINGS_RESTART_REQUIRED"),
 					"text": tr("SETTINGS_RESTART_REQUIRED_SUBTITLE"),
 					"action_text": tr("BUTTON_CANCEL"),
 					"primary_text": tr("BUTTON_OK"),
 					"cancel_text": ""
 				})
-	var reason = await SignalBus.popup_finish_requested
 	return reason == "primary"
 
 
@@ -223,7 +244,7 @@ func _on_setting_toggled(id: String, is_on: bool) -> void:
 			if !SettingsManager.set_value("settings",id, is_on):
 				SystemLog.log("Couldn't find setting ", id, "!")
 				if OS.is_debug_build():
-					SignalBus.popup_open_requested.emit({
+					PopupManager.show_popup({
 						"title": "Missing key?",
 						"text": "This option was bound to a key that does not currently exist within the default schema.",
 						"action_text": "",
@@ -264,7 +285,7 @@ func _on_setting_dropdown_changed(id: String, value: String):
 			if !SettingsManager.set_value("settings",id, value):
 				SystemLog.log("Couldn't find setting ", id, "!")
 				if OS.is_debug_build():
-					SignalBus.popup_open_requested.emit({
+					PopupManager.show_popup({
 						"title": "Missing key?",
 						"text": "This option was bound to a key that does not currently exist within the default schema.",
 						"action_text": "",

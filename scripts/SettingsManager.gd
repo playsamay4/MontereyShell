@@ -189,7 +189,20 @@ func initiate_update_check():
 	got_update_info.emit()
 	got_button_update_text.emit()
 	update_button_state_changed.emit()
-	
+
+func get_version_info() -> String:
+	return BUILD_INFO["version"]
+
+func get_target_version_info() -> String:
+	return BUILD_INFO["targetVersion"]
+
+# ==================================
+# NUX
+# ==================================
+func restart_nux() -> void:
+	set_value("settings", "nuxStatus", NUX_STATUS.NEW_DEVICE)
+	SignalBus.restart_home_requested.emit()
+
 # =================
 # Tools
 # =================

@@ -93,3 +93,11 @@ size_flags_vertical = 4
 texture = ExtResource("6_hn5wg")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="EditLineEdit" type="LineEdit" parent="." unique_id=500219364]
+visible = false
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+placeholder_text = "value"

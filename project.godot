@@ -28,6 +28,9 @@ SignalBus="*uid://twkxgatpl075"
 SettingsManager="*uid://mvdlljtefbk1"
 UiAudioManager="*uid://cnv5eldgtgp5e"
 PackageManager="*uid://lhj0ftjsmx1o"
+AppRegistry="*res://scripts/apps/app_registry.gd"
+WindowManager="*res://scripts/apps/window_manager.gd"
+PopupManager="*res://scripts/popup_manager.gd"
 
 [editor_plugins]
 

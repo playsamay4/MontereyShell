@@ -44,7 +44,8 @@ static var PAGES = {
 		"title": "SETTINGS_DEVELOPER",
 		"options": [
 			{"id": "devAudioStyle", "type": "dropdown", "header": "UI Audio", "subtitle": "Select which UI sounds you want to use", "icon": "res://images/aui/tabs/settings/ic_volume.png", "dropdown_keys": ["v3", "v16", "Modern"]},
-			{"id": "devStartNux", "type": "button", "header": "Restart NUX", "subtitle": "Clears provisioning data and restarts NUX", "buttonText":"Start"},
+			{"id": "devStartNux", "type": "button", "header": "Restart NUX", "subtitle": "Clears provisioning data and restarts NUX", "buttonText":"Start",
+				"buttonAction": {"target": "SettingsManager", "method": "restart_nux"}},
 
 		]
 	},
@@ -72,12 +73,14 @@ static var PAGES = {
 					{"target": "SettingsManager", "signal": "got_button_update_text"}, 
 				"buttonEnabledSource": 
 					{"target": "SettingsManager", "method": "is_update_button_enabled"}, 
-				"buttonEnabledChangeSignal": 
-					{"target": "SettingsManager", "signal": "update_button_state_changed"}
-				
+				"buttonEnabledChangeSignal":
+					{"target": "SettingsManager", "signal": "update_button_state_changed"},
+				"buttonAction":
+					{"target": "SettingsManager", "method": "initiate_update_check"}
+
 			},
 			{"id": "aboutVersion", "type": "text", "header":"SETTINGS_VERSION", "subtitleSource": {"target": "SettingsManager", "method": "get_version_info"}},
-			{"id": "aboutTarget", "type": "text", "header":"SETTINGS_TARGET_VERSION", "subtitle": ""},
+			{"id": "aboutTarget", "type": "text", "header":"SETTINGS_TARGET_VERSION", "subtitleSource": {"target": "SettingsManager", "method": "get_target_version_info"}},
 		]
 	}
 	

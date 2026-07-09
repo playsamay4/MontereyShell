@@ -3,10 +3,6 @@ extends Node
 
 signal restart_home_requested
 
-signal panel_open_requested(panel_res: String)
-signal popup_open_requested(config: Dictionary)
-signal popup_finish_requested(reason: String)
-
 signal request_locked_viewport_scene(scene_path: String)
 var active_locked_scene_instance: Node = null
 

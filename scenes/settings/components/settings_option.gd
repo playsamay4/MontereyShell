@@ -6,6 +6,7 @@ signal setting_toggled(setting_id: String, is_on: bool)
 signal setting_dropdown_changed(setting_id: String, id: String)
 signal setting_clicked(setting_id: String)
 signal setting_button_clicked(setting_id: String)
+signal setting_edited(setting_id: String, value: String)
 
 @export var setting_id: String = "unique_key"
 
@@ -49,8 +50,17 @@ signal setting_button_clicked(setting_id: String)
 		button_enabled = value
 		if is_inside_tree() and option_btn:
 			option_btn.disabled = not button_enabled
-			
-@export_enum("toggle", "dropdown", "external", "page", "text", "header", "button") var option_type: String = "toggle":
+
+## Initial text for the "edit" row type. Only pushed into the LineEdit when
+## explicitly set (not on every _update_ui() pass) so it doesn't stomp on
+## text the user is actively typing.
+@export var edit_text: String = "":
+	set(value):
+		edit_text = value
+		if is_inside_tree() and edit_line_edit:
+			edit_line_edit.text = value
+
+@export_enum("toggle", "dropdown", "external", "page", "text", "header", "button", "edit") var option_type: String = "toggle":
 	set(value):
 		option_type = value
 		_update_ui()
@@ -63,6 +73,7 @@ signal setting_button_clicked(setting_id: String)
 @onready var icon_btn_texture: TextureRect = $IconButtonTexture
 @onready var option_btn: Button = $OptionButton
 @onready var option_btn_spinner: TextureRect = $OptionButton/LoadingSpinner
+@onready var edit_line_edit: LineEdit = $EditLineEdit
 
 @onready var dropdown_btn: Button = $DropdownButton
 const POPUP_SCENE = preload("res://templates/dropdown_popup.tscn")
@@ -81,6 +92,9 @@ func _ready() -> void:
 			toggle_btn.toggled.connect(_on_toggle_state_changed)
 			
 	dropdown_btn.pressed.connect(_on_dropdown_btn_pressed)
+	option_btn.pressed.connect(_on_option_btn_pressed)
+	edit_line_edit.text_submitted.connect(_on_edit_text_submitted)
+	edit_line_edit.focus_exited.connect(_on_edit_focus_exited)
 
 	
 
@@ -118,6 +132,7 @@ func _update_ui() -> void:
 	toggle_btn.hide()
 	icon_btn_texture.hide()
 	option_btn.hide()
+	edit_line_edit.hide()
 	
 	mouse_default_cursor_shape = Control.CURSOR_ARROW
 	mouse_filter = Control.MOUSE_FILTER_PASS
@@ -142,10 +157,9 @@ func _update_ui() -> void:
 		else:
 			option_btn_spinner.visible = false
 			option_btn.text = button_text
-		
-		
-	
-		
+	elif option_type == "edit":
+		edit_line_edit.show()
+		edit_line_edit.text = edit_text
 
 func _make_row_clickable() -> void:
 	#ensure the row catches the click event
@@ -186,5 +200,12 @@ func _on_dropdown_btn_pressed() -> void:
 func _on_item_chosen(id: String) -> void:
 	selected_id = id
 	setting_dropdown_changed.emit(setting_id, selected_id)
-	SystemLog.log("User changed setting to: ", selected_id)
-	
+
+func _on_option_btn_pressed() -> void:
+	setting_button_clicked.emit(setting_id)
+
+func _on_edit_text_submitted(new_text: String) -> void:
+	setting_edited.emit(setting_id, new_text)
+
+func _on_edit_focus_exited() -> void:
+	setting_edited.emit(setting_id, edit_line_edit.text)

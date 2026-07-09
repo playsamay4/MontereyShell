@@ -182,7 +182,8 @@ func _nux_begin() -> void:
 			
 	else:
 		UiAudioManager.play_env_audio("res://audio/nux/music_first_time_nux_dark_loop.ogg")
-		#locked_viewport_go_to_scene("res://scenes/nux/NuxUpdatingPopup.tscn")
+		locked_viewport_go_to_scene("res://scenes/nux/NuxOtaBlock.tscn")
+		
 
 
 func _on_video_screen_finished() -> void:

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AppManifest" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/apps/app_manifest.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/nux/full_vr/fit_and_focus_clarity.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "nux.fit_and_focus_clarity"
+display_name = "Fit And Focus (Clarity)"
+scene = ExtResource("2")
+category = "Nux"

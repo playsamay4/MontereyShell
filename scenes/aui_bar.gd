@@ -89,23 +89,20 @@ func _on_sub_item_triggered(action: String) -> void:
 	match action:
 
 		"home":
-			SignalBus.panel_open_requested.emit("res://scenes/Panel_Home.tscn")
+			WindowManager.open_app(&"main", "system.home")
 		"library":
-			SignalBus.panel_open_requested.emit("res://scenes/Library/Panel_Library.tscn")
+			WindowManager.open_app(&"main", "system.library")
 		"volume":
 			_switch_to_tab(5,settings_btn)
 		"seeAll":
-			SignalBus.panel_open_requested.emit("res://scenes/settings/Panel_Settings.tscn")
+			WindowManager.open_app(&"main", "system.settings")
 		"debug":
-			SignalBus.panel_open_requested.emit("res://scenes/Debug/DebugPanel.tscn")
-		#"seeOutside":
-			##TODO: Move to SignalBus event
-			#SignalBus.panel_open_requested.emit("seeOutside")
+			WindowManager.open_app(&"main", "system.debug")
 		"notifsViewAll":
-			SignalBus.panel_open_requested.emit("res://scenes/DebugPanel.tscn")
+			WindowManager.open_app(&"main", "system.debug")
 		_:
 			SystemLog.log("No route defined for: ", action)
-			SignalBus.popup_open_requested.emit({
+			PopupManager.show_popup({
 				"title": "No route defined",
 				"text": "Sub item triggered: " + action + ", there is no route for this event.",
 				"action_text": "",

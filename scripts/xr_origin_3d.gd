@@ -44,15 +44,20 @@ func _on_right_button_pressed(button_name: String) -> void:
 	if button_name == "ax_button":
 		if _is_holding_grip():
 			SignalBus.restart_home_requested.emit()
+	elif button_name == "by_button":
+		if not _is_holding_grip():
+			WindowManager.go_back(&"main")
 
-		
+
 func _on_left_button_pressed(button_name: String) -> void:
 	if button_name == "ax_button":
 		if _is_holding_grip():
 			SignalBus.restart_home_requested.emit()
 	if button_name == "by_button":
 		if _is_holding_grip():
-			SignalBus.panel_open_requested.emit("res://scenes/Debug/DebugPanel.tscn")
+			WindowManager.open_app(&"main", "system.debug")
+		else:
+			WindowManager.go_back(&"main")
 	elif button_name == "primary_click":
 		lstick_held = true
 		lstick_hold_time = 0.0

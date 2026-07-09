@@ -3,11 +3,14 @@ extends Control
 const TEXT_HEADER_SCENE = preload("res://scenes/Debug/DebugTextHeader.tscn")
 const TEXT_ENTRY_SCENE = preload("res://scenes/Debug/DebugTextEntry.tscn")
 const BUTTON_ENTRY_SCENE = preload("res://scenes/Debug/DebugButtonEntry.tscn")
+const SETTINGS_OPTION_SCENE = preload("res://scenes/settings/components/settings_option.tscn")
 
 @onready var device_info = %DeviceInfoVBox
 @onready var launch_panel = %LaunchPanelVBox
+@onready var device_config = %DeviceConfigVBox
 
 var app_buttons: Dictionary = {}
+var population_thread: Thread
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,10 +18,11 @@ func _ready() -> void:
 	%TestActions.pressed.connect(func(): %TestActionsPanel.show() )
 	%DeviceInfo.pressed.connect(func(): %DeviceInfoPanel.show() )
 	%Launch.pressed.connect(func(): %LaunchPanel.show() )
+	%DeviceConfig.pressed.connect(func(): %DeviceConfigPanel.show() )
 
 
 	%ShowDialog.pressed.connect(func():
-		SignalBus.popup_open_requested.emit({
+		PopupManager.show_popup({
 				"title": "Dialog Flow",
 				"text": "This is a test dialog",
 				"action_text": "Action",
@@ -28,9 +32,11 @@ func _ready() -> void:
 		)
 		
 	populate_device_info()
-	
+
 	populate_launch_entries()
-	
+
+	populate_device_config()
+
 	%TestActionsPanel.show()
 	
 	%DeviceInfoScrollContainer.get_v_scroll_bar().custom_maximum_size.x = 0
@@ -43,7 +49,7 @@ func _ready() -> void:
 	
 	%ClearAppDBCacheBtn.pressed.connect(func():
 		PackageManager.clear_icon_cache()
-		SignalBus.popup_open_requested.emit({
+		PopupManager.show_popup({
 				"title": "APP DB CACHE",
 				"text": "Cleared App DB cache. Restart to trigger a new cache update.",
 				"action_text": "",
@@ -97,60 +103,113 @@ func populate_device_info():
 			device_info.add_child(new_item)
 
 func populate_launch_entries():
-	var info = [
-		{"type":"header","text":"VR Packages"},
-		{"type":"entry","title":"Explore", "target":"res://scenes/Panel_Home.tscn"},
-		{"type":"entry","title":"Settings", "target":"res://scenes/settings/Panel_Settings.tscn"},
-		{"type":"entry","title":"anytimeui", "target":"res://scenes/AUI_Bar.tscn"},
-		{"type":"entry","title":"LoadingDots", "target":"res://scenes/LoadingDots.tscn"},
-		{"type":"entry","title":"popup", "target":"res://scenes/PanelPopup.tscn"},
-		{"type":"header","text":"NUX"},
-		{"type":"entry","title":"Create Guardian Boundary", "target":"res://scenes/nux/full_vr/create_guardian_boundary.tscn"},
-		{"type":"entry","title":"Fit And Focus (Clarity)", "target":"res://scenes/nux/full_vr/fit_and_focus_clarity.tscn"},
-		{"type":"entry","title":"Fit And Focus (Fit)", "target":"res://scenes/nux/full_vr/fit_and_focus_fit.tscn"},
-		{"type":"entry","title":"Fit And Focus (Focus)", "target":"res://scenes/nux/full_vr/fit_and_focus_focus.tscn"},
-		{"type":"entry","title":"Health and Safety", "target":"res://scenes/nux/full_vr/HealthAndSafety.tscn"},
-		{"type":"entry","title":"Show Universal Menu", "target":"res://scenes/nux/full_vr/show_universal_menu.tscn"},
-		{"type":"entry","title":"clarity", "target":"res://scenes/nux/clarity.tscn"},
-		{"type":"entry","title":"ipd", "target":"res://scenes/nux/ipd.tscn"},
-		{"type":"entry","title":"NuxOtaBlock", "target":"res://scenes/nux/NuxOtaBlock.tscn"},
-		{"type":"entry","title":"NuxUpdatingPopup", "target":"res://scenes/nux/NuxUpdatingPopup.tscn"},
-		{"type":"header","text":"SystemGrid"},
-		{"type":"entry","title":"PowerAction", "target":"res://scenes/SystemGrid/PowerAction.tscn"},
-		{"type":"entry","title":"PowerOffDialog", "target":"res://scenes/SystemGrid/PowerOffDialog.tscn"},
-		{"type":"header","text":"Host Device Packages"}
-	]
-
 	for child in launch_panel.get_children():
 		child.queue_free()
-		
-	# Instantiate static panel buttons
-	for option_data in info:
-		var new_item
-		if option_data["type"] == "header":
-			new_item = TEXT_HEADER_SCENE.instantiate()
-			new_item.text = option_data["text"]
-		elif option_data["type"] == "entry":
-			new_item = BUTTON_ENTRY_SCENE.instantiate()
-			new_item.get_node("%Button").text = option_data["title"]
-			new_item.get_node("%Button").pressed.connect(func(): SignalBus.panel_open_requested.emit(option_data["target"]) )
-			
-		new_item.mouse_filter = Control.MOUSE_FILTER_PASS
-		launch_panel.add_child(new_item)
-	
+
+	# Registered apps (res://apps/**/*.tres), grouped by category. Adding a
+	# new app anywhere in the project only requires dropping an AppManifest
+	# .tres under res://apps/ - nothing here needs to change.
+	for category in AppRegistry.get_categories():
+		var header = TEXT_HEADER_SCENE.instantiate()
+		header.text = category
+		header.mouse_filter = Control.MOUSE_FILTER_PASS
+		launch_panel.add_child(header)
+
+		for manifest in AppRegistry.get_apps(category):
+			var entry = BUTTON_ENTRY_SCENE.instantiate()
+			entry.get_node("%Button").text = manifest.display_name
+			entry.get_node("%Button").pressed.connect(func(): WindowManager.open_app(&"main", manifest.id))
+			entry.mouse_filter = Control.MOUSE_FILTER_PASS
+			launch_panel.add_child(entry)
+
+	var host_header = TEXT_HEADER_SCENE.instantiate()
+	host_header.text = "Host Device Packages"
+	host_header.mouse_filter = Control.MOUSE_FILTER_PASS
+	launch_panel.add_child(host_header)
+
+	# There can be 100+ installed host apps - building a Button per app
+	# synchronously here is the single biggest source of hitching when this
+	# panel opens. Build them off-thread (same pattern panel_library.gd
+	# already uses) and only touch the live tree once, deferred back onto
+	# the main thread.
 	app_buttons.clear()
+	if population_thread and population_thread.is_started():
+		population_thread.wait_to_finish()
+	population_thread = Thread.new()
+	population_thread.start(_bg_populate_host_apps)
+
+func _bg_populate_host_apps() -> void:
+	var built: Array = []
 	for app in PackageManager.installed_apps:
 		var btn = Button.new()
 		btn.text = app.name + "(" + app.package_id + ")"
-		btn.custom_minimum_size = Vector2(120, 120) 
+		btn.custom_minimum_size = Vector2(120, 120)
 		btn.expand_icon = true
 		btn.pressed.connect(func(): PackageManager.launch_app(app.package_id))
-		
+
 		if app.icon_texture:
 			btn.icon = app.icon_texture
-			
-		launch_panel.add_child(btn)
-		app_buttons[app.package_id] = btn
+
+		built.append({"package_id": app.package_id, "button": btn})
+
+	_add_host_app_buttons.call_deferred(built)
+
+func _add_host_app_buttons(built: Array) -> void:
+	for entry in built:
+		launch_panel.add_child(entry["button"])
+		app_buttons[entry["package_id"]] = entry["button"]
+
+	if population_thread and population_thread.is_started():
+		population_thread.wait_to_finish()
+
+func _exit_tree() -> void:
+	if population_thread and population_thread.is_started():
+		population_thread.wait_to_finish()
+
+## Raw editor for every key in SettingsManager.DEFAULTS["settings"], built
+## dynamically off that dictionary rather than hardcoded here - so it stays
+## complete as settings get added, and covers keys that don't otherwise
+## have friendly UI in the real Settings app (e.g. nuxStatus). Bools get a
+## toggle; everything else gets a free-text row parsed back to its type.
+func populate_device_config() -> void:
+	for child in device_config.get_children():
+		child.queue_free()
+
+	var keys := SettingsManager.DEFAULTS["settings"].keys()
+	keys.sort()
+
+	for key in keys:
+		var default_value = SettingsManager.DEFAULTS["settings"][key]
+		var row = SETTINGS_OPTION_SCENE.instantiate()
+		row.setting_id = key
+		row.header_text = key
+		row.mouse_filter = Control.MOUSE_FILTER_PASS
+
+		if default_value is bool:
+			row.option_type = "toggle"
+			row.toggled = SettingsManager.get_value("settings", key) or false
+			row.setting_toggled.connect(func(id: String, is_on: bool):
+				SettingsManager.set_value("settings", id, is_on)
+				)
+		else:
+			row.option_type = "edit"
+			row.edit_text = str(SettingsManager.get_value("settings", key))
+			row.setting_edited.connect(_on_device_config_edited)
+
+		device_config.add_child(row)
+
+func _on_device_config_edited(id: String, value: String) -> void:
+	var default_value = SettingsManager.DEFAULTS["settings"].get(id)
+	var coerced: Variant = value
+
+	if default_value is int:
+		coerced = int(value) if value.is_valid_int() else default_value
+	elif default_value is float:
+		coerced = float(value) if value.is_valid_float() else default_value
+	# else: leave as the raw string
+
+	if !SettingsManager.set_value("settings", id, coerced):
+		SystemLog.log("Couldn't set device config value for ", id)
 
 func _on_app_icon_updated(package_id: String, texture: Texture2D) -> void:
 	if app_buttons.has(package_id) and is_instance_valid(app_buttons[package_id]):
