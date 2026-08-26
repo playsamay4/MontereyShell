@@ -9,3 +9,4 @@ id = "system_grid.power_action"
 display_name = "PowerAction"
 scene = ExtResource("2")
 category = "System Grid"
+default_window = &"system"

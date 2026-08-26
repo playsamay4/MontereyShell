@@ -166,4 +166,3 @@ flat = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1174504734]
 libraries/ = SubResource("AnimationLibrary_iu18j")
-autoplay = &"new_animation"

@@ -5,6 +5,7 @@ extends Node3D
 
 @onready var mainPanel = $CurvedPanel
 @onready var popupPanel = $PopupPanel
+@onready var main_panel_follower = %MainPanelFollower
 
 @onready var viewport : Viewport = get_viewport()
 
@@ -14,6 +15,12 @@ var aui_fade_tween: Tween
 var in_ar = false
 
 var main_window: AppWindow
+
+## The main panel's normal, world-locked position - captured once at
+## startup so "Static" mode has something to restore to after "Float"
+## mode (used for locked-viewport-style content like OTA-block/twilight)
+## has been repositioning it.
+var _main_panel_static_transform: Transform3D
 
 var nux_steps: Array[String] = [
 	"nux.fit_and_focus_fit",
@@ -44,16 +51,37 @@ func _ready() -> void:
 
 	main_window = WindowManager.register_window(&"main", mainPanel)
 	PopupManager.register(popupPanel, popupPanel.get_scene_instance(), $"AnimationPlayer", aui_bar_3d)
+	_main_panel_static_transform = mainPanel.transform
 
 	SignalBus.aui_bar_show_requested.connect(func(): fade_aui_bar(true, 0.4))
 	SignalBus.aui_bar_hide_requested.connect(func(): fade_aui_bar(false, 0.4))
+
+	var nux_status = SettingsManager.get_value("settings", "nuxStatus")
+	var nux_type = SettingsManager.get_value("settings", "nuxType")
+
+	# Not ready for onboarding proper yet (still waiting on updates/OTA) -
+	# straight into the dark void with a blocking screen, main panel in
+	# "Float" mode since the user may not be looking anywhere near its
+	# normal static position.
+	if nux_status == SettingsManager.NUX_STATUS.DAY0_OTA_READY:
+		_begin_updating_popup()
+		return
+	elif nux_status != SettingsManager.NUX_STATUS.NUX_COMPLETE and nux_status != SettingsManager.NUX_STATUS.NOTIFY_ENDPOINT:
+		_begin_ota_block()
+		return
+
+	# Twilight onboarding: also starts straight in the dark void, same as
+	# OTA-block above - it never sees the normal bright home fade-in.
+	if nux_status == SettingsManager.NUX_STATUS.NOTIFY_ENDPOINT and nux_type == "twilight":
+		_begin_twilight_nux()
+		return
 
 	SignalBus.fade_in_scene.emit()
 	aui_bar_3d.visible = false
 
 	await SignalBus.fade_in_scene_finished
 
-	if SettingsManager.get_value("settings", "nuxType") == "full_vr" && SettingsManager.get_value("settings", "nuxStatus") != SettingsManager.NUX_STATUS.NUX_COMPLETE:
+	if nux_status == SettingsManager.NUX_STATUS.NOTIFY_ENDPOINT and nux_type == "full_vr":
 		UiAudioManager.play_chime("res://audio/update_complete.ogg")
 		await get_tree().create_timer(1.5).timeout
 
@@ -68,6 +96,7 @@ func _ready() -> void:
 					"action_text": "",
 					"primary_text": tr("NUX_CONTINUE"),
 					"cancel_text": "",
+					"fade_in": 1.0,
 					})
 			_start_nux_sequence()
 		show_update_popup.call()
@@ -80,9 +109,59 @@ func _ready() -> void:
 	init_aui()
 
 func init_aui():
+	main_panel_follower.go_static(_main_panel_static_transform)
 
 	await fade_aui_bar(true, 0.4)
 	UiAudioManager.play_env_audio("res://audio/system_environment_ambix.ogg")
+
+
+func _get_xr_camera() -> XRCamera3D:
+	return get_viewport().get_camera_3d() as XRCamera3D
+
+
+## Waiting on updates/OTA - a dead-end display until nuxStatus changes
+## externally (e.g. via Device Config's raw editor + a restart in this mock
+## shell) and the app relaunches into a further-along stage. Shown "Float"
+## mode - head-locked, since the user hasn't done Guardian setup yet and
+## may not be looking anywhere near the panel's normal static position.
+func _begin_updating_popup() -> void:
+	aui_bar_3d.visible = false
+	main_panel_follower.go_float(_get_xr_camera())
+	SignalBus.tween_scene_light.emit(0, 1)
+	await SignalBus.tween_scene_light_finished
+	UiAudioManager.play_env_audio("res://audio/nux/music_first_time_nux_dark_loop.ogg")
+	await main_window.open(AppRegistry.get_app("nux.updating_popup"), {}, false)
+
+
+func _begin_ota_block() -> void:
+	aui_bar_3d.visible = false
+	main_panel_follower.go_float(_get_xr_camera())
+	SignalBus.tween_scene_light.emit(0, 1)
+	await SignalBus.tween_scene_light_finished
+	UiAudioManager.play_env_audio("res://audio/nux/music_first_time_nux_dark_loop.ogg")
+	await main_window.open(AppRegistry.get_app("nux.ota_block"), {}, false)
+
+
+func _begin_twilight_nux() -> void:
+	aui_bar_3d.visible = false
+	main_panel_follower.go_float(_get_xr_camera())
+	# Same softlock concern as the full_vr sequence: mandatory, no history
+	# to fall back to.
+	main_window.back_navigation_locked = true
+	SignalBus.tween_scene_light.emit(0, 1)
+	await SignalBus.tween_scene_light_finished
+
+	var instance = await main_window.open(AppRegistry.get_app("nux.twilight"), {}, false)
+	if instance and instance.has_signal("twilight_finished"):
+		instance.twilight_finished.connect(_on_twilight_finished, CONNECT_ONE_SHOT)
+
+
+func _on_twilight_finished() -> void:
+	main_window.back_navigation_locked = false
+	main_window.open(AppRegistry.get_app("system.blank"), {}, false)
+	SignalBus.tween_scene_light.emit(5, 2)
+	await SignalBus.tween_scene_light_finished
+	init_aui()
 
 func _start_nux_sequence() -> void:
 	# Onboarding is mandatory - it runs with keep_history=false (nothing to

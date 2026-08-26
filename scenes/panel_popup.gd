@@ -33,3 +33,6 @@ func fade_in(duration: float):
 
 	%PanelContainer.modulate.a = 0
 	tween.tween_property(%PanelContainer, "modulate:a", 1, duration)
+
+func show_instant() -> void:
+	%PanelContainer.modulate.a = 1

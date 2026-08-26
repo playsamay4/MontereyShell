@@ -34,12 +34,19 @@ signal fade_out_scene_finished()
 signal tween_scene_light()
 signal tween_scene_light_finished()
 
-signal start_system_view(scene: String)
+signal start_system_view(app_id: String)
 signal end_system_view()
 
 
 signal nux_show_fixed_display(scene: String)
 signal nux_hide_fixed_display()
+
+## The OpenXR composition-layer video quad Master.tscn owns for the
+## twilight NUX flow. It stays Master-owned (a native Android media surface
+## backs it - recreating that on every QuestHome reload would be wasteful
+## and risky) but the sequencing/decision logic that drives it lives in
+## QuestHome's nux.twilight app, which reaches it through this reference.
+var boot_video_player: XRVideoPlayerQuad = null
 
 signal power_off()
 signal restart()

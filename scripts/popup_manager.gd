@@ -46,6 +46,11 @@ func register(host: Node, popup_instance: Control, anim_player: AnimationPlayer,
 ## Shows config and returns the reason ("action"/"primary"/"cancel", or ""
 ## if aborted) once the user dismisses it. If a popup is already showing,
 ## this one queues and displays after.
+##
+## config["fade_in"] (float, seconds): if > 0, the popup content fades in
+## over that duration instead of appearing instantly. Defaults to instant -
+## most popups (dialogs, confirmations) should just be there; the slow
+## fade is for specific moments like the NUX "update complete" popup.
 func show_popup(config: Dictionary) -> String:
 	var request := PopupRequest.new(config)
 	_queue.append(request)
@@ -57,7 +62,13 @@ func show_popup(config: Dictionary) -> String:
 func _present(request: PopupRequest) -> void:
 	_current = request
 	_popup_instance.setup_popup(request.config)
-	_popup_instance.fade_in(1)
+
+	var fade_in_duration: float = request.config.get("fade_in", 0.0)
+	if fade_in_duration > 0.0:
+		_popup_instance.fade_in(fade_in_duration)
+	else:
+		_popup_instance.show_instant()
+
 	_host.visible = true
 	if _aui_bar:
 		_aui_bar.enabled = false

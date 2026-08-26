@@ -315,6 +315,144 @@ func clear_icon_cache() -> void:
 		app.icon_loaded = false
 	_cache_all_icons()
 
+func get_external_cache_dir() -> String:
+	if OS.get_name() == "Android":
+		return "/sdcard/Download/monterey_icon_cache/"
+	else:
+		var downloads_dir = OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)
+		if not downloads_dir.is_empty():
+			return downloads_dir.path_join("monterey_icon_cache")
+		return "user://../monterey_external_icon_cache/"
+
+func export_icon_cache(target_dir: String = "") -> Dictionary:
+	if target_dir.is_empty():
+		target_dir = get_external_cache_dir()
+
+	_ensure_cache_dir_exists()
+
+	var err = DirAccess.make_dir_recursive_absolute(target_dir)
+	if err != OK and OS.get_name() == "Android" and target_dir != "/sdcard/MontereyShell/icon_cache/":
+		var alt_target = "/sdcard/MontereyShell/icon_cache/"
+		var alt_err = DirAccess.make_dir_recursive_absolute(alt_target)
+		if alt_err == OK:
+			target_dir = alt_target
+			err = OK
+
+	if err != OK:
+		var err_msg = "Failed to create export directory:\n%s\n(Godot Error Code: %d)" % [target_dir, err]
+		print("[PackageManager] ", err_msg)
+		return {
+			"success": false,
+			"count": 0,
+			"path": target_dir,
+			"error_code": err,
+			"error_message": err_msg
+		}
+
+	var cache_dir_access = DirAccess.open(CACHE_DIR)
+	if not cache_dir_access:
+		var err_msg = "Internal cache dir unreachable: %s" % CACHE_DIR
+		print("[PackageManager] ", err_msg)
+		return {
+			"success": false,
+			"count": 0,
+			"path": target_dir,
+			"error_code": -1,
+			"error_message": err_msg
+		}
+
+	var exported_count = 0
+	var copy_errors = 0
+	cache_dir_access.list_dir_begin()
+	var file_name = cache_dir_access.get_next()
+	while file_name != "":
+		if not cache_dir_access.current_is_dir():
+			var src = CACHE_DIR + file_name
+			var dst = target_dir.path_join(file_name)
+			var c_err = DirAccess.copy_absolute(src, dst)
+			if c_err == OK:
+				exported_count += 1
+			else:
+				copy_errors += 1
+				print("[PackageManager] Failed to copy ", src, " to ", dst, " Error: ", c_err)
+		file_name = cache_dir_access.get_next()
+
+	if FileAccess.file_exists(FAIL_LOG_PATH):
+		DirAccess.copy_absolute(FAIL_LOG_PATH, target_dir.path_join("failed_fetches.txt"))
+
+	print("[PackageManager] Exported ", exported_count, " icons to ", target_dir)
+	return {
+		"success": true,
+		"count": exported_count,
+		"copy_errors": copy_errors,
+		"path": target_dir,
+		"error_code": OK,
+		"error_message": ""
+	}
+
+func restore_icon_cache(source_dir: String = "") -> Dictionary:
+	if source_dir.is_empty():
+		source_dir = get_external_cache_dir()
+
+	if not DirAccess.dir_exists_absolute(source_dir):
+		if OS.get_name() == "Android" and source_dir != "/sdcard/MontereyShell/icon_cache/":
+			var alt_source = "/sdcard/MontereyShell/icon_cache/"
+			if DirAccess.dir_exists_absolute(alt_source):
+				source_dir = alt_source
+
+	if not DirAccess.dir_exists_absolute(source_dir):
+		var err_msg = "External backup dir not found at:\n%s" % source_dir
+		print("[PackageManager] ", err_msg)
+		return {
+			"success": false,
+			"count": 0,
+			"path": source_dir,
+			"error_code": -1,
+			"error_message": err_msg
+		}
+
+	var source_dir_access = DirAccess.open(source_dir)
+	if not source_dir_access:
+		var err_msg = "Cannot access external backup dir at:\n%s" % source_dir
+		print("[PackageManager] ", err_msg)
+		return {
+			"success": false,
+			"count": 0,
+			"path": source_dir,
+			"error_code": -1,
+			"error_message": err_msg
+		}
+
+	_ensure_cache_dir_exists()
+
+	source_dir_access.list_dir_begin()
+	var file_name = source_dir_access.get_next()
+	var restored_count = 0
+	while file_name != "":
+		if not source_dir_access.current_is_dir():
+			var src = source_dir.path_join(file_name)
+			if file_name == "failed_fetches.txt":
+				DirAccess.copy_absolute(src, FAIL_LOG_PATH)
+			else:
+				var dst = CACHE_DIR + file_name
+				if DirAccess.copy_absolute(src, dst) == OK:
+					restored_count += 1
+		file_name = source_dir_access.get_next()
+
+	_load_failure_log()
+	for app in installed_apps:
+		app.icon_loaded = false
+	_cache_all_icons()
+	print("[PackageManager] Restored ", restored_count, " icons from ", source_dir)
+	return {
+		"success": true,
+		"count": restored_count,
+		"path": source_dir,
+		"error_code": OK,
+		"error_message": ""
+	}
+
+
 func _load_mock_data() -> void:
 	for i in range(25):
 		var mock = AppData.new()

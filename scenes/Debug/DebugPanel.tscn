@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://i10gpm1k6t6" path="res://scenes/Debug/DebugTextHeader.tscn" id="2_5xy7x"]
 [ext_resource type="FontFile" uid="uid://cbq5mdsrnxu0j" path="res://fonts/Roboto-Regular.ttf" id="2_yb5qt"]
 [ext_resource type="PackedScene" uid="uid://dwohbkvei32q0" path="res://scenes/Debug/DebugTextEntry.tscn" id="3_43oxw"]
+[ext_resource type="Texture2D" uid="uid://b83dfqwmfwps3" path="res://images/oc_icon_chevron_down_filled_24_d2d2d2.png" id="4_chevron"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2ndm"]
 bg_color = Color(0.050980393, 0.050980393, 0.050980393, 1)
@@ -237,6 +238,21 @@ size_flags_horizontal = 4
 theme_type_variation = &"DebugButton"
 text = "Clear App DB Cache"
 
+[node name="ExportIconCacheBtn" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/TabContainer/TestActionsPanel/VBoxContainer" unique_id=628341980]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"DebugButton"
+text = "Export Icon Cache"
+
+[node name="RestoreIconCacheBtn" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/TabContainer/TestActionsPanel/VBoxContainer" unique_id=628341981]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"DebugButton"
+text = "Restore Icon Cache"
+
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/TabContainer/TestActionsPanel" unique_id=1979633675]
 layout_mode = 2
 
@@ -282,6 +298,23 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
+
+[node name="LaunchTargetRow" type="HBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/TabContainer/LaunchPanel" unique_id=700123459]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/TabContainer/LaunchPanel/LaunchTargetRow" unique_id=700123460]
+layout_mode = 2
+text = "Launch Target:"
+
+[node name="LaunchTargetDropdown" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/TabContainer/LaunchPanel/LaunchTargetRow" unique_id=700123461]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"MainButton"
+text = "Default (per-app)"
+icon = ExtResource("4_chevron")
+icon_alignment = 2
 
 [node name="LaunchPanelScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/HBoxContainer/TabContainer/LaunchPanel" unique_id=308155224]
 unique_name_in_owner = true

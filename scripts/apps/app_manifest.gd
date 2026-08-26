@@ -19,3 +19,10 @@ extends Resource
 
 ## Grouping used by launcher UIs (debug panel, dock, etc).
 @export var category: String = "General"
+
+## Which window this app wants to open in by default (e.g. &"main",
+## &"system") - used by generic launchers (the debug panel's "Launch" tab)
+## that don't otherwise know or care where a given app belongs. Callers
+## that already have an opinion (e.g. aui_bar routing taps to &"main") can
+## still pass an explicit window id and ignore this.
+@export var default_window: StringName = &"main"

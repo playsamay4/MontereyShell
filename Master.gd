@@ -24,7 +24,6 @@ var system_view_prev_controller_laser_state: bool = false
 
 var is_loading: bool = false
 var sequence_finished: bool = false
-var allow_scene_swap: bool = true
 var loaded_resource: PackedScene = null
 
 var controller_lasers_showing: bool = false
@@ -36,28 +35,10 @@ func _clear_world_container() -> void:
 	for child in world_container.get_children():
 		child.queue_free()
 
-func _clear_viewport_safely(vp_node: Node) -> void:
-	if not is_instance_valid(vp_node):
-		return
-		
-	if vp_node.has_method("set_scene_instance"):
-		vp_node.set_scene_instance(null)
-	
-	if "scene_instance" in vp_node and is_instance_valid(vp_node.scene_instance):
-		vp_node.scene_instance.queue_free()
-		vp_node.scene_instance = null
-	
-	if vp_node.has_node("Viewport"):
-		var internal_vp = vp_node.get_node("Viewport")
-		for child in internal_vp.get_children():
-			if not child is Camera2D and not child is Camera3D:
-				child.queue_free()
-
 func _evaluate_boot_settings() -> void:
 	var nuxStatus = SettingsManager.get_value("settings", "nuxStatus")
 	if nuxStatus != SettingsManager.NUX_STATUS.NUX_COMPLETE:
-		skip_boot = true # SWAP BACK WHEN DONE
-		allow_scene_swap = false
+		skip_boot = true
 		SystemLog.log("NUX STATUS is %s",  SettingsManager.NUX_STATUS_NAME[nuxStatus])
 	else:
 		skip_boot = not SettingsManager.get_value("settings", "experimentUseBootSequence")
@@ -121,14 +102,17 @@ func _ready() -> void:
 	SignalBus.controller_hide_model.connect(_hide_controller_models)
 	SignalBus.controller_hide_reticles.connect(_hide_controller_reticles)
 	SignalBus.controller_show_reticles.connect(_show_controller_reticles)
+	var system_window := WindowManager.register_window(&"system", system_view_locked_viewport)
+	system_window.app_opened.connect(_on_system_window_app_opened)
+	SignalBus.boot_video_player = video_screen
 	SignalBus.start_system_view.connect(show_system_view)
 	SignalBus.end_system_view.connect(hide_system_view)
-	SignalBus.power_off.connect(_shutdown)
+	SignalBus.power_off.connect(_power_off)
 	SignalBus.restart.connect(_restart)
 	
 	SignalBus.nux_show_fixed_display.connect(func(scene: String):
 		%FixedDisplay.hide()
-		_current_nux_scene = await set_fixed_display_viewport_scene(load(scene))
+		await set_fixed_display_viewport_scene(load(scene))
 		await get_tree().process_frame
 		%FixedDisplay.show()
 		)
@@ -144,183 +128,87 @@ func _ready() -> void:
 
 func _handle_post_boot_flow() -> void:
 	%LoadingDots.hide()
-	
-	if not allow_scene_swap:
-		SystemLog.log("scene swap was denied")
-		_nux_begin()
-	else:
-		_finalize_scene_swap()
 
-var _nux_video_step: int = 0
-var _current_nux_scene: Node = null
+	# QuestHome now owns the full NUX decision tree (OTA-block, twilight,
+	# full_vr, or straight to Home) - Master's only remaining job here is
+	# the pre-completion "curtain" backdrop and getting the controllers
+	# visible, both independent of which specific flow QuestHome runs.
+	if SettingsManager.get_value("settings", "nuxStatus") != SettingsManager.NUX_STATUS.NUX_COMPLETE:
+		if locked_viewport:
+			locked_viewport_parent.show()
+		_show_controller_models()
+		_show_controller_lasers()
 
-func _nux_begin() -> void:
-	if locked_viewport:
-		locked_viewport_parent.show()
-
-	_show_controller_models()
-	_show_controller_lasers()
-	
-	if SettingsManager.get_value("settings", "nuxStatus") == SettingsManager.NUX_STATUS.NOTIFY_ENDPOINT:
-		if SettingsManager.get_value("settings", "nuxType") == "twilight":
-			_hide_controller_lasers()
-			_hide_controller_models()
-
-			if video_screen.video_finished.is_connected(_on_video_screen_finished):
-				video_screen.video_finished.disconnect(_on_video_screen_finished)
-			video_screen.video_finished.connect(_on_video_screen_finished)
-
-			if not SignalBus.controller_trigger_pressed.is_connected(_on_nux_trigger_pressed):
-				SignalBus.controller_trigger_pressed.connect(_on_nux_trigger_pressed)
-
-			_nux_video_step = 0
-			video_screen.show()
-			video_screen.play_video()
-		elif SettingsManager.get_value("settings", "nuxType") == "full_vr":
-			allow_scene_swap = true
-			_finalize_scene_swap()
-			
-	else:
-		UiAudioManager.play_env_audio("res://audio/nux/music_first_time_nux_dark_loop.ogg")
-		locked_viewport_go_to_scene("res://scenes/nux/NuxOtaBlock.tscn")
-		
+	_finalize_scene_swap()
 
 
-func _on_video_screen_finished() -> void:
-	if _nux_video_step == 0:
-		print("[NUX] First video finished. Showing clarity scene overlay.")
-		video_screen.hide() 
-		
-		_current_nux_scene = await set_fixed_display_viewport_scene(load("res://scenes/nux/clarity.tscn"))
-		%FixedDisplay.show()
-		
-	elif _nux_video_step == 1:
-		_nux_video_step = 2 
-		video_screen.hide() 
-
-		_current_nux_scene = await set_fixed_display_viewport_scene(load("res://scenes/nux/ipd.tscn"))
-		%FixedDisplay.show()
-		
-	elif _nux_video_step == 2:
-		%LockedViewport.hide()
-		_current_nux_scene = null 
-		SettingsManager.set_value("settings", "nuxStatus", SettingsManager.NUX_STATUS.NUX_COMPLETE)
-
-		allow_scene_swap = true
-		_finalize_scene_swap()
-	
-		
-
-
-func _on_nux_trigger_pressed(_arg) -> void:
-	var nuxType = SettingsManager.get_value("settings", "nuxType")
-	if nuxType != "twilight":
-		return
-	
-	if _nux_video_step == 0 and is_instance_valid(_current_nux_scene):
-		_nux_video_step = 1 
-		
-		var anim_player = _current_nux_scene.get_node_or_null("AnimationPlayer") as AnimationPlayer
-		if anim_player:
-			anim_player.play("fade_out")
-			await anim_player.animation_finished
-		
-		%FixedDisplay.hide()
-		_current_nux_scene = null 
-		
-		var next_clip: String = "video/quest_nux_fit_vertical.mp4" if OS.get_name() == "Android" else "res://video/quest_nux_fit_vertical.ogv"
-		
-		video_screen.show()
-		video_screen.change_and_play_video(next_clip)
-	elif _nux_video_step == 2 and is_instance_valid(_current_nux_scene):
-		var anim_player = _current_nux_scene.get_node_or_null("AnimationPlayer") as AnimationPlayer
-		if anim_player:
-			anim_player.play("fade_out")
-			await anim_player.animation_finished
-		%FixedDisplay.hide()
-		_current_nux_scene = null 
-		var next_clip: String = "video/quest_nux_fit_transition.mp4" if OS.get_name() == "Android" else "res://video/quest_nux_fit_transition.ogv"
-		
-		video_screen.show()
-		video_screen.change_and_play_video(next_clip)
-		
-		
-
-
-func locked_viewport_go_to_scene(scene: String):
-	var new_scene_resource = load(scene)
-	if new_scene_resource:
-		if locked_viewport.has_method("set_scene_instance"):
-			locked_viewport.set_scene_instance(null)
-		elif "scene_instance" in locked_viewport:
-			if is_instance_valid(locked_viewport.scene_instance):
-				locked_viewport.scene_instance.queue_free()
-			locked_viewport.scene_instance = null
-
-		locked_viewport.set_scene(new_scene_resource)
-		
-
-func show_system_view(scene: String, force: bool = false) -> void:
+## Entry point for the "official" flow (power hold, shutdown, etc): brings
+## up the system view presentation, then opens app_id into it.
+func show_system_view(app_id: String, force: bool = false) -> void:
 	if is_in_system_view and not force:
 		return
-	SystemLog.log("Transitioning to systemview %s", scene)
+	await _reveal_system_view(app_id)
+	# The system window shows exactly one app - whichever one opened it -
+	# and has no back-stack, so there's never anything to reveal underneath.
+	await WindowManager.open_app(&"system", app_id, {}, false)
+
+
+## Anything opening an app directly into the "system" window - without
+## going through show_system_view(), e.g. the debug panel's launch-target
+## picker - still needs the full presentation around it, or the app would
+## load invisibly behind a SystemView node that's never told to show.
+func _on_system_window_app_opened(_instance: Node, manifest: AppManifest) -> void:
+	if is_in_system_view:
+		return
+	_reveal_system_view(manifest.id if manifest else "")
+
+
+func _reveal_system_view(app_id: String = "") -> void:
+	SystemLog.log("Transitioning to systemview %s", app_id)
 	is_in_system_view = true
 	system_view_locked_viewport.hide()
 
-	
+
 	# 1. Back up the current world environment state before touching it
 	original_bg_mode = environment.background_mode
 	original_bg_color = environment.background_color
-	
+
 	system_view_prev_controller_laser_state = controller_lasers_showing
 	_hide_controller_lasers()
 
-	
+
 	# 2. Force background to solid flat color
 	environment.background_mode = Environment.BG_COLOR
-	
+
 	# 3. Apply Hex 363636 ("54, 54, 54" in sRGB)
 	environment.background_color = Color("363636")
-	
+
 	var mat = master_camera_fade.get_active_material(0) as StandardMaterial3D
-	if not mat: 
-		SystemLog.log("MASTERCAMERAFADE MATERIAL NOT FOUND?") 
+	if not mat:
+		SystemLog.log("MASTERCAMERAFADE MATERIAL NOT FOUND?")
 		return
 	mat.albedo_color.a = 1
-	
+
 	locked_viewport_parent.hide()
 	world_container.hide()
-	
-	
+
+
 	master_camera_fade.show()
 	_hide_controller_reticles()
-	
+
 	UiAudioManager.pause_env_audio()
-	
+
 	await get_tree().create_timer(0.4).timeout
-	
+
 
 	var tween = create_tween()
-	
+
 	system_view_locked_viewport.show()
 	tween.tween_property(mat, "albedo_color:a", 0, 0.5)
-	
+
 	system_view.show()
 	_show_controller_lasers()
 	_show_controller_reticles()
-	
-	
-	var new_scene_resource = load(scene)
-	if new_scene_resource:
-		if system_view_locked_viewport.has_method("set_scene_instance"):
-			system_view_locked_viewport.set_scene_instance(null)
-		elif "scene_instance" in system_view_locked_viewport:
-			if is_instance_valid(system_view_locked_viewport.scene_instance):
-				system_view_locked_viewport.scene_instance.queue_free()
-			system_view_locked_viewport.scene_instance = null
-
-		system_view_locked_viewport.set_scene(new_scene_resource)
-	return
 
 
 func hide_system_view() -> void:
@@ -337,20 +225,9 @@ func hide_system_view() -> void:
 	_hide_controller_reticles()
 	
 	master_camera_fade.show()
-	
-	
-	var new_scene_resource = load("res://scenes/blank.tscn")
-	if new_scene_resource:
-		if system_view_locked_viewport.has_method("set_scene_instance"):
-			system_view_locked_viewport.set_scene_instance(null)
-		elif "scene_instance" in system_view_locked_viewport:
-			if is_instance_valid(system_view_locked_viewport.scene_instance):
-				system_view_locked_viewport.scene_instance.queue_free()
-			system_view_locked_viewport.scene_instance = null
 
-		system_view_locked_viewport.set_scene(new_scene_resource)
-	
-	
+	WindowManager.close_app(&"system")
+
 	await get_tree().create_timer(0.4).timeout
 
 	
@@ -402,9 +279,15 @@ func _start_background_load() -> void:
 		SystemLog.log("Background thread initialization failure")
 
 func _shutdown() -> void:
-	await show_system_view("res://scenes/SystemGrid/PowerAction.tscn", true)
+	await show_system_view("system_grid.power_action", true)
 	UiAudioManager.play_shutdown_sound()
-	UiAudioManager.stop_env_audio() 
+	UiAudioManager.stop_env_audio()
+
+
+func _power_off() -> void:
+	await _shutdown()
+	await get_tree().create_timer(3.0).timeout
+	get_tree().quit() 
 
 
 func _restart() -> void:
@@ -424,19 +307,17 @@ func _restart() -> void:
 	# 2. Clear containers and viewports
 	_clear_world_container()
 	
-	_clear_viewport_safely(locked_viewport)
 	if is_instance_valid(locked_viewport):
 		locked_viewport_parent.hide()
 		
-	_clear_viewport_safely(system_view_locked_viewport)
+	WindowManager.close_app(&"system")
 	if is_instance_valid(system_view):
 		system_view.hide()
 	
 	# 3. Restore default variables
 	is_in_system_view = false
 	sequence_finished = false
-	allow_scene_swap = true
-	
+
 	# 4. FORCE ENVIRONMENT BACK TO BOOT STATE
 	if environment:
 		environment.background_mode = Environment.BG_SKY

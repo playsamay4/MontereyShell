@@ -36,6 +36,12 @@ func get_app_window(id: StringName) -> AppWindow:
 	return _windows.get(id, null)
 
 
+## Every currently-registered window id, e.g. for a debug launcher letting
+## you pick which one to open an app into.
+func get_window_ids() -> Array:
+	return _windows.keys()
+
+
 ## keep_history defaults to true: the app currently open in window_id (if
 ## any) is parked rather than destroyed, so go_back() can return to it.
 ## Pass false for flows with their own dedicated forward/back navigation

@@ -58,7 +58,7 @@ const DEFAULTS = {
 			"devAudioStyle": "v16",
 			
 			
-			"nuxStatus": NUX_STATUS.NUX_COMPLETE,
+			"nuxStatus": NUX_STATUS.NEW_DEVICE,
 			
 			
 			"nuxType": "full_vr"

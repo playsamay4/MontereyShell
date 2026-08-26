@@ -11,6 +11,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dw5j2sp3ahhqu" path="res://models/curved_screen.obj" id="9_y23qn"]
 [ext_resource type="PackedScene" uid="uid://cpf78bgnhfgg" path="res://scenes/PanelPopup.tscn" id="10_sfooh"]
 [ext_resource type="AudioStream" uid="uid://c7hbminq8ke08" path="res://audio/system_environment_ambix.ogg" id="11_gwqxd"]
+[ext_resource type="Script" path="res://scenes/lock_viewport.gd" id="12_follow"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_gwqxd"]
 resource_local_to_scene = true
@@ -231,6 +232,12 @@ shape = SubResource("ConcavePolygonShape3D_5ogu3")
 [node name="Screen" type="MeshInstance3D" parent="CurvedPanel" unique_id=1807990690]
 mesh = ExtResource("9_y23qn")
 surface_material_override/0 = SubResource("StandardMaterial3D_ed27y")
+
+[node name="MainPanelFollower" type="Node3D" parent="." node_paths=PackedStringArray("target_node")]
+unique_name_in_owner = true
+script = ExtResource("12_follow")
+face_distance = 2.14
+target_node = NodePath("../CurvedPanel")
 
 [node name="PopupPanel" type="Node3D" parent="." unique_id=1311394436]
 transform = Transform3D(0.80156946, 0, 0, 0, 0.89091784, 0, 0, 0, 1, 0, 1.1272501, -1.8645278)

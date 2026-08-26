@@ -34,7 +34,7 @@ func _process(delta):
 
 		if lstick_hold_time >= 3.0:
 			SystemLog.log("Left stick held for 3 seconds. triggering power options")
-			SignalBus.start_system_view.emit("res://scenes/SystemGrid/PowerOffDialog.tscn")
+			SignalBus.start_system_view.emit("system_grid.power_off_dialog")
 
 			# Prevent repeated firing
 			lstick_held = false

@@ -4,13 +4,20 @@ const TEXT_HEADER_SCENE = preload("res://scenes/Debug/DebugTextHeader.tscn")
 const TEXT_ENTRY_SCENE = preload("res://scenes/Debug/DebugTextEntry.tscn")
 const BUTTON_ENTRY_SCENE = preload("res://scenes/Debug/DebugButtonEntry.tscn")
 const SETTINGS_OPTION_SCENE = preload("res://scenes/settings/components/settings_option.tscn")
+const DROPDOWN_POPUP_SCENE = preload("res://templates/dropdown_popup.tscn")
+
+const DEFAULT_LAUNCH_TARGET_LABEL := "Default (per-app)"
 
 @onready var device_info = %DeviceInfoVBox
 @onready var launch_panel = %LaunchPanelVBox
+@onready var launch_target_dropdown: Button = %LaunchTargetDropdown
 @onready var device_config = %DeviceConfigVBox
 
 var app_buttons: Dictionary = {}
 var population_thread: Thread
+
+var _launch_target_options: Array[String] = []
+var _launch_target_selected: String = DEFAULT_LAUNCH_TARGET_LABEL
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,6 +26,7 @@ func _ready() -> void:
 	%DeviceInfo.pressed.connect(func(): %DeviceInfoPanel.show() )
 	%Launch.pressed.connect(func(): %LaunchPanel.show() )
 	%DeviceConfig.pressed.connect(func(): %DeviceConfigPanel.show() )
+	launch_target_dropdown.pressed.connect(_on_launch_target_dropdown_pressed)
 
 
 	%ShowDialog.pressed.connect(func():
@@ -33,6 +41,7 @@ func _ready() -> void:
 		
 	populate_device_info()
 
+	populate_launch_target_dropdown()
 	populate_launch_entries()
 
 	populate_device_config()
@@ -57,6 +66,42 @@ func _ready() -> void:
 				"cancel_text": "",
 				})
 		)
+
+	%ExportIconCacheBtn.pressed.connect(func():
+		var res: Dictionary = PackageManager.export_icon_cache()
+		var msg: String
+		if res.get("success", false):
+			msg = "Exported %d icons to external path:\n%s" % [res.get("count", 0), res.get("path", "")]
+			if res.get("copy_errors", 0) > 0:
+				msg += "\n(Note: %d files failed to copy)" % res.get("copy_errors", 0)
+		else:
+			msg = "Export Failed!\n" + res.get("error_message", "Unknown error")
+		PopupManager.show_popup({
+				"title": "EXPORT ICON CACHE",
+				"text": msg,
+				"action_text": "",
+				"primary_text": "OK",
+				"cancel_text": "",
+				})
+		)
+
+	%RestoreIconCacheBtn.pressed.connect(func():
+		var res: Dictionary = PackageManager.restore_icon_cache()
+		var msg: String
+		if res.get("success", false):
+			msg = "Restored %d icons from external path:\n%s" % [res.get("count", 0), res.get("path", "")]
+		else:
+			msg = "Restore Failed!\n" + res.get("error_message", "Unknown error")
+		PopupManager.show_popup({
+				"title": "RESTORE ICON CACHE",
+				"text": msg,
+				"action_text": "",
+				"primary_text": "OK",
+				"cancel_text": "",
+				})
+		)
+
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -102,6 +147,37 @@ func populate_device_info():
 			new_item.mouse_filter = Control.MOUSE_FILTER_PASS
 			device_info.add_child(new_item)
 
+## "Default (per-app)" plus every window currently registered with
+## WindowManager, so a debug user can force any registered app to open in
+## any window regardless of what it would normally pick for itself -
+## e.g. previewing a System Grid dialog in the main panel, or vice versa.
+##
+## Uses the project's own custom dropdown (templates/dropdown_popup.tscn)
+## rather than Godot's built-in OptionButton - the native one opens its
+## popup as a separate top-level window, which doesn't render inside these
+## panels' SubViewport-in-3D setup and is effectively unusable in XR.
+func populate_launch_target_dropdown() -> void:
+	_launch_target_options = [DEFAULT_LAUNCH_TARGET_LABEL]
+	for window_id in WindowManager.get_window_ids():
+		_launch_target_options.append(str(window_id))
+
+	_launch_target_selected = DEFAULT_LAUNCH_TARGET_LABEL
+	launch_target_dropdown.text = _launch_target_selected
+
+func _on_launch_target_dropdown_pressed() -> void:
+	var popup = DROPDOWN_POPUP_SCENE.instantiate()
+	get_viewport().add_child(popup)
+	popup.setup(_launch_target_options, _launch_target_selected, launch_target_dropdown)
+	popup.option_selected.connect(func(option_id: String):
+		_launch_target_selected = option_id
+		launch_target_dropdown.text = option_id
+		)
+
+func _resolve_launch_target(manifest: AppManifest) -> StringName:
+	if _launch_target_selected == DEFAULT_LAUNCH_TARGET_LABEL:
+		return manifest.default_window
+	return StringName(_launch_target_selected)
+
 func populate_launch_entries():
 	for child in launch_panel.get_children():
 		child.queue_free()
@@ -118,7 +194,7 @@ func populate_launch_entries():
 		for manifest in AppRegistry.get_apps(category):
 			var entry = BUTTON_ENTRY_SCENE.instantiate()
 			entry.get_node("%Button").text = manifest.display_name
-			entry.get_node("%Button").pressed.connect(func(): WindowManager.open_app(&"main", manifest.id))
+			entry.get_node("%Button").pressed.connect(func(): WindowManager.open_app(_resolve_launch_target(manifest), manifest.id))
 			entry.mouse_filter = Control.MOUSE_FILTER_PASS
 			launch_panel.add_child(entry)
 
